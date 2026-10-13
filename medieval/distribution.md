@@ -1,24 +1,24 @@
 # Distribution list
 
-Paths are relative to the `site/` folder (the web root). Send every guest the shared invitation plus **their own** Phase 1 link only.
+Paths are relative to the `site/` folder (the web root). Send every guest only the invitation link: they enter their full name on it and are taken to their own character page. The direct links below are a backup (never send someone else's link). Each character page has a Phase 2 passphrase box; the passphrase is in `.sealed/phase2-passphrase.txt` (git-ignored). Reveal it to everyone when Phase 2 begins.
 
 Invitation (everyone): `/invitation.html`
 
 | Player | Character | Phase 1 link |
 |---|---|---|
-| Brad Stephenson | Magister Mordecai Quillfeather | `/p1/81311897548f6c5b.html` |
-| Emily Barber | Wen Liang | `/p1/1497c53b5c881d01.html` |
-| Alyssum Johnson | Queen Zhao Suyin of Cathay | `/p1/3d2e2370cf587fd7.html` |
-| Craig Brown | King Oswin Edmund Plantagrey IV | `/p1/20ce737d95de3f99.html` |
-| Emily Brown | Queen Margarethe Eleanor Plantagrey | `/p1/c76172d78068d5bc.html` |
-| Jared Beckstead | Sir Cedric Aelfric Brightblade | `/p1/160924b39657d3d1.html` |
-| Breyton Barber | Wat Piers Fenwick | `/p1/35cd0016d3b51b02.html` |
-| John Gorriceta | Godwin Alfred Hobsworth | `/p1/33db72a7e0665e12.html` |
-| Kayla Beckstead | Tobias "Tumble" Thistlewick | `/p1/ea90cd93f1b0d782.html` |
-| Ryan Chandler | Lord Reginald Cuthbert Thornbury | `/p1/9c0bf218fd2cd68c.html` |
-| Rachel Chandler | Lady Rosamund Philippa Thornbury | `/p1/a34f85eb49372b7a.html` |
-| Shelby Gorriceta | Master Bartholomew Crowe | `/p1/f20d89b4cb9447fd.html` |
-| Zach Johnson | Baron Godfrey Aldous de Ravenmoor | `/p1/fa07de2e3c645a49.html` |
+| Brad Stephenson | Magister Mordecai Quillfeather | `/p1/08b1cc61cb96fcfd5d586c8647ee541e.html` |
+| Emily Barber | Wen Liang | `/p1/f36e5adc0a505adfac5976ce8b779258.html` |
+| Alyssum Johnson | Queen Zhao Suyin of Cathay | `/p1/c9f34c7eab77dbcd7c0f30164b2c0d37.html` |
+| Craig Brown | King Oswin Edmund Plantagrey IV | `/p1/f4399b2aae59dee85c3066b2b35cf782.html` |
+| Emily Brown | Queen Margarethe Eleanor Plantagrey | `/p1/44aaafb00beb0aac5fb8318e1b05f81d.html` |
+| Jared Beckstead | Sir Cedric Aelfric Brightblade | `/p1/35e259c3dcee561f03d2ac94694fedef.html` |
+| Breyton Barber | Wat Piers Fenwick | `/p1/9ced3d86d3340f28481f5d1232485ecd.html` |
+| John Gorriceta | Godwin Alfred Hobsworth | `/p1/855b7de2adfe66827b4f1ff748e7271d.html` |
+| Kayla Beckstead | Tobias "Tumble" Thistlewick | `/p1/6a3044db803b8399f46e65354f14d4ef.html` |
+| Ryan Chandler | Lord Reginald Cuthbert Thornbury | `/p1/bdb80c69e5bb7cc13828577fdc874553.html` |
+| Rachel Chandler | Lady Rosamund Philippa Thornbury | `/p1/e5f86cbf87b7dd0f98cb14a8eaaae365.html` |
+| Shelby Gorriceta | Master Bartholomew Crowe | `/p1/325c9a3ef679c898fd22e475c27b924a.html` |
+| Zach Johnson | Baron Godfrey Aldous de Ravenmoor | `/p1/e00280f207cb0e666c16f69385ec6087.html` |
 
 ## Spare characters (hand out only if an extra guest arrives)
 

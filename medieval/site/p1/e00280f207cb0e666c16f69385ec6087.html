@@ -22,6 +22,10 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 .card{font-size:1.05rem}
 .for{font-size:.9em;color:#6b5230;margin:0 0 6px}
 .nav{max-width:780px;margin:0 auto;padding:10px 16px;color:#e8c66a;font-size:.95em}
+.card+.card,#p2out .card{margin-top:18px}
+.lock input,.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.lock button,.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 .nav a{color:#e8c66a}
 @media print{body{background:#fff}.nav{display:none}.card{break-inside:avoid;box-shadow:none}}
 @media (max-width:520px){.card{padding:12px}.head{flex-wrap:wrap}.badge{margin-left:0}}
@@ -40,4 +44,35 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 <p><i>Gift to bring for the Baron:</i> A little engraved souvenir spoon for each guest (they are slightly bent).</p>
 <h4>Conversation starters</h4><ul><li>'Have you seen my cellar? Four hundred casks!' (it is not four hundred.)</li><li>'Did you count the candles? Eleven!'</li><li>'Tell me, what do you know of our esteemed guest?'</li></ul>
 <div class="foot">Keep this page secret. More will be revealed at the feast.</div>
-</article></div></body></html>
+</article>
+<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the Baron falls</div></div></div>
+<p>When the host announces the death and Phase 2 begins, they will reveal a passphrase. Enter it here to read your Phase 2 card.</p>
+<form id="p2form"><input type="text" id="p2pass" placeholder="Passphrase" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit">Unlock</button> <span id="p2err" class="err"></span></form></article>
+<div id="p2out" hidden></div>
+</div><script>// Character page: decrypt this character's Phase 2 card with the passphrase the host reveals.
+(function () {
+  const ENC = {"iter":310000,"salt":"WChb9Yd/uY3TdpKcq8+mkQ==","iv":"MP7ivCosPZUX+yNl","ct":"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"};
+  const KEY = 'hp-phase2-passphrase';
+  const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  async function decrypt(pass) {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass.trim().toLowerCase()), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(ENC.salt), iterations: ENC.iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    return new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(ENC.iv) }, key, b64(ENC.ct)));
+  }
+  const form = document.getElementById('p2form'), err = document.getElementById('p2err'), out = document.getElementById('p2out'), lock = document.getElementById('p2lock');
+  async function unlock(pass, silent) {
+    try {
+      out.innerHTML = await decrypt(pass);
+      out.hidden = false; lock.hidden = true;
+      try { localStorage.setItem(KEY, pass); } catch (x) { /* storage may be unavailable */ }
+      if (!silent) out.scrollIntoView();
+    } catch (x) {
+      if (!silent) err.textContent = 'That is not the passphrase. Ask the host once the Baron has fallen.';
+      try { localStorage.removeItem(KEY); } catch (y) { /* ignore */ }
+    }
+  }
+  form.addEventListener('submit', (e) => { e.preventDefault(); err.textContent = ''; unlock(document.getElementById('p2pass').value, false); });
+  let saved = null; try { saved = localStorage.getItem(KEY); } catch (x) { /* ignore */ }
+  if (saved) unlock(saved, true);
+})();
+</script></body></html>

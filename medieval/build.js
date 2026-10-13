@@ -20,6 +20,26 @@ fs.writeFileSync(tokenFile, JSON.stringify(tokens, null, 2));
 
 const playerOf = {};
 for (const m of CAST.cast) playerOf[m.id] = m.player;
+
+// A guest's page address is derived from their normalised name, so the invitation form can compute it
+// without shipping a name-to-address table. Spare characters keep random addresses.
+tokens.nameSalt = tokens.nameSalt || crypto.randomBytes(16).toString('hex');
+const NAME_ITER = 100000;
+const normName = (s) => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z\s]/g, ' ').replace(/\s+/g, ' ').trim();
+const nameToken = (name) => crypto.pbkdf2Sync(normName(name), Buffer.from(tokens.nameSalt, 'hex'), NAME_ITER, 16, 'sha256').toString('hex');
+const tokenOf = {};
+for (const c of CHARS) tokenOf[c.id] = playerOf[c.id] ? nameToken(playerOf[c.id]) : tokens[c.id];
+fs.writeFileSync(tokenFile, JSON.stringify(tokens, null, 2));
+
+// Phase 2 cards are encrypted into each character page; the host reveals this passphrase when Phase 2 starts.
+const phase2Pass = (process.env.PHASE2_PASSPHRASE || fs.readFileSync(path.join(ROOT, '.sealed', 'phase2-passphrase.txt'), 'utf8')).trim().toLowerCase();
+function encryptText(text, pass) {
+  const salt = crypto.randomBytes(16), iv = crypto.randomBytes(12), iter = 310000;
+  const c = crypto.createCipheriv('aes-256-gcm', crypto.pbkdf2Sync(pass, salt, iter, 32, 'sha256'), iv);
+  const ct = Buffer.concat([c.update(text, 'utf8'), c.final(), c.getAuthTag()]);
+  return { iter, salt: salt.toString('base64'), iv: iv.toString('base64'), ct: ct.toString('base64') };
+}
+const client = (f) => fs.readFileSync(path.join(ROOT, 'src', 'client', f), 'utf8');
 const isSpare = (c) => !playerOf[c.id];
 const byId = Object.fromEntries(CHARS.map((c) => [c.id, c]));
 for (const m of CAST.cast) if (!byId[m.id]) throw new Error('Unknown character in cast: ' + m.id);
@@ -58,6 +78,10 @@ const P1_CSS = `${BASE_CSS}
 .card{font-size:1.05rem}
 .for{font-size:.9em;color:#6b5230;margin:0 0 6px}
 .nav{max-width:780px;margin:0 auto;padding:10px 16px;color:#e8c66a;font-size:.95em}
+.card+.card,#p2out .card{margin-top:18px}
+.lock input,.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.lock button,.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 .nav a{color:#e8c66a}
 @media print{body{background:#fff}.nav{display:none}.card{break-inside:avoid;box-shadow:none}}
 @media (max-width:520px){.card{padding:12px}.head{flex-wrap:wrap}.badge{margin-left:0}}
@@ -80,10 +104,16 @@ ${player ? `<p class="for">Prepared for <b>${player}</b>. Keep this page secret!
 <div class="foot">Keep this page secret. More will be revealed at the feast.</div>
 </article>`;
 }
+const p2Body = (c) => p2Card(c);
 function p1Page(c) {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${c.name}: Your Character</title><style>${P1_CSS}</style></head><body>
 <div class="nav"><a href="../invitation.html">&larr; Read the invitation again</a></div>
-<div class="wrap">${p1Body(c)}</div></body></html>`;
+<div class="wrap">${p1Body(c)}
+<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the Baron falls</div></div></div>
+<p>When the host announces the death and Phase 2 begins, they will reveal a passphrase. Enter it here to read your Phase 2 card.</p>
+<form id="p2form"><input type="text" id="p2pass" placeholder="Passphrase" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit">Unlock</button> <span id="p2err" class="err"></span></form></article>
+<div id="p2out" hidden></div>
+</div><script>${client('phase2-unlock.js').replace('__ENC__', JSON.stringify(encryptText(p2Body(c), phase2Pass)))}</script></body></html>`;
 }
 
 // ---------------------------------------------------------------- Invitation
@@ -94,12 +124,19 @@ function invitationPage() {
 .card h3{font-size:1.7em}
 .seal{font-size:3.5em;margin:6px 0}
 .small-print{font-size:.85em;font-style:italic}
+.nameform{font-size:1rem}.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 @media print{body{background:#fff}}
 </style></head><body><div class="wrap"><article class="card">
 <h3>${INVITE.title}</h3><div class="seal">🕯️</div>
 ${INVITE.paras.map((x) => '<p>' + x + '</p>').join('')}
 ${INVITE.small.map((x) => '<p class="small-print">' + x + '</p>').join('')}
-</article></div></body></html>`;
+</article>
+<article class="card nameform" style="margin-top:18px"><h4>Present thyself to the Steward</h4>
+<p>Enter thy full name to receive the letter describing thy character.</p>
+<form id="nameForm"><input type="text" id="guestName" placeholder="First and last name" autocomplete="name" required> <button type="submit">Find my character</button><span id="nameErr" class="err"></span></form>
+</article></div><script>${client('name-form.js').replace('__SALT__', tokens.nameSalt).replace('__ITER__', String(NAME_ITER))}</script></body></html>`;
 }
 
 // ---------------------------------------------------------------- Print cards (Phase 2, evidence, slips)
@@ -168,7 +205,7 @@ function printMaterials() {
 <label><input type="checkbox" id="spareToggle"> Include spare characters (not cast)</label>
 <label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="slips">Reward slips</option></select></label>
 <button id="printBtn">Print</button></div>
-<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, reward slips eight to a sheet. Cut along the card borders. The invitation and Phase 1 pages are digital (see <code>distribution.md</code>). Keep these cards sealed until the host's signal.</div>
+<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, reward slips eight to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and reward slips are physical. Keep them sealed until the host's signal.</div>
 <main>
 <section class="sheet-section" id="p2"><h2>Phase 2: Character Cards</h2><p class="intro">Host hands these out after the death scene. One per player.</p><div class="cards">${CHARS.map(p2Card).join('')}</div></section>
 <section class="sheet-section" id="ev"><h2>Evidence Cards</h2><p class="intro">Hand one to each living character with their Phase 2 card.</p><div class="cards">${CHARS.filter((c) => c.ev).map(evCard).join('')}</div></section>
@@ -198,7 +235,7 @@ function hostGuide() {
 // ---------------------------------------------------------------- Reviewer page
 function reviewerPage() {
   const enc = fs.readFileSync(path.join(ROOT, 'src', 'solution.enc.json'), 'utf8');
-  const p1Links = CHARS.map((c) => `<li><a href="../p1/${tokens[c.id]}.html">${c.name}</a> <span class="dim">(${playerOf[c.id] ? playerOf[c.id] : 'spare'})</span></li>`).join('');
+  const p1Links = CHARS.map((c) => `<li><a href="../p1/${tokenOf[c.id]}.html">${c.name}</a> <span class="dim">(${playerOf[c.id] ? playerOf[c.id] : 'spare'})</span></li>`).join('');
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Reviewer Page: The Hallowmas Feast at Ravenmoor</title><style>
 body{font-family:Palatino,Georgia,serif;max-width:900px;margin:0 auto;padding:20px;background:#f6ecd0;color:#2b1d0e;line-height:1.5}
 h1{color:#7a1f1f;font-variant:small-caps;border-bottom:3px double #a8791a}h2{color:#7a1f1f;font-variant:small-caps;border-bottom:1px solid #a8791a;margin-top:28px}
@@ -243,7 +280,8 @@ li{margin:2px 0}
 <li>Phase 1 secrets are low-stakes, funny gossip about other characters (mostly).</li>
 <li>The Baron's death scene reveals the method clearly and is easy to act out.</li>
 <li>Trading secrets and evidence feels rewarding in both phases.</li>
-<li>Casting makes sense for the actual players (see <code>distribution.md</code> in the repository, or the table in the host guide).</li>
+<li>Casting makes sense for the actual players (see the table in the host guide).</li>
+<li>The invitation page's name form leads each guest to their own Phase 1 page; each character page unlocks its Phase 2 card with a passphrase the host reveals when Phase 2 starts (ask the host for it to preview).</li>
 </ul>
 <h3>Content and tone</h3><ul>
 <li>Family-friendly: romance only, no affairs, no drug themes, drinking limited to mead, wine and cider.</li>
@@ -296,7 +334,7 @@ document.getElementById('f').addEventListener('submit', async (e) => {
 // ---------------------------------------------------------------- Write everything
 fs.rmSync(SITE, { recursive: true, force: true });
 write('invitation.html', invitationPage());
-for (const c of CHARS) write(`p1/${tokens[c.id]}.html`, p1Page(c));
+for (const c of CHARS) write(`p1/${tokenOf[c.id]}.html`, p1Page(c));
 write('robots.txt', 'User-agent: *\nDisallow: /\n');
 const R = `review-${tokens.review}`;
 write(`${R}/reviewer.html`, reviewerPage());
@@ -304,11 +342,11 @@ write(`${R}/party-materials.html`, printMaterials());
 write(`${R}/phase1-all.html`, phase1All());
 write(`${R}/host-guide.html`, hostGuide());
 
-const lines = ['# Distribution list', '', 'Paths are relative to the `site/` folder (the web root). Send every guest the shared invitation plus **their own** Phase 1 link only.', '',
+const lines = ['# Distribution list', '', 'Paths are relative to the `site/` folder (the web root). Send every guest only the invitation link: they enter their full name on it and are taken to their own character page. The direct links below are a backup (never send someone else\'s link). Each character page has a Phase 2 passphrase box; the passphrase is in `.sealed/phase2-passphrase.txt` (git-ignored). Reveal it to everyone when Phase 2 begins.', '',
   `Invitation (everyone): \`/invitation.html\``, '', '| Player | Character | Phase 1 link |', '|---|---|---|'];
-for (const m of CAST.cast) lines.push(`| ${m.player} | ${byId[m.id].name} | \`/p1/${tokens[m.id]}.html\` |`);
+for (const m of CAST.cast) lines.push(`| ${m.player} | ${byId[m.id].name} | \`/p1/${tokenOf[m.id]}.html\` |`);
 lines.push('', '## Spare characters (hand out only if an extra guest arrives)', '', '| Character | Phase 1 link |', '|---|---|');
-for (const c of CHARS.filter(isSpare)) lines.push(`| ${c.name} | \`/p1/${tokens[c.id]}.html\` |`);
+for (const c of CHARS.filter(isSpare)) lines.push(`| ${c.name} | \`/p1/${tokenOf[c.id]}.html\` |`);
 lines.push('', '## Reviewer and host documents (do NOT send to players)', '', `\`/${R}/reviewer.html\`, \`/${R}/party-materials.html\`, \`/${R}/host-guide.html\`, \`/${R}/phase1-all.html\``, '');
 fs.writeFileSync(path.join(ROOT, 'distribution.md'), lines.join('\n'));
 console.log('Built', CHARS.length, 'character pages. Review folder:', R);

@@ -11,7 +11,7 @@ const INVITE = {
   ],
   small: [
     "Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything.",
-    "Thine own good name and station are described in the letter that comes with this summons. Keep it close and tell no one.",
+    "Thine own good name and station are described in a private letter, which the Steward will deliver when thou givest thy name below. Keep it close and tell no one.",
     "Sent by the hand of Godwin Hobsworth, Steward of Ravenmoor. Make answer to the Steward that thou wilt attend."
   ]
 };

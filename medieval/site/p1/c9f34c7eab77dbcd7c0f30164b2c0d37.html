@@ -22,6 +22,10 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 .card{font-size:1.05rem}
 .for{font-size:.9em;color:#6b5230;margin:0 0 6px}
 .nav{max-width:780px;margin:0 auto;padding:10px 16px;color:#e8c66a;font-size:.95em}
+.card+.card,#p2out .card{margin-top:18px}
+.lock input,.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.lock button,.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 .nav a{color:#e8c66a}
 @media print{body{background:#fff}.nav{display:none}.card{break-inside:avoid;box-shadow:none}}
 @media (max-width:520px){.card{padding:12px}.head{flex-wrap:wrap}.badge{margin-left:0}}
@@ -40,4 +44,35 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 <p><i>Gift to bring for the Baron:</i> Small boxes of fragrant tea for everyone, and a tiny silk fan for the Baron.</p>
 <h4>Conversation starters</h4><ul><li>'In Cathay, a host drinks first. Tell me, is this custom also yours?'</li><li>'May I pour you some tea? You seem agitated.'</li></ul>
 <div class="foot">Keep this page secret. More will be revealed at the feast.</div>
-</article></div></body></html>
+</article>
+<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the Baron falls</div></div></div>
+<p>When the host announces the death and Phase 2 begins, they will reveal a passphrase. Enter it here to read your Phase 2 card.</p>
+<form id="p2form"><input type="text" id="p2pass" placeholder="Passphrase" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit">Unlock</button> <span id="p2err" class="err"></span></form></article>
+<div id="p2out" hidden></div>
+</div><script>// Character page: decrypt this character's Phase 2 card with the passphrase the host reveals.
+(function () {
+  const ENC = {"iter":310000,"salt":"W5sVYUad7aehG/LQ1JNSlA==","iv":"GPAtkq3Cl3CqTM6L","ct":"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"};
+  const KEY = 'hp-phase2-passphrase';
+  const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  async function decrypt(pass) {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass.trim().toLowerCase()), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(ENC.salt), iterations: ENC.iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    return new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(ENC.iv) }, key, b64(ENC.ct)));
+  }
+  const form = document.getElementById('p2form'), err = document.getElementById('p2err'), out = document.getElementById('p2out'), lock = document.getElementById('p2lock');
+  async function unlock(pass, silent) {
+    try {
+      out.innerHTML = await decrypt(pass);
+      out.hidden = false; lock.hidden = true;
+      try { localStorage.setItem(KEY, pass); } catch (x) { /* storage may be unavailable */ }
+      if (!silent) out.scrollIntoView();
+    } catch (x) {
+      if (!silent) err.textContent = 'That is not the passphrase. Ask the host once the Baron has fallen.';
+      try { localStorage.removeItem(KEY); } catch (y) { /* ignore */ }
+    }
+  }
+  form.addEventListener('submit', (e) => { e.preventDefault(); err.textContent = ''; unlock(document.getElementById('p2pass').value, false); });
+  let saved = null; try { saved = localStorage.getItem(KEY); } catch (x) { /* ignore */ }
+  if (saved) unlock(saved, true);
+})();
+</script></body></html>

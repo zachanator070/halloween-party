@@ -22,6 +22,10 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 .card{font-size:1.05rem}
 .for{font-size:.9em;color:#6b5230;margin:0 0 6px}
 .nav{max-width:780px;margin:0 auto;padding:10px 16px;color:#e8c66a;font-size:.95em}
+.card+.card,#p2out .card{margin-top:18px}
+.lock input,.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.lock button,.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 .nav a{color:#e8c66a}
 @media print{body{background:#fff}.nav{display:none}.card{break-inside:avoid;box-shadow:none}}
 @media (max-width:520px){.card{padding:12px}.head{flex-wrap:wrap}.badge{margin-left:0}}
@@ -40,4 +44,35 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 <p><i>Gift to bring for the Baron:</i> A bottle of 'blessed' herbal tonic (it tastes like feet) and a loaf of fresh bread.</p>
 <h4>Conversation starters</h4><ul><li>'Benedicite! Is this soup or a sacrament?'</li><li>'Child, what ails you? Have you tried more cheese?'</li><li>'Hic! I only had a thimble of mead. A large thimble.'</li></ul>
 <div class="foot">Keep this page secret. More will be revealed at the feast.</div>
-</article></div></body></html>
+</article>
+<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the Baron falls</div></div></div>
+<p>When the host announces the death and Phase 2 begins, they will reveal a passphrase. Enter it here to read your Phase 2 card.</p>
+<form id="p2form"><input type="text" id="p2pass" placeholder="Passphrase" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit">Unlock</button> <span id="p2err" class="err"></span></form></article>
+<div id="p2out" hidden></div>
+</div><script>// Character page: decrypt this character's Phase 2 card with the passphrase the host reveals.
+(function () {
+  const ENC = {"iter":310000,"salt":"ElnVPS00Y5uVMahf5qa3iQ==","iv":"EPNnOZ+zQxUDcLDf","ct":"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"};
+  const KEY = 'hp-phase2-passphrase';
+  const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  async function decrypt(pass) {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass.trim().toLowerCase()), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(ENC.salt), iterations: ENC.iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    return new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(ENC.iv) }, key, b64(ENC.ct)));
+  }
+  const form = document.getElementById('p2form'), err = document.getElementById('p2err'), out = document.getElementById('p2out'), lock = document.getElementById('p2lock');
+  async function unlock(pass, silent) {
+    try {
+      out.innerHTML = await decrypt(pass);
+      out.hidden = false; lock.hidden = true;
+      try { localStorage.setItem(KEY, pass); } catch (x) { /* storage may be unavailable */ }
+      if (!silent) out.scrollIntoView();
+    } catch (x) {
+      if (!silent) err.textContent = 'That is not the passphrase. Ask the host once the Baron has fallen.';
+      try { localStorage.removeItem(KEY); } catch (y) { /* ignore */ }
+    }
+  }
+  form.addEventListener('submit', (e) => { e.preventDefault(); err.textContent = ''; unlock(document.getElementById('p2pass').value, false); });
+  let saved = null; try { saved = localStorage.getItem(KEY); } catch (x) { /* ignore */ }
+  if (saved) unlock(saved, true);
+})();
+</script></body></html>

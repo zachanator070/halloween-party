@@ -23,9 +23,39 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 .card h3{font-size:1.7em}
 .seal{font-size:3.5em;margin:6px 0}
 .small-print{font-size:.85em;font-style:italic}
+.nameform{font-size:1rem}.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 @media print{body{background:#fff}}
 </style></head><body><div class="wrap"><article class="card">
 <h3>By Command of the Household of Baron Godfrey de Ravenmoor</h3><div class="seal">🕯️</div>
 <p>Hear ye, all good folk of every estate, whether lord or lady, knight or merchant, minstrel or fool!</p><p>Baron Godfrey Aldous de Ravenmoor doth bid thee to a <strong>Great Feast on the eve of All Hallows</strong>, to be held in the Hall of Ravenmoor Keep, in the year of Our Lord 1342.</p><p>A most Exalted Lady hath come among us from a land beyond the farthest roads, with an escort and strange gifts in her train. In gratitude for so rare an honour, the Baron doth open his hall, his cellar, and his fire. Come, give thanks, and treat of trade and friendship, that all our houses may prosper.</p><p>There shall be roast fowl, mulled mead, soul cakes for the souls of the faithful, and a toast to be drunk from the Baron's own Loving Cup.</p>
-<p class="small-print">Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything.</p><p class="small-print">Thine own good name and station are described in the letter that comes with this summons. Keep it close and tell no one.</p><p class="small-print">Sent by the hand of Godwin Hobsworth, Steward of Ravenmoor. Make answer to the Steward that thou wilt attend.</p>
-</article></div></body></html>
+<p class="small-print">Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything.</p><p class="small-print">Thine own good name and station are described in a private letter, which the Steward will deliver when thou givest thy name below. Keep it close and tell no one.</p><p class="small-print">Sent by the hand of Godwin Hobsworth, Steward of Ravenmoor. Make answer to the Steward that thou wilt attend.</p>
+</article>
+<article class="card nameform" style="margin-top:18px"><h4>Present thyself to the Steward</h4>
+<p>Enter thy full name to receive the letter describing thy character.</p>
+<form id="nameForm"><input type="text" id="guestName" placeholder="First and last name" autocomplete="name" required> <button type="submit">Find my character</button><span id="nameErr" class="err"></span></form>
+</article></div><script>// Invitation page: turn a guest's name into the (unguessable) address of their Phase 1 page.
+(function () {
+  const SALT = '0d89223920c0d8b7711e7420dbe62270', ITER = 100000;
+  const norm = (s) => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  const hex2bytes = (h) => Uint8Array.from(h.match(/../g), (x) => parseInt(x, 16));
+  const bytes2hex = (b) => Array.from(new Uint8Array(b), (x) => x.toString(16).padStart(2, '0')).join('');
+  async function tokenFor(name) {
+    const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(norm(name)), 'PBKDF2', false, ['deriveBits']);
+    return bytes2hex(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: hex2bytes(SALT), iterations: ITER, hash: 'SHA-256' }, key, 128));
+  }
+  const form = document.getElementById('nameForm'), err = document.getElementById('nameErr');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); err.textContent = '';
+    const name = document.getElementById('guestName').value;
+    if (norm(name).split(' ').length < 2) { err.textContent = 'Please enter your first and last name.'; return; }
+    const url = 'p1/' + (await tokenFor(name)) + '.html';
+    try {
+      const r = await fetch(url, { method: 'HEAD' });
+      if (!r.ok) { err.textContent = 'The Steward cannot find that name on the guest list. Try your full name as the host knows it.'; return; }
+    } catch (x) { /* offline or local file: just try to go there */ }
+    location.href = url;
+  });
+})();
+</script></body></html>

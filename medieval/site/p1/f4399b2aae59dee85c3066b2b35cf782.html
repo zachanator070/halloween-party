@@ -22,6 +22,10 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 .card{font-size:1.05rem}
 .for{font-size:.9em;color:#6b5230;margin:0 0 6px}
 .nav{max-width:780px;margin:0 auto;padding:10px 16px;color:#e8c66a;font-size:.95em}
+.card+.card,#p2out .card{margin-top:18px}
+.lock input,.nameform input{font:inherit;padding:6px 10px;width:18em;max-width:100%}
+.lock button,.nameform button{font:inherit;padding:6px 14px;background:var(--gold);color:#fff;border:0;border-radius:4px;cursor:pointer}
+.err{color:#a11;display:block;margin-top:4px}
 .nav a{color:#e8c66a}
 @media print{body{background:#fff}.nav{display:none}.card{break-inside:avoid;box-shadow:none}}
 @media (max-width:520px){.card{padding:12px}.head{flex-wrap:wrap}.badge{margin-left:0}}
@@ -40,4 +44,35 @@ p{margin:2px 0 4px}ul{margin:2px 0 4px;padding-left:20px}
 <p><i>Gift to bring for the Baron:</i> A signed (by someone else) royal decree granting the Baron 'the right to be honoured by the King', plus a jar of honey.</p>
 <h4>Conversation starters</h4><ul><li>'We are very hungry. Is there... pie?'</li><li>'Where is our jester? We require a joke.'</li><li>'Is it time for the feast? What time is it? Is it feast time?'</li></ul>
 <div class="foot">Keep this page secret. More will be revealed at the feast.</div>
-</article></div></body></html>
+</article>
+<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the Baron falls</div></div></div>
+<p>When the host announces the death and Phase 2 begins, they will reveal a passphrase. Enter it here to read your Phase 2 card.</p>
+<form id="p2form"><input type="text" id="p2pass" placeholder="Passphrase" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit">Unlock</button> <span id="p2err" class="err"></span></form></article>
+<div id="p2out" hidden></div>
+</div><script>// Character page: decrypt this character's Phase 2 card with the passphrase the host reveals.
+(function () {
+  const ENC = {"iter":310000,"salt":"NigJAnD/Cm2LsF1HIEkCxg==","iv":"Gp2/CyKVk0fnt+Ud","ct":"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"};
+  const KEY = 'hp-phase2-passphrase';
+  const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  async function decrypt(pass) {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass.trim().toLowerCase()), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(ENC.salt), iterations: ENC.iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    return new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(ENC.iv) }, key, b64(ENC.ct)));
+  }
+  const form = document.getElementById('p2form'), err = document.getElementById('p2err'), out = document.getElementById('p2out'), lock = document.getElementById('p2lock');
+  async function unlock(pass, silent) {
+    try {
+      out.innerHTML = await decrypt(pass);
+      out.hidden = false; lock.hidden = true;
+      try { localStorage.setItem(KEY, pass); } catch (x) { /* storage may be unavailable */ }
+      if (!silent) out.scrollIntoView();
+    } catch (x) {
+      if (!silent) err.textContent = 'That is not the passphrase. Ask the host once the Baron has fallen.';
+      try { localStorage.removeItem(KEY); } catch (y) { /* ignore */ }
+    }
+  }
+  form.addEventListener('submit', (e) => { e.preventDefault(); err.textContent = ''; unlock(document.getElementById('p2pass').value, false); });
+  let saved = null; try { saved = localStorage.getItem(KEY); } catch (x) { /* ignore */ }
+  if (saved) unlock(saved, true);
+})();
+</script></body></html>
