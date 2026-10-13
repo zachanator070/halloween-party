@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Host Guide: The Hallowmas Feast at Ravenmoor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: Palatino, "Palatino Linotype", Georgia, serif; max-width:820px; margin:24px auto; padding:0 18px; color:#2b1d0e; background:#f6ecd0; line-height:1.45; }
+  h1 { color:#7a1f1f; font-variant:small-caps; border-bottom:3px double #a8791a; padding-bottom:6px; }
+  h2 { color:#7a1f1f; font-variant:small-caps; margin-top:28px; border-bottom:1px solid #a8791a; }
+  h3 { color:#5b3a12; margin-bottom:4px; }
+  table { border-collapse:collapse; width:100%; margin:8px 0; font-size:.95em; }
+  th, td { border:1px solid #b8a06a; padding:5px 8px; text-align:left; vertical-align:top; }
+  th { background:#e8d29a; }
+  code { background:#e8d9ab; padding:1px 5px; border-radius:3px; }
+  .box { border:2px dashed #7a1f1f; background:#fbf3dc; padding:10px 14px; margin:12px 0; border-radius:6px; }
+  .warn { border-color:#a8791a; }
+  .cue { border:3px double #7a1f1f; background:#fffaf0; padding:14px 18px; margin:14px 0; border-radius:8px; page-break-inside:avoid; }
+  .cue h3 { margin-top:0; color:#7a1f1f; font-variant:small-caps; text-align:center; }
+  @media print { body { background:#fff; max-width:none; } .noprint { display:none; } }
+</style>
+</head>
+<body>
+<h1>Host Guide: The Hallowmas Feast at Ravenmoor</h1>
+
+<div class="box warn">
+<b>Spoiler policy.</b> This guide tells you everything a host needs <i>except the solution</i>. You know the victim and the method (to run the death scene), and nothing more. The solution is encrypted in the reviewer page, and an outside reviewer holds the passphrase. <b>Do not ask for it until the reveal.</b> The cards you print will contain clues; you will be tempted to read them. Resist! You will enjoy the reveal more. If you accidentally see a card, don't worry: no single card gives the answer.
+</div>
+
+<h2>1. The game at a glance</h2>
+<ul>
+  <li><b>Story:</b> All Hallows' Eve, 1342. Baron Godfrey of Ravenmoor holds a feast to honour a mysterious foreign Queen and to open trade. Guests arrive in character.</li>
+  <li><b>Phase 1 (about 45 to 60 minutes):</b> Guests mingle in character, learn each other's relationships and quirks, and trade Phase 1 secrets for information.</li>
+  <li><b>The toast and the death:</b> The host plays the Baron and has read the Death Cue in advance. At the toast the Baron drinks from the Loving Cup and dies dramatically, revealing the method. You ring a bell: Phase 2 begins.</li>
+  <li><b>Phase 2 (about 45 to 60 minutes):</b> Everyone gets a Phase 2 card (more backstory, a new secret, perhaps a strong conviction) and one piece of evidence. They trade secrets and evidence, and each hunts a particular evidence piece to turn in to you for a Bonus Truth.</li>
+  <li><b>Accusations and reveal:</b> Everyone writes who, how, and why on a slip. You read the sealed reveal aloud.</li>
+  <li><b>Nobody</b>, not even the murderer, is told who the murderer is until the end. Their cards never say. This is on purpose.</li>
+</ul>
+
+<h2>2. Who is coming</h2>
+<p>Thirteen guests are confirmed. Every guest has a character; three extra characters are spares in case someone turns up. The mystery works with exactly this cast. Any guest may play any role regardless of gender; swap titles (Baroness, King, Queen) as needed. You can change the cast in <code>src/cast.json</code> and re-run <code>node build.js</code>.</p>
+{{CAST_TABLE}}
+<p><b>You are playing the Baron.</b> You are also the host, so you are the one who plays the victim: you read your own Death Cue (Section 6) before the party and cue your own death at the toast. You will also see the Phase 2 and evidence cards while printing and dealing them. To keep the solution a surprise for yourself, avoid reading them closely, or ask someone else to print and deal them. Ask another guest (or the reviewer) to ring the bell and hand out the Phase 2 envelopes when you fall.</p>
+
+<h2>3. Before the party</h2>
+<h3>Send digitally and print</h3>
+<ol>
+  <li><b>Digital (before the party):</b> deploy the <code>site/</code> folder to any static web host (the invitation and every player's Phase 1 page are in it). Send each guest the shared invitation link and <b>their own</b> Phase 1 link from <code>distribution.md</code>. Each Phase 1 page contains only that character's information, and its address is unguessable, so guests cannot see each other's cards. Do not publish a directory listing of the site. Do not send the reviewer folder (<code>review-.../</code>) to any player.</li>
+  <li><b>Print (for the party):</b> open <code>party-materials.html</code> in the review folder and print the Phase 2 cards, Evidence cards and Reward slips. Use letter paper, <b>landscape</b>, background graphics ON. Only the cast characters print by default.</li>
+  <li>Keep the Phase 2 cards, evidence cards, and slips sealed (an envelope per guest works nicely, labelled with the character's name; the cards show the player's name).</li>
+  <li>Ask guests to read their Phase 1 page before the party, keep it secret, and dress and bring props as suggested.</li>
+</ol>
+<div class="box"><b>Queen Suyin's origin.</b> The invitation never names her land. Only Queen Zhao Suyin's own card says she is from Cathay in the far east. Her player should reveal this naturally on arrival.</div>
+<h3>Props and set dressing</h3>
+<ul>
+  <li><b>The Loving Cup</b>: a silver (or silver-looking) goblet, ideally engraved with a raven (draw one on tape). It must be easy to hold and drink from; fill it with spiced cider or grape juice at the toast.</li>
+  <li>A hand bell to ring when the Baron falls.</li>
+  <li>A ghost sheet or pale veil for the Baron once dead.</li>
+  <li>Candles (battery ones are safer), soul cakes (or gingerbread or round cookies), mulled cider or mead (adults: moderation).</li>
+  <li><b>Optional physical props</b> to make evidence tactile (cards work fine without them): a napkin with purple sprinkles or sugar crystals; a crumpled kraft-paper packet stamped with a crow; a second sealed packet; a rolled scroll; a wax tablet (a card with a thumbprint); a small sealed letter.</li>
+  <li>A box or "Evidence Chest" where guests drop turned-in evidence; a small basket for accusation slips and pencils.</li>
+</ul>
+
+<h2>4. Running the party</h2>
+<table>
+<tr><th>When</th><th>Host action</th></tr>
+<tr><td>Arrival</td><td>Greet guests in character as the Herald or just yourself. Remind everyone to speak in character from the door. Queen Suyin's player should arrive a little after the others for effect.</td></tr>
+<tr><td>Phase 1 (45 to 60 min)</td><td>Let guests mingle. Nudge quiet players toward each other. Offer food. Remind them they may bluff but may not show their card. Phase 1 secrets are traded for information, never for free.</td></tr>
+<tr><td>About 20 minutes before the toast</td><td>Re-read your <b>Death Cue</b> (Section 6) and make sure the Loving Cup is ready. Quietly tell your chosen bell-ringer to ring the bell and begin Phase 2 when you fall.</td></tr>
+<tr><td>The toast</td><td>Have the Baron call everyone for the toast. He raises the Cup, speaks a short toast, and performs the death (see the Death Cue). When he collapses, <b>ring the bell</b> and declare: "The Baron is dead! Murder has come to Ravenmoor!"</td></tr>
+<tr><td>Transition</td><td>Hand the Baron's player (you) the Ghost card and a sheet. Give each other guest their Phase 2 envelope (card plus evidence). Give them two minutes to read.</td></tr>
+<tr><td>Phase 2 (45 to 60 min)</td><td>Guests trade secrets and evidence. Hand out a <b>Reward slip</b> whenever a guest turns in the evidence they were told to find. Remind the Ghost of the three-answer rule.</td></tr>
+<tr><td>Accusations</td><td>Announce the final bell. Everyone writes <b>Who, How, and Why</b> on a slip and drops it in the basket.</td></tr>
+<tr><td>Reveal</td><td>Do the reveal (Section 7). Award points. Take bows.</td></tr>
+</table>
+
+<h2>5. Rules for the players (read these aloud at the start of Phase 1)</h2>
+<ol>
+  <li>Stay in character and enjoy your quirks. The sillier, the better.</li>
+  <li>Never show your card to anyone else. You may read from it aloud if you wish.</li>
+  <li><b>Secrets</b> are traded: you give yours only in exchange for information (a secret or an answer). You may bluff, but you may not lie about what is written on your own evidence card when showing it.</li>
+  <li><b>Evidence</b> may be traded for secrets or for other evidence. When you trade it away, you hand it over.</li>
+  <li>Each player is given a piece of evidence to find. Turn it in to the host for a Bonus Truth.</li>
+  <li>No one knows who the murderer is, not even the murderer. The murderer should hunt for the killer with the rest of you.</li>
+  <li>Keep it friendly and family-friendly: romance is fine, affairs and rudeness are not.</li>
+</ol>
+
+<h2>6. Death Cue for the Baron (read this yourself before the party)</h2>
+<div class="cue">
+<h3>The Death Cue: Baron Godfrey</h3>
+<p><b>You will be poisoned at the toast.</b> The poison is <b>ratsbane</b> (rat poison) in your Loving Cup. You do not know who put it there. Perform your death scene dramatically and make sure everyone hears the method:</p>
+<ol>
+  <li>Give a short, grand toast. Count the candles. Say "I SHALL DRINK FIRST!" (you should say this; it is in the Order of Ceremonies).</li>
+  <li>Raise the Loving Cup and drink. Pause. Smack your lips. "The mead tastes... of garlic. And iron."</li>
+  <li>Clutch your throat, then your belly: "It burns! My belly burns like a dragon's!"</li>
+  <li>Gasp the words: "<b>RATSBANE!</b> Rats... in my cup! Someone has fed me ratsbane!"</li>
+  <li>Stagger, drop the Cup (do not spill on the carpet), and count down as you collapse: "Seven... six... five... four... three... two..."</li>
+  <li>Fall, preferably onto something soft. Stay still. Then, when the host hands you the ghost sheet, you are the Ghost.</li>
+</ol>
+<p>Make sure you say the word <b>ratsbane</b> clearly, and that the Cup is dropped for everyone to see. Everything else: improvise and be dramatic!</p>
+</div>
+
+<h2>7. Accusations, scoring, and the reveal</h2>
+<ul>
+  <li>Each slip: <b>Murderer</b>, <b>Method</b>, <b>Motive</b>. Scoring: 1 point for each correct item (murderer, method, motive), plus 1 point for each piece of evidence turned in.</li>
+  <li>Read slips aloud for fun before the reveal, with dramatic pauses.</li>
+  <li><b>The reveal.</b> The solution is encrypted. Ask the outside reviewer for the passphrase only when all slips are in. Open <code>reviewer.html</code> (in the review folder), paste the passphrase into "Decrypt the solution", and read the section <b>"Reveal read-aloud"</b> to the group. Section 4 of the solution lists which clue each guest was holding; read these out so everybody sees how the pieces fit.</li>
+  <li>The murderer's player never knew. Congratulate them on being the best-hidden villain in Aldermere!</li>
+</ul>
+
+<h2>8. If guests change</h2>
+<ul>
+  <li><b>A spare guest turns up:</b> send them a spare character's Phase 1 link (listed in <code>distribution.md</code>) and print that character's Phase 2 card and evidence (tick "Include spare characters" in <code>party-materials.html</code>). Nothing else changes. If all spares are used, give them a hat and make them "the Baron's cousin Hugo, who eats everything", with no secrets.</li>
+  <li><b>A confirmed guest cancels:</b> do not decrypt the solution. Message the outside reviewer with the character's name only; they will tell you how to cover the role without spoiling anything. You can also assign one of the spare characters, depending on the reviewer's advice.</li>
+</ul>
+
+<h2>9. Content notes</h2>
+<ul>
+  <li>Family-friendly. Romance (Princess and Squire) is lighthearted only. No affairs, no adult themes.</li>
+  <li>Drinking is mead, wine, cider. No drugs. Please remind guests to drink responsibly and not drive.</li>
+  <li>The murder is staged and not graphic. The only weapon used is a poison cup.</li>
+</ul>
+</body>
+</html>

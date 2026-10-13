@@ -1,0 +1,61 @@
+{
+  "cast": [
+    {
+      "player": "Brad Stephenson",
+      "id": "mordecai"
+    },
+    {
+      "player": "Emily Barber",
+      "id": "wen"
+    },
+    {
+      "player": "Alyssum Johnson",
+      "id": "suyin"
+    },
+    {
+      "player": "Craig Brown",
+      "id": "oswin"
+    },
+    {
+      "player": "Emily Brown",
+      "id": "margarethe"
+    },
+    {
+      "player": "Jared Beckstead",
+      "id": "cedric"
+    },
+    {
+      "player": "Breyton Barber",
+      "id": "wat"
+    },
+    {
+      "player": "John Gorriceta",
+      "id": "godwin"
+    },
+    {
+      "player": "Kayla Beckstead",
+      "id": "tobias"
+    },
+    {
+      "player": "Ryan Chandler",
+      "id": "reginald"
+    },
+    {
+      "player": "Rachel Chandler",
+      "id": "rosamund"
+    },
+    {
+      "player": "Shelby Gorriceta",
+      "id": "crowe"
+    },
+    {
+      "player": "Zach Johnson",
+      "id": "baron"
+    }
+  ],
+  "spares": [
+    "isolde",
+    "ambrose",
+    "lucien"
+  ]
+}
