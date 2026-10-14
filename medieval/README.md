@@ -8,7 +8,8 @@ Medieval Halloween murder mystery for 13 players (16 characters designed; 3 spar
 | `site/review-<token>/` | Reviewer and host documents (`reviewer.html` itself lives at `site/reviewer.html`, i.e. `/halloween-party/reviewer.html`), `party-materials.html` (printable Phase 2 / evidence / bonus clue cards), `host-guide.html`, `phase1-all.html`. Do not send to players. |
 | `distribution.md` | Which link goes to which player. |
 | `src/characters.js` | Phase 1 character text and the invitation. |
-| `src/phase2.js` | Phase 2 cards, evidence and the three bonus clues per player. |
+| `src/phase2.base.js` | Phase 2 cards, evidence and bonus clues (base data). |
+| `src/case.js`, `scripts/new-case.js` | Pick the murderer at random and generate `src/phase2.js` (git-tracked output) plus the encrypted solution, so nobody has to see the choice. Run `node scripts/new-case.js` then `node build.js`. |
 | `src/cast.json` | Player to character assignments and spare characters. |
 | `src/solution.enc.json` | The solution, encrypted (AES-256-GCM / PBKDF2). Embedded into `reviewer.html` by the build. |
 | `.sealed/reviewer-passphrase.txt` | Passphrase for the reviewer only (git-ignored). Forward it without opening it. |
