@@ -180,9 +180,10 @@ function p2Card(c) {
 <h4>Your new role</h4>${li(p.rules)}
 <h4>Your truthful answers (use only if asked)</h4>
 <div class="secret">${p.truths.map((t) => '<div><b>' + t[0] + '</b> ' + t[1] + '</div>').join('')}</div>
+${c.ev ? `<h4>Your evidence</h4><p>You hold <b>${c.ev.name}</b>. Living guests may read it or trade for it.</p>` : ''}
 ${p.quest ? `<h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (The host will give you Bonus Clues.)</p>` : ''}
 <h4>Gold and awards</h4><p>You keep the gold you had and may still earn coins for your quest. Coins count toward <b>Richest Purse</b>, and you may vote for <b>Best Costume</b> and <b>Best Actor</b>.</p>
-<h4>Reminder</h4><p>You do not know who killed you. You only know you tasted the ginger and it was not ginger. Enjoy haunting.</p>
+<p><i>You do not know who killed you. Enjoy haunting.</i></p>
 <div class="foot">You win by watching them all fumble.</div></article>`;
   }
   return `<article class="card${cls(c)}">

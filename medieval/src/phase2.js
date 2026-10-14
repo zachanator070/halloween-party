@@ -5,14 +5,14 @@ const PHASE2 = {
 baron: {
   p2: {
     afternoon: "From half past five until the seven o'clock bell you were in the kitchens, tasting soups with the cook. You counted fourteen soups (it was fifteen; you will say fourteen). You left only once, to shout at a kitchen boy.",
-    story: "Master Crowe gave you his day ledger at noon, 'in case I get carried away tonight', and begged you to keep it safe. At supper the night before the two of you argued about announcing your debtors' names at the toast: Crowe insisted that 'shame pays faster than silver'. You called it ungentlemanly. He laughed.",
-    secret: "ABOUT LORD THORNBURY: at about twenty past six, while you tasted soup, you saw Lord Thornbury slip into the kitchen, pocket a fistful of comfits, and bolt when the cook shouted. He has stolen sweets from your kitchen since he was a boy.",
-    herring: "You are firmly convinced that Lord Thornbury is the murderer. His debt is the largest and he looked guilty fleeing the kitchen (he always looks guilty). You do not know what clears him.",
-    quest: ["The Interpreter's Tea Log", "You wonder whether the foreign Queen enjoyed your hospitality. Her interpreter keeps a log of everything. Find it and turn it in."]
+    story: "At supper the night before, you and Master Crowe argued about announcing your debtors' names at the toast: Crowe insisted that 'shame pays faster than silver'. You called it ungentlemanly. He laughed. Today, Lord Thornbury spent the whole evening turning the spit beside you, complaining that it was beneath him.",
+    secret: "ABOUT LORD THORNBURY: you saw him slip into the kitchen at half past five to pilfer comfits (he has stolen sweets from your kitchen since he was a boy). The cook caught him and put him to work at the spit until the seven o'clock bell. He did not leave once.",
+    herring: "You are firmly convinced that Tobias the Jester is the murderer. He mocked you at the last feast and you threatened to banish him, and a jester who hates a host would sooner poison the party than leave it. You do not know what clears him.",
+    quest: ["Master Crowe's Day Ledger", "Your partner kept his ledger of sales and loans. Find it (Crowe's ghost has it) and turn it in. Ask nicely: ghosts cannot carry things."]
   },
-  ev: { name: "Master Crowe's Day Ledger", emoji: "📒",
-    text: "<span class='aname'>CROWE &amp; CO. LEDGER</span><b>WOLFSBANE (dried root, ground). Three linen pouches, each tied with a coloured cord:</b><br>BLUE: Oct 30, to <i>Sir Cedric Brightblade</i>, 'bait for the wolf hunt'.<br>GREEN: Oct 8, Hollin Fair, to <i>Magister Mordecai</i>, 'a stage trick'.<br>RED: Oct 30, to <i>Lord R. Thornbury</i>, on credit, 'for wolves among the manor sheep'. <i>Sent on to Thornbury Manor by rider.</i><br><b>LOANS (jointly with the Baron):</b> Lord Thornbury 300 marks; Sir Cedric 50 marks.<br><b>PAWN:</b> one gold circlet (royal), unredeemed.",
-    how: "Master Crowe pressed it into your hands at noon and told you to keep it safe." },
+  ev: { name: "The Cook's Kitchen Chit", emoji: "🍲",
+    text: "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Fifteen</b> soups tasted, four spilled.<br><b>5:30</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><b>7:00</b> Bell. Both released. Spit still greasy.<br><i>Cook's mark: ✿</i>",
+    how: "The cook handed it to you at the bell, to prove you owed her nothing for the soup you tasted." },
   bonus: [
     "The poison was wolfsbane, also called monkshood: ground dried root. A strong dose numbs the tongue and tingles the lips within moments of tasting.",
     "Master Crowe's tin of candied ginger sat on the gift table from a quarter past five, lid shut, until the toast. The Hall was closed from half past five until seven.",
@@ -94,7 +94,7 @@ cedric: {
 
 wat: {
   p2: {
-    afternoon: "You and Sir Cedric practised at the tilt-yard from three until half past five. Then Sir Cedric sent you to the armorer with his dented helm and said he would go and rest. You waited at the smithy until the helm was mended at seven, eating two apples, then carried it back to the Hall.",
+    afternoon: "You and Sir Cedric practised at the tilt-yard from four until half past five. Then Sir Cedric sent you to the armorer with his dented helm and said he would go and rest. You waited at the smithy until the helm was mended at seven, eating two apples, then carried it back to the Hall.",
     story: "On the way to the smithy you thought Sir Cedric seemed quieter than usual: he had not told a single story since supper. You did not like to ask. Your arms were aching from the lances.",
     secret: "ABOUT SIR CEDRIC'S HORSE: at supper on Oct 30 Master Crowe teased Sir Cedric loudly that his horse Valor 'would fetch a fair price at All Souls'. Sir Cedric went white, then laughed it off with a story. You have never seen him go that pale.",
     herring: "You are firmly convinced that Lady Rosamund is the murderer. Her polite insults must be hiding something sharper. You do not know what clears her.",
@@ -148,20 +148,20 @@ tobias: {
 
 reginald: {
   p2: {
-    afternoon: "You spent the late afternoon strolling alone around the keep, admiring the architecture and the gardens. You are vague about exactly where and for how long: you never could keep track of time, unless a meal was involved.",
+    afternoon: "At half past five you slipped into the kitchen for comfits. The cook caught you, clipped your ear and set you turning the spit and scraping pots until the seven o'clock bell, with the Baron tasting soups at your elbow. You have never held a tool in your life.",
     story: "Two letters were slid under your door: one addressed to you, one to Sir Cedric (clearly misdelivered, since his room is next to yours). You pocketed both, as you pocket everything. On Oct 30 Master Crowe also sold you a pouch of wolfsbane, on credit, for the wolves among the manor sheep, and sent it on to Thornbury Manor by his rider (the delivery note is with the letters). You never saw the pouch itself.",
     secret: "ABOUT YOUR DEBT: you owe the Baron and Master Crowe 300 marks, due on All Souls' Day, or Thornbury Manor is forfeit. You have told no one. Your wife would die of shame. You hope that, somehow, it will all go away.",
     herring: "You are firmly convinced that Squire Wat is the murderer. He is always carrying things around the Hall, and a person with a tray can hide anything. You do not know what clears him.",
-    quest: ["Lady Rosamund's chapel offering receipt", "You want proof your wife has been praying for your finances. Find her receipt from the chapel (she is guarding it) and turn it in."]
+    quest: ["The Cook's Kitchen Chit", "You want proof (to show your wife) that you were punished unjustly. Find the cook's chit (the Baron has it) and turn it in."]
   },
   ev: { name: "Master Crowe's Demand Letters", emoji: "✉️",
     text: "<span class='aname'>CROWE &amp; CO., jointly with Baron Godfrey</span><b>Letter 1.</b> To Lord Reginald Thornbury: three hundred marks due by <b>All Souls' Day (Nov 2)</b>, or <b>Thornbury Manor shall be forfeit</b>.<br><b>Letter 2.</b> To Sir Cedric Brightblade: fifty marks due by All Souls' Day, or his <b>warhorse Valor and gilt spurs shall be seized</b>.<br><i>'I shall announce both at the toast, for shame pays faster than silver.' B. Crowe</i><br><b>Delivery note.</b> 'Wolfsbane, red cord, sold to Lord T. on credit. Sent by my rider to Thornbury Manor today, as it is not fit to be carried among guests. B.C.'",
     how: "Both were slid under your door this morning. The second was clearly misdelivered. You pocketed both and tried not to read the last line." },
   bonus: [
-    "The pouch found in the garden was blue. Your red pouch is not the one used.",
-    "The Marshal confirms that practice at the tilt-yard ended at half past five.",
-    "The cook saw you at the kitchen door at twenty past six, filching comfits, and chased you away."
-  ]
+  "The pouch found in the garden was blue. Your red pouch is not the one used.",
+  "The Marshal confirms that practice at the tilt-yard ended at half past five.",
+  "The cook's chit says you turned the spit from half past five until the bell, and burned two chickens."
+]
 },
 
 rosamund: {
@@ -188,7 +188,7 @@ crowe: {
       "You are DEAD. You are now the Ghost of Master Crowe. Put on a sheet or a pale veil, if you have one, and wander the Hall silently and mournfully. Do not speak, except to answer questions.",
       "Any living guest may ask you yes-or-no questions, but you may answer only THREE in total across the whole evening. Answer by nodding or shaking your head, then name a price for the answer in a hollow ghostly whisper ('Yes. Dear at twice the price.').",
       "Answer truthfully using the list below. If asked something not on the list, shake your head sadly (you do not know).",
-      "You still carry your own secret from your Phase 1 card, but you may only share it through a nod when asked a direct question about it."
+      "You still carry your Phase 1 secret, which you may share by nodding only if asked about it directly."
     ],
     truths: [
       ["Was the poison in your tin of candied ginger?", "Yes."],
@@ -198,12 +198,13 @@ crowe: {
       ["Were you taking tea with Queen Suyin from half past five until seven?", "Yes. You never left her side."],
       ["Was the Hall barred to guests from half past five until the bell at seven?", "Yes."],
       ["Did you sell three pouches of wolfsbane?", "Yes. They are all in your ledger."],
-      ["Did you plan to announce debts at the toast?", "Yes. Two of them."],
-      ["Do you suspect the Queen of Cathay?", "No."]
+      ["Did you plan to announce debts at the toast?", "Yes. Two of them."]
     ],
-    quest: ["Your own ledger", "You want your Day Ledger back. The Baron has it. Find it and turn it in to the host. (Ask nicely: ghosts cannot carry things.)"]
+    quest: ["The Interpreter's Tea Log", "You wish to see how many offers you made at tea (you counted a great many). Find Wen's log and turn it in. Ask nicely: ghosts cannot carry things."]
   },
-  ev: null,
+  ev: { name: "Master Crowe's Day Ledger", emoji: "📒",
+    text: "<span class='aname'>CROWE &amp; CO. LEDGER</span><b>WOLFSBANE (dried root, ground). Three linen pouches, each tied with a coloured cord:</b><br>BLUE: Oct 30, to <i>Sir Cedric Brightblade</i>, 'bait for the wolf hunt'.<br>GREEN: Oct 8, Hollin Fair, to <i>Magister Mordecai</i>, 'a stage trick'.<br>RED: Oct 30, to <i>Lord R. Thornbury</i>, on credit, 'for wolves among the manor sheep'. <i>Sent on to Thornbury Manor by rider.</i><br><b>LOANS (jointly with the Baron):</b> Lord Thornbury 300 marks; Sir Cedric 50 marks.<br><b>PAWN:</b> one gold circlet (royal), unredeemed.",
+    how: "You never let it out of your coat, not even in death." },
   bonus: [
     "Only three people could buy wolfsbane from you: three pouches, three coloured cords.",
     "The dose had to be big: a whole pouch, emptied into the tin.",
@@ -220,7 +221,7 @@ isolde: {
     quest: ["The Smith's Receipt from Hollin", "You want a keepsake of the dreadful day the axle broke. Find the smith's receipt (the minstrel has it) and turn it in."]
   },
   ev: { name: "The Princess's Sketchbook", emoji: "🎨",
-    text: "<span class='aname'>SKETCHBOOK OF PRINCESS ISOLDE</span>Page 7: <i>Hollin Smithy, by the smithy's clock, <b>half past six</b>.</i> Quick portraits: the King asleep on a barrel, the Queen frowning at the axle, the Magister covered in mud, the Jester juggling socks, the minstrel singing at a donkey.<br>Page 8: <i>The road. A quarter to seven.</i> Everyone squashed into the carriage. Page 9: <i>The gate. A quarter past six.</i> A very cross Herald.",
+    text: "<span class='aname'>SKETCHBOOK OF PRINCESS ISOLDE</span>Page 7: <i>Hollin Smithy, by the smithy's clock, <b>half past six</b>.</i> Quick portraits: the King asleep on a barrel, the Queen frowning at the axle, the Magister covered in mud, the Jester juggling socks, the minstrel singing at a donkey.<br>Page 8: <i>The road. A quarter to seven.</i> Everyone squashed into the carriage. Page 9: <i>The gate. A quarter past seven.</i> A very cross Herald.",
     how: "You draw everything. You drew all this to pass the time while the smith mended the axle." },
   bonus: [
     "Wolfsbane makes the tongue tingle and go numb, and then the heart falters.",
@@ -238,7 +239,7 @@ wen: {
     quest: ["The Baron's Order of Ceremonies", "You must give the Queen a plain-spoken translation of the feast's schedule. Find the Order (your Queen has it) and turn it in. Be diplomatic."]
   },
   ev: { name: "The Interpreter's Tea Log", emoji: "🍵",
-    text: "<span class='aname'>LOG OF THE TEA CEREMONY</span>East Gallery, Oct 31. <b>5:30</b> The Queen sits. Master Crowe sits. Pot 1.<br><b>6:15</b> Pot 4. Master Crowe still talking. The window overlooks the stable yard.<br><b>7:00</b> Bell. Pot 7. Master Crowe has offered the Queen 'silk', 'a bargain', and 'a sure thing'. Queen declines all.<br><i>(Margin: a rude drawing of a merchant's hat.)</i>",
+    text: "<span class='aname'>LOG OF THE TEA CEREMONY</span>East Gallery, Oct 31. <b>5:30</b> The Queen sits. Master Crowe sits. Pot 1.<br><b>6:15</b> Pot 4. Master Crowe still talking. The window overlooks the stable yard.<br><b>7:00</b> Bell. Pot 7. Master Crowe has offered the Queen 'silk', 'a bargain', and 'a sure thing'. Queen declines all.<br><i>Witness: Pip the page-boy, who brought hot water at 6:15 (mark ☕). (Margin: a rude drawing of a merchant's hat.)</i>",
     how: "You kept it while standing guard outside the gallery. It is mostly accurate." },
   bonus: [
     "Queen Suyin and Master Crowe took tea together from half past five until seven. Crowe never left her side.",
@@ -271,7 +272,7 @@ ambrose: {
     story: "As the herbalist of Ravenmoor, you know every poisonous plant for miles. You know wolfsbane well: it grows wild only in the high valleys, and the Baron's gardens have none. Whoever used it must have bought it. You saw nobody in the garden.",
     secret: "ABOUT THE POISON: wolfsbane numbs the mouth and tongue within moments of tasting, then makes the heart falter. The Baron's gardens do not grow it. It must have come in a pouch from a merchant.",
     herring: "You are firmly convinced that Magister Mordecai is the murderer. Dark arts, you are sure. He mutters over potions and keeps strange bottles. You do not know what clears him.",
-    quest: ["The Magister's sealed pouch of wolfsbane", "You wish to bless the dangerous object, from a safe distance. Find his sealed pouch and turn it in."]
+    quest: ["Lady Rosamund's chapel offering receipt", "You want to check you signed it properly. Find the receipt and turn it in."]
   },
   ev: { name: "The Chapel Vigil Register", emoji: "📖",
     text: "<span class='aname'>VIGIL REGISTER, ST. ETHELBURGA</span>All Hallows' Eve:<br><b>5:30</b> Chapel opened by Br. Ambrose, swept, seven candles set. Half-hour bell rung by Tam the bell-boy, who saw him.<br><b>6:00</b> Present: Lady Rosamund Thornbury. Seven candles lit.<br><b>6:45</b> Lady Rosamund still at prayer. (Br. Ambrose dozing. Mead.)<br><b>7:00</b> Bell. Lady Rosamund rose.<br><i>Witness: Tam the bell-boy (mark ✱). (Margin: 'Pray for the soul of the soup.')</i>",
