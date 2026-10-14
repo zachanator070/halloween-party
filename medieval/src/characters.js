@@ -10,7 +10,7 @@ const INVITE = {
     "There shall be roast fowl, mulled mead, soul cakes for the souls of the faithful, and a toast, with the opening of all gifts, wherein by the custom of Ravenmoor each giver shall taste first of his own offering."
   ],
   small: [
-    "Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything. Each guest shall receive a purse of gold at the door, to spend upon tidings; and at the feast's end, prizes shall be given.",
+    "Dress as befits thy station. A few guests are bidden to bring a gift for the Exalted Lady, to be set upon the gift table; the private letter will tell thee if thou art one. Mind thy manners; the Baron counts everything. Each guest shall receive a purse of gold at the door, to spend upon tidings; and at the feast's end, prizes shall be given.",
     "Thine own good name and station are described in a private letter, which the Steward will deliver when thou givest thy name below. Keep it close and tell no one.",
     "Sent by the hand of Godwin Hobsworth, Steward of Ravenmoor. Make answer to the Steward that thou wilt attend."
   ]
@@ -26,7 +26,7 @@ CHARS.push(
     rel:[["Lord Reginald Thornbury","Your oldest friend from boyhood, and also, awkwardly, a debtor: you and Master Crowe lent him a great deal."],["Master Bartholomew Crowe","Your business partner in lending and trade. You suspect he cheats you, but you need him."],["King Oswin","Your liege. His approval is your favourite food."]],
     flaw:"Vanity. You cannot bear to be corrected, and you exaggerate everything you know.",
     secret:"ABOUT MASTER CROWE: his famous 'Eastern silk' is dyed English wool. You have known for months and have said nothing because you profit too. Trade this for information.",
-    gift:"A little engraved souvenir spoon for each guest (they are slightly bent).",
+    gift:"For the Exalted Lady: a flask of 'the finest spiced mead in the shire' (it is mostly cider) and an engraved souvenir spoon. By the custom of the house you taste the flask first.",
     props:["A big ring of keys (any keys!)","A goblet or fancy mug to wave around","A rolled paper 'guest list' you consult and ignore","A cape: a bedsheet or bathrobe with a pinned-on brooch"],
     costume:"A velvet-looking robe or bathrobe, a belt, fur trim from a scarf, a slightly crooked small crown or cap.",
     starters:["'Have you seen my cellar? Four hundred casks!' (it is not four hundred.)","'Did you count the candles? Eleven!'","'Tell me, what do you know of our esteemed guest?'"]
@@ -40,7 +40,6 @@ CHARS.push(
     rel:[["Master Bartholomew Crowe","A persistent merchant who keeps offering you 'authentic Cathay silk'. You find it hilarious and slightly insulting."],["Baron Godfrey","Your kind but exhausting host. He counts things a great deal."],["Queen Margarethe","You admire her command of a room and secretly want to win the 'who is more regal' contest."],["Wen Liang","Your interpreter and companion, if he is in attendance. A trusted old friend."]],
     flaw:"Rigid about protocol. You will not be hurried, interrupted, or served out of order, and you hold a grudge for a bad pour of tea.",
     secret:"ABOUT QUEEN MARGARETHE: the large pearl necklace she wears is glass. A queen of Cathay knows real pearls by their glow. Trade this for information.",
-    gift:"Small boxes of fragrant tea for everyone, and a tiny silk fan for the Baron.",
     props:["A teapot or kettle and a few small cups (or mugs)","A folding fan or paper fan","A silk robe or long scarf (a kimono or bathrobe works)","Chopsticks as hairpins; a pen or two"],
     costume:"A long, flowing robe in red or gold, hair up and held with chopsticks, calm expression, a hint of dramatic eye makeup.",
     starters:["'In Cathay, a host drinks first. Tell me, is this custom also yours?'","'May I pour you some tea? You seem agitated.'"]
@@ -54,7 +53,7 @@ CHARS.push(
     rel:[["Queen Margarethe","Your wife, the real ruler of Aldermere. You are terrified and adoring."],["Tobias Thistlewick, the Jester","Your closest friend. He tells you the truth and you pretend it is a joke."],["Magister Mordecai","Your court magician. You believe every word he says."]],
     flaw:"Gluttony and gullibility. You will believe anything, if it is said with confidence, and you can be bribed with sweets.",
     secret:"ABOUT LORD THORNBURY: at the last royal feast he stole your marzipan swan, tucked it into his coat, and ate it behind a curtain. You saw. Trade this for information.",
-    gift:"A signed (by someone else) royal decree granting the Baron 'the right to be honoured by the King', plus a jar of honey.",
+    gift:"For the Exalted Lady: a jar of royal honey, and a decree (signed by someone else) naming her 'honoured guest of the realm'. You taste the honey first, if you can bear to stop at one spoonful.",
     props:["A paper or cardboard crown","A scepter (a wooden spoon, rolling pin, or long candle)","A cape or blanket draped over your shoulders","A drumstick or snack in your pocket at all times"],
     costume:"A red robe or tablecloth cape, golden belt, crown slightly askew, a napkin tucked in your collar.",
     starters:["'We are very hungry. Is there... pie?'","'Where is our jester? We require a joke.'","'Is it time for the feast? What time is it? Is it feast time?'"]
@@ -68,7 +67,6 @@ CHARS.push(
     rel:[["King Oswin","Your husband. You love him dearly and treat him like a child."],["Lady Rosamund Thornbury","Your cousin, fallen on hard times. You pity her and pretend not to."],["Magister Mordecai","The court magician you cannot stand. He mutters about poisons and potions."]],
     flaw:"Control. You cannot stand being unprepared and you must have the last word.",
     secret:"ABOUT MAGISTER MORDECAI: his 'prophecies' are copied from a cheap street almanac he hides in his sleeve. You found it. Trade this for information.",
-    gift:"A hand-embroidered cushion (it is slightly too small to sit on) and a signed note on royal letterhead.",
     props:["A hand fan (to snap)","A small bell or spoon to tap on a glass","A tiara or shiny headband","White gloves; a lace handkerchief"],
     costume:"A long gown or dress, a shawl, pearls, a tall stiff posture, an expression that says 'I am disappointed'.",
     starters:["'Sit up straight. You look like a sack of turnips.'","'Is that how they hold a goblet in your country? Hm.'","'My husband has no idea where he is. Please be kind.'"]
@@ -86,7 +84,7 @@ CHARS.push(
     rel:[["Squire Wat Fenwick","Your squire, your shadow, your biggest fan. You teach him everything (badly)."],["Queen Margarethe","You are her champion. You would die for her and she knows it and bosses you."],["Baron Godfrey","He (and a merchant partner) lent you 50 marks, which you have not repaid. You avoid him by loudly telling stories."]],
     flaw:"A secret coward who is dying to be seen as a hero. You also owe money you pretend you don't.",
     secret:"ABOUT MAGISTER MORDECAI: his 'magical lightning' is flash powder. You saw him mixing it in the stable behind the royal tent last spring. Trade this for information.",
-    gift:"A polished (by Wat) hunting horn for the Baron to blow at feasts. It is horrifyingly loud.",
+    gift:"For the Exalted Lady: a hunting horn, polished by Wat and horrifyingly loud. You blow it, once, at the presentation (and then flinch at the echo).",
     props:["A cardboard, foam, or wooden sword with a scabbard","A shield (a lid, tray, or cardboard)","A tin-foil medal pinned to your chest","A colander, pot, or helmet-shaped hat"],
     costume:"A tunic with a tabard over a long-sleeved shirt, a belt with a sword, boots, an enormous mustache (drawn or glued).",
     starters:["'In my forty victories, I have never seen such a feast!'","'Ahem, who rang that bell? I was not startled.'","'Wat! Hold this. And that. And my dignity.'"]
@@ -100,7 +98,6 @@ CHARS.push(
     rel:[["Sir Cedric","Your knight, your hero, your boss. You love him, even though you know his stories are fibs."],["Tobias Thistlewick, the Jester","Your friend. He teaches you rhymes and tricks."],["Princess Isolde","If she attends: your secret crush. You write poems you never show."]],
     flaw:"You cannot lie. Any direct question gets a stammering, over-honest answer, and you cannot keep a secret for long.",
     secret:"ABOUT SIR CEDRIC: he is terrified of ghosts, geese, and the dark, and he sleeps with a candle burning. You hold his gauntlets while he shivers. Trade this for information.",
-    gift:"A small neat hand-copied scroll of poems (for anyone who wants one), tied with a ribbon.",
     props:["A tray piled with random objects (cups, a sock, a shoe)","A polishing cloth over your shoulder","A quill pen and a small roll of paper","A tote bag or satchel marked 'GEAR'"],
     costume:"A plain tunic, belt, boots, hair slightly messy, a smudge of ink on your cheek.",
     starters:["'Sir Cedric says he has done forty victories!' 'Forty!'","'May I carry that for you? Oh dear, I dropped something.'","'I have a scroll of poems if... never mind, it is nothing.'"]
@@ -114,7 +111,7 @@ CHARS.push(
     rel:[["King Oswin","Your patron. He believes everything you say, and you take care to say very little."],["Tobias Thistlewick, the Jester","Your rival. He mocks your tricks and you hate it."],["Queen Margarethe","She distrusts you. You are very polite and sweaty near her."]],
     flaw:"Total fraud, terrified of being exposed. You panic when asked to perform real magic or to explain how your tricks work.",
     secret:"ABOUT TOBIAS THE JESTER: he writes the rude ballads about the court that are sung in every tavern. His rhymes give him away: he always rhymes 'queen' with 'obscene'. Trade this for information.",
-    gift:"A small velvet bag of 'enchanted' pebbles (guaranteed to bring luck for at least a day).",
+    gift:"For the Exalted Lady: a small bag of 'enchanted' sugared almonds, said to bring luck for a day. You taste one first, with a flourish.",
     props:["A pointy hat or hood and a long robe (a bathrobe!)","A deck of cards or some coins for tricks","A glass bowl or ball as a 'crystal ball'","A wand: a chopstick, stick, or wooden spoon"],
     costume:"A starry dark robe, a pointed hat, rings, a long fake beard if you can. Practice one coin trick.",
     starters:["'Hush! Do you not hear it? The omens are... stirring.'","'Allow me to read your palm. Ah. I see... a visitor. Or a loss.'","'The coin! It was behind your ear all along.'"]
@@ -128,7 +125,6 @@ CHARS.push(
     rel:[["King Oswin","Your friend and your patron. He is a child, and you love him."],["Magister Mordecai","Your rival. You can duplicate any of his tricks but he cannot do yours."],["Baron Godfrey","He found your mockery rude and threatened to banish you from his halls."]],
     flaw:"You cannot resist mocking anyone and everyone. It has made you enemies. You also hate being quiet.",
     secret:"ABOUT QUEEN MARGARETHE: she sings in the bath, loudly and badly, and has begged you never to tell. You were walking past the bath-house and heard 'Greensleeves' butchered. Trade this for information.",
-    gift:"A set of three 'juggling' balls (they are actually socks) and an acrostic poem about the Baron.",
     props:["A jingling hat or bells (tie small bells to your sleeves)","A stick topped with a sock puppet or stuffed toy","Three balls or socks to (almost) juggle","Mismatched socks, tights, or colourful clothing"],
     costume:"Bright, mismatched colours, a floppy two-pointed hat with bells, striped tights, a big painted smile.",
     starters:["'Good sir, you are as wise as a bell, and just as hollow!'","'A knight, a mage, and a king walk into a feast... and only one is sober!'","'Hear the tale of Wat the Squire, who dropped a lance, and then his hire!'"]
@@ -146,7 +142,6 @@ CHARS.push(
     rel:[["Baron Godfrey","Your oldest friend since boyhood, and your greatest creditor. You avoid his eye."],["Lady Rosamund Thornbury","Your wife and the real brains of the family. You adore her."],["Master Crowe","You owe him, too. You duck behind pillars when he approaches."]],
     flaw:"Pride, delusion, and an inability to face his problems. You have never in your life done a day's work.",
     secret:"ABOUT THE BARON: his famous cellar is mostly cider barrels. You helped him roll them in when no one was looking, years ago. He swore you to secrecy. Trade this for information.",
-    gift:"A beautiful wooden box, empty. 'The contents are a surprise. A surprise for a later date.'",
     props:["A monocle (a magnifying glass or a round frame)","A faded fancy coat with lots of deep pockets","An empty coin purse you wave around","A lace handkerchief; a hidden snack"],
     costume:"The fanciest worn-out jacket you own, a floppy cravat, scuffed shoes you pretend are fashionable.",
     starters:["'Money? Oh, how tedious. Is that a cheese?'","'Do try the comfits, they are simply too delightful to ignore.'","'My manor? Splendid, thank you. The roof is... aerated.'"]
@@ -160,7 +155,7 @@ CHARS.push(
     rel:[["Lord Reginald Thornbury","Your husband. Kind, useless, adored. You manage everything."],["Queen Margarethe","Your cousin. You love her and resent how kindly she pities you."],["Brother Ambrose","If he attends: your confessor, who keeps your secrets."]],
     flaw:"Pride in your family name. You would rather starve in silk than accept charity, and you never admit anything is wrong.",
     secret:"ABOUT YOUR HUSBAND: Reginald pockets sweets everywhere he goes, comfits, marzipan, bits of cheese. You find melted comfits in all his coats and have given up. He thinks you don't know. Trade this for information.",
-    gift:"A hand-stitched lavender sachet (the lavender is mostly dried grass) and a thoughtful note.",
+    gift:"For the Exalted Lady: a tin of homemade lavender shortbread (slightly burnt) and a thoughtful note. You taste a piece first, with a brave smile.",
     props:["Lace gloves or a lace-trimmed scarf","A hand fan","Obviously-fake jewels: big bead necklace, clip-on earrings","A lorgnette (a pair of glasses on a stick) or a monocle"],
     costume:"An old-fashioned, slightly threadbare gown, too many mismatched jewels, perfect posture, flawless smile.",
     starters:["'Oh, how BRAVE of you to wear that. Truly.'","'Reginald, dear, put the cheese back.'","'Do you know, my cousin the Queen mentions you often. Mostly as a warning.'"]
@@ -174,7 +169,7 @@ CHARS.push(
     rel:[["Baron Godfrey","Your partner in loans and trade. You think he is a fool but a profitable one."],["The foreign Queen","The prize. You will sell her anything. (You will learn who she is when she arrives.)"],["King Oswin","Your biggest debtor. His circlet is in your strongbox."]],
     flaw:"Greed. You also sell fakes and have a habit of mislabelling goods, 'for efficiency'.",
     secret:"ABOUT KING OSWIN: his gold circlet is in pawn to you for a loan that paid for hunting dogs. The King does not wear it because he does not have it. Trade this for information.",
-    gift:"A pewter tin of your finest candied ginger, with a small paper price tag. By the custom of the house you will taste the first piece yourself at the toast, then sell the rest.",
+    gift:"For the Exalted Lady: a pewter tin of your finest candied ginger, with a small paper price tag. By the custom of the house you taste the first piece yourself at the toast, then you sell her the rest.",
     props:["A small tin of candied ginger (or any sweets) to open at the toast","An abacus, calculator, or notebook of figures","A coin pouch full of tokens or chocolate coins","A measuring tape or ruler"],
     costume:"A tidy tunic in good brown wool, a cap, a chain of office, a belt with a purse, ink-stained fingers.",
     starters:["'That cloak? Eight shillings. Tell me, what would you pay for a better one?'","'For you, friend, a special price. Just for you.'","'Everything has a price. What is yours?'"]
@@ -192,7 +187,6 @@ CHARS.push(
     rel:[["Queen Margarethe and King Oswin","Your parents. Your mother organises your life and your father forgets it."],["Squire Wat Fenwick","The sweet squire who dropped a tray at court. You think of him often. A little too often."],["Lucien the Troubadour","He writes songs about you. They are not good, but you swoon anyway."]],
     flaw:"Naive and impulsive. You believe any sad story and run from any responsibility.",
     secret:"ABOUT SQUIRE WAT: he carries a poem folded in his tunic that begins 'O Princess of the starry hair'. You peeked. You did not tell him you peeked. Trade this for information.",
-    gift:"A pressed rose in a tiny glass frame for the Baron, and a sonnet you wrote about the moon.",
     props:["A flower crown or a few real/paper flowers","A 'love letter' on scented paper","A pillow or cushion for fainting safely","A hand mirror or ribbon"],
     costume:"A pastel gown or nightgown with a long scarf as a veil, flowers in your hair, flushed cheeks.",
     starters:["'Ohhh, is it not exactly like a ballad?' *sigh*","'Have you ever loved someone whose name you couldn't say?'","'I feel faint... Oh, there is a lovely cushion!'"]
@@ -206,7 +200,6 @@ CHARS.push(
     rel:[["Queen Suyin","Your queen and friend. You know her moods by her fan."],["Master Crowe","He tries to sell you things between sentences. You enjoy ruining his deals."],["Magister Mordecai","He tried to buy 'something exciting' from the Queen's baggage. You said no."]],
     flaw:"You mistranslate on purpose when bored. It has already caused one treaty near-disaster.",
     secret:"ABOUT QUEEN SUYIN: she adores English custard tarts and ate eleven on the road. She has begged you never to tell. Trade this for information.",
-    gift:"A scroll with the Baron's name written in beautiful Cathay characters (it says 'Honoured Host' - maybe).",
     props:["A scroll or rolled paper","A small notebook and a quill or pen","A sash or silk belt","A teacup, always on a saucer"],
     costume:"A simple dark silk robe with a sash, hair tied back, completely neutral expression.",
     starters:["'She says it is a pleasure. It is... a pleasure.'","'I will translate that. She says no.'","'Do not mention custard tarts. I beg you.'"]
@@ -220,7 +213,6 @@ CHARS.push(
     rel:[["Baron Godfrey","Your master. You adore and fear his enthusiasm."],["Tobias Thistlewick, the Jester","Your nemesis. He has pinched honey pots and mocked your keys."],["Brother Ambrose","Your drinking buddy, over a few secret sips in the cellar."]],
     flaw:"You secretly sneak sips of the Baron's best wine and are hoping nobody counts the barrels.",
     secret:"ABOUT BROTHER AMBROSE: he keeps a tiny flask of mead inside his Bible, hollowed out for the purpose. He refills it from the cellar. Trade this for information.",
-    gift:"A hand-lettered 'Rules of the House' scroll, numbered up to 112.",
     props:["A very large ring of keys","A staff or long broom handle","A clipboard or scroll of 'Protocol'","A small bell to ring for dinner"],
     costume:"A dark livery or apron, a chain of office, a very serious expression, spectacles on the end of the nose.",
     starters:["'Rule the Twenty-Third: do not touch the candelabra.'","'Have you counted the guests? I make it eleven. Or sixteen. Dear me.'","'Is that goblet yours? Whose goblet is that?'"]
@@ -234,7 +226,6 @@ CHARS.push(
     rel:[["Lady Rosamund Thornbury","One of your flock. She confesses little, but you see her sorrows."],["Godwin Hobsworth, the Steward","Your drinking buddy and fellow cellar-raider."],["Baron Godfrey","He lets you live in the chapel and complains about your tankard."]],
     flaw:"Gluttony and tipsiness. You will say anything for another sip, and you sometimes fall asleep in the middle of a blessing.",
     secret:"ABOUT STEWARD GODWIN: he sneaks sips of the Baron's best wine from the cellar every night. Cask 9 is nearly empty. Trade this for information.",
-    gift:"A bottle of 'blessed' herbal tonic (it tastes like feet) and a loaf of fresh bread.",
     props:["A brown robe or blanket tied with a rope belt","A string of prayer beads (or a necklace)","A tankard (a mug)","A small book or 'herb journal'"],
     costume:"A brown hooded robe with a rope belt, sandals, a bit of flour on your sleeves.",
     starters:["'Benedicite! Is this soup or a sacrament?'","'Child, what ails you? Have you tried more cheese?'","'Hic! I only had a thimble of mead. A large thimble.'"]
@@ -248,7 +239,6 @@ CHARS.push(
     rel:[["Princess Isolde","Your muse. You serenade her at every opportunity."],["Tobias Thistlewick, the Jester","Your rival for the royal ear."],["Baron Godfrey","He has not yet paid your fee from last Easter."]],
     flaw:"You steal other minstrels' tunes and swear they're yours. You also never pay back anything you borrow.",
     secret:"ABOUT TOBIAS THE JESTER: he cannot actually juggle. His juggling balls are stuffed socks, and he has dropped them in every performance for years. Trade this for information.",
-    gift:"A song about the Baron, performed on the spot, with an invoice.",
     props:["A lute, ukulele, guitar, or tambourine","A feathered cap or hat","A small songbook or lyric sheet","A rose to present (to anyone)"],
     costume:"A colourful tunic, a cape, a feathered hat, boots, a dramatic scarf.",
     starters:["'I have composed a ballad about this very moment!'","'Shall I sing? I shall sing.'","'Who here has a rhyme for \"Baron\"? Only \"barren\"...'"]
