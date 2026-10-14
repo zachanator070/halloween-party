@@ -1,6 +1,14 @@
 {
   "cast": [
     {
+      "player": "Zach Johnson",
+      "id": "baron"
+    },
+    {
+      "player": "Alyssum Johnson",
+      "id": "suyin"
+    },
+    {
       "player": "Brad Stephenson",
       "id": "mordecai"
     },
@@ -9,8 +17,8 @@
       "id": "wen"
     },
     {
-      "player": "Alyssum Johnson",
-      "id": "suyin"
+      "player": "John Gorriceta",
+      "id": "lucien"
     },
     {
       "player": "Craig Brown",
@@ -29,10 +37,6 @@
       "id": "wat"
     },
     {
-      "player": "John Gorriceta",
-      "id": "godwin"
-    },
-    {
       "player": "Kayla Beckstead",
       "id": "tobias"
     },
@@ -47,15 +51,11 @@
     {
       "player": "Shelby Gorriceta",
       "id": "crowe"
-    },
-    {
-      "player": "Zach Johnson",
-      "id": "baron"
     }
   ],
   "spares": [
     "isolde",
-    "ambrose",
-    "lucien"
+    "godwin",
+    "ambrose"
   ]
 }

@@ -6,7 +6,9 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { CHARS, REWARDS, INVITE } = require('./src/characters.js');
+const { CHARS, INVITE } = require('./src/characters.js');
+const PHASE2 = require('./src/phase2.js');
+for (const c of CHARS) { if (!PHASE2[c.id]) throw new Error('No phase 2 data for ' + c.id); Object.assign(c, PHASE2[c.id]); }
 const CAST = require('./src/cast.json');
 
 const ROOT = __dirname;
@@ -97,7 +99,7 @@ ${player ? `<p class="for">Prepared for <b>${player}</b>. Keep this page secret!
 <h4>How you treat others</h4>${li(p.treat)}
 <h4>Your relationships</h4>${li(p.rel.map((r) => '<b>' + r[0] + ':</b> ' + r[1]))}
 <h4>Your flaw</h4><p>${p.flaw}</p>
-<div class="secret"><b>Your secret to trade:</b> ${p.secret}<br><i>You may reveal it only in exchange for information. You may bluff, but you may not show anyone this page.</i></div>
+<div class="secret"><b>Your secret to trade:</b> ${p.secret}<br><i>You may reveal it only in exchange for information. Do not show anyone this page.</i></div>
 <h4>Props to bring</h4>${li(p.props)}<p><i>Costume tip:</i> ${p.costume}</p>
 <p><i>Gift to bring for the Baron:</i> ${p.gift}</p>
 <h4>Conversation starters</h4>${li(p.starters)}
@@ -109,7 +111,7 @@ function p1Page(c) {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${c.name}: Your Character</title><style>${P1_CSS}</style></head><body>
 <div class="nav"><a href="../invitation.html">&larr; Read the invitation again</a></div>
 <div class="wrap">${p1Body(c)}
-<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the Baron falls</div></div></div>
+<article class="card lock" id="p2lock"><div class="head"><div class="emoji">🔒</div><div><h3>Phase 2</h3><div class="title">Sealed until the murder</div></div></div>
 <p>When the host announces the death and Phase 2 begins, they will reveal a passphrase. Enter it here to read your Phase 2 card.</p>
 <form id="p2form"><input type="text" id="p2pass" placeholder="Passphrase" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit">Unlock</button> <span id="p2err" class="err"></span></form></article>
 <div id="p2out" hidden></div>
@@ -150,7 +152,6 @@ section>h2{color:#f6ecd0;font-variant:small-caps;letter-spacing:2px;border-botto
 section>p.intro{color:#d9c9a3;font-size:14px}
 .cards{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 .card{width:100%;max-width:5.2in;font-size:1rem;line-height:1.35;display:flex;flex-direction:column;break-inside:avoid;page-break-inside:avoid;padding:14px 16px}
-.card.slip{max-width:20rem;font-size:.9rem;border-width:2px}
 .card h3{font-size:1.4em}.card .for{font-size:.85em;margin:0}.card .foot{margin-top:auto}
 .artifact{font-size:.9em}
 body.hide-spare .spare{display:none!important}
@@ -158,14 +159,12 @@ body.hide-spare .spare{display:none!important}
 @media print{
  .card{width:5.2in;max-width:none;height:7.7in;overflow:hidden;font-size:9.4pt;line-height:1.28;padding:.16in .2in .14in}
  .card.small{height:3.85in;font-size:8.6pt;padding:.1in .16in}
- .card.slip{height:1.9in;width:2.55in;max-width:none;font-size:7.8pt;padding:.07in .1in;border-width:2px}
  .card h3{font-size:15pt}.card .title{font-size:9.5pt}.card .emoji{font-size:30pt}.card h4{font-size:8pt}.card .for{font-size:8pt}
  .artifact{font-size:8.2pt}
  body{background:#fff}.toolbar,.note,section>h2,section>p.intro{display:none!important}
  main{padding:0}section.sheet-section{margin:0;max-width:none;page-break-before:always}section.sheet-section:first-of-type{page-break-before:auto}
  .cards{display:grid;grid-template-columns:5.2in 5.2in;gap:0 .15in;justify-content:center}
- .cards.slips{grid-template-columns:repeat(4,2.55in);gap:.08in .12in}
- body[data-only="p2"] section:not(#p2),body[data-only="ev"] section:not(#ev),body[data-only="slips"] section:not(#slips){display:none!important}
+ body[data-only="p2"] section:not(#p2),body[data-only="ev"] section:not(#ev),body[data-only="bonus"] section:not(#bonus){display:none!important}
 }`;
 const forLine = (c) => (playerOf[c.id] ? `<div class="for">Player: <b>${playerOf[c.id]}</b></div>` : '');
 const cls = (c) => (isSpare(c) ? ' spare' : '');
@@ -177,18 +176,19 @@ function p2Card(c) {
 <h4>Your new role</h4>${li(p.rules)}
 <h4>Your truthful answers (use only if asked)</h4>
 <div class="secret">${p.truths.map((t) => '<div><b>' + t[0] + '</b> ' + t[1] + '</div>').join('')}</div>
-<h4>Reminder</h4><p>You do not know who killed you. You only know you drank from your goblet. Enjoy haunting.</p>
+${p.quest ? `<h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (The host will give you Bonus Clues.)</p>` : ''}
+<h4>Reminder</h4><p>You do not know who killed you. You only know you tasted the ginger and it was not ginger. Enjoy haunting.</p>
 <div class="foot">You win by watching them all fumble.</div></article>`;
   }
   return `<article class="card${cls(c)}">
-<div class="head"><div class="emoji">${c.emoji}</div><div><h3>${c.name}</h3><div class="title">Phase 2: The Baron is dead!</div>${forLine(c)}</div><div class="badge p2">Phase 2<br>Your Character</div></div>
+<div class="head"><div class="emoji">${c.emoji}</div><div><h3>${c.name}</h3><div class="title">Phase 2: Master Crowe is dead!</div>${forLine(c)}</div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>${p.afternoon}</p>
 <h4>What else you know</h4><p>${p.story}</p>
 <div class="secret"><b>Your new secret to trade:</b> ${p.secret}</div>
 ${p.herring ? `<div class="herring"><b>Your conviction:</b> ${p.herring}</div>` : ''}
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>${c.ev.name}</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
-<h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (The host will give you a Bonus Truth.)</p>
-<h4>Your goal</h4><p>Work out WHO killed the Baron, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (When you do, the host will give you your Bonus Clues.)</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article>`;
 }
 function evCard(c) {
@@ -199,20 +199,27 @@ function evCard(c) {
 <p><b>How it came to you:</b> ${e.how}</p>
 <div class="foot">Trade this for a secret or another piece of evidence. Show it to others only in trade.</div></article>`;
 }
-const slipCard = (t, i) => `<article class="card slip"><div style="text-align:center;font-weight:bold;color:#7a1f1f;font-variant:small-caps">Bonus Truth ${i + 1}</div><p style="margin-top:4px">${t}</p></article>`;
+function bonusCard(c) {
+  const q = c.p2.quest[0];
+  return `<article class="card small${cls(c)}">
+<div class="head"><div class="emoji">🗝️</div><div><h3 style="font-size:12pt">Bonus Clues</h3><div class="title">${c.name}</div>${forLine(c)}</div><div class="badge ev">Bonus</div></div>
+<p><i>Hand over when this player turns in:</i> <b>${q}</b>.</p>
+${li(c.bonus)}
+<div class="foot">Three true clues. Share them, trade them, or keep them close.</div></article>`;
+}
 
 function printMaterials() {
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Phase 2, Evidence and Reward Cards (printable)</title><style>${PRINT_CSS}</style></head><body class="hide-spare">
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Phase 2, Evidence and Bonus Clue Cards (printable)</title><style>${PRINT_CSS}</style></head><body class="hide-spare">
 <div class="toolbar"><strong>🕯️ Ravenmoor Feast: print cards</strong>
-<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#slips">Reward slips</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
+<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#bonus">Bonus clues</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
 <label><input type="checkbox" id="spareToggle"> Include spare characters (not cast)</label>
-<label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="slips">Reward slips</option></select></label>
+<label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="bonus">Bonus clue cards</option></select></label>
 <button id="printBtn">Print</button></div>
-<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, reward slips eight to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and reward slips are physical. Keep them sealed until the host's signal.</div>
+<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, bonus clue cards four to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and bonus clue cards are physical. Keep them sealed until the host's signal.</div>
 <main>
 <section class="sheet-section" id="p2"><h2>Phase 2: Character Cards</h2><p class="intro">Host hands these out after the death scene. One per player.</p><div class="cards">${CHARS.map(p2Card).join('')}</div></section>
 <section class="sheet-section" id="ev"><h2>Evidence Cards</h2><p class="intro">Hand one to each living character with their Phase 2 card.</p><div class="cards">${CHARS.filter((c) => c.ev).map(evCard).join('')}</div></section>
-<section class="sheet-section" id="slips"><h2>Host Reward Slips</h2><p class="intro">When a guest turns in the evidence they were told to find, give them one slip (any one). Cut apart and keep face down.</p><div class="cards slips">${REWARDS.map(slipCard).join('')}</div></section>
+<section class="sheet-section" id="bonus"><h2>Bonus Clue Cards</h2><p class="intro">When a guest turns in the evidence they were told to find, hand them their own bonus clue card (it carries their name). Keep them sealed until then.</p><div class="cards">${CHARS.map(bonusCard).join('')}</div></section>
 </main>
 <script>
 document.getElementById('spareToggle').addEventListener('change',e=>document.body.classList.toggle('hide-spare',!e.target.checked));
@@ -257,7 +264,7 @@ li{margin:2px 0}
 <div class="cols"><ul>
 <li><a href="invitation.html">Invitation</a> (what players receive; identical for all)</li>
 <li><a href="${R}/phase1-all.html">All Phase 1 cards in one page</a></li>
-<li><a href="${R}/party-materials.html">Phase 2 cards, evidence cards, reward slips</a> (printable; tick "Include spare characters" for the full set)</li>
+<li><a href="${R}/party-materials.html">Phase 2 cards, evidence cards, bonus clue cards</a> (printable; tick "Include spare characters" for the full set)</li>
 <li><a href="${R}/host-guide.html">Host guide</a> (must contain no solution)</li>
 </ul></div>
 <h3>Each player's own Phase 1 page</h3>
@@ -271,7 +278,7 @@ li{margin:2px 0}
 <h2>3. Review checklist</h2>
 <h3>Coherence and fairness</h3><ul>
 <li>The case is solvable from the cast characters' cards and evidence.</li>
-<li>Every fact in the solution's timeline matches the cards (times, names, packet numbers, door details).</li>
+<li>Every fact in the solution's timeline matches the cards (times, names, pouch colours, door details).</li>
 <li>The alibi matrix holds: only the culprit has an unaccounted-for window.</li>
 <li>No single card names or decisively points to the culprit. Note how many cards contribute partially.</li>
 <li>The culprit's cards never describe the deed. Judge whether the culprit's vague "afternoon" line is too much of a tell.</li>
@@ -281,7 +288,7 @@ li{margin:2px 0}
 <h3>Fun</h3><ul>
 <li>Each character has a quirk to lean into, props, and conversation starters.</li>
 <li>Phase 1 secrets are low-stakes, funny gossip about other characters (mostly).</li>
-<li>The Baron's death scene reveals the method clearly and is easy to act out.</li>
+<li>Master Crowe's death scene reveals the method clearly and is easy to act out.</li>
 <li>Trading secrets and evidence feels rewarding in both phases.</li>
 <li>Casting makes sense for the actual players (see the table in the host guide).</li>
 <li>The invitation page's name form leads each guest to their own Phase 1 page; each character page unlocks its Phase 2 card with a passphrase the host reveals when Phase 2 starts (ask the host for it to preview).</li>

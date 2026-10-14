@@ -16,7 +16,7 @@
       try { localStorage.setItem(KEY, pass); } catch (x) { /* storage may be unavailable */ }
       if (!silent) out.scrollIntoView();
     } catch (x) {
-      if (!silent) err.textContent = 'That is not the passphrase. Ask the host once the Baron has fallen.';
+      if (!silent) err.textContent = 'That is not the passphrase. Ask the host once the murder has happened.';
       try { localStorage.removeItem(KEY); } catch (y) { /* ignore */ }
     }
   }
