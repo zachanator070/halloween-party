@@ -105,7 +105,7 @@ ${player ? `<p class="for">Prepared for <b>${player}</b>. Keep this page secret!
 <div class="secret"><b>Your secret to trade:</b> ${p.secret}<br><i>You may reveal it in exchange for information or gold. Do not show anyone this page.</i></div>
 ${GOLD_RULES}
 <h4>Props to bring</h4>${li(p.props)}<p><i>Costume tip:</i> ${p.costume}</p>
-${p.gift ? `<h4>Your gift</h4><p>${p.gift} Set it on the gift table when you arrive; it is presented at the toast.</p>` : ''}
+${p.gift ? `<h4>Your gift</h4><p>${p.gift}</p>` : ''}
 <h4>Conversation starters</h4>${li(p.starters)}
 <div class="foot">Keep this page secret. More will be revealed at the feast.</div>
 </article>`;

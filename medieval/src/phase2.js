@@ -29,7 +29,7 @@ suyin: {
     quest: ["Lady Rosamund's chapel offering receipt", "You are curious about the Western custom of burning candles for a husband's finances. Find her receipt and turn it in."]
   },
   ev: { name: "The Baron's Order of Ceremonies", emoji: "📜",
-    text: "<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>4:15</b> All gifts for the Exalted Lady to be set upon the gift table in the Hall, sealed or covered (late arrivals on arrival).<br>• <b>4:30</b> Hall CLOSED to guests. Main door BARRED. Garden door latched (not bolted) for the herb boy.<br>• <b>6:00</b> Bell. Hall to open.<br>• <b>6:30</b> Guests seated. Count the candles!<br>• <b>7:30</b> THE TOAST, and the OPENING OF GIFTS. By the custom of Ravenmoor, each giver tastes first of any food or drink he has given.<br>• <b>8:00</b> Soul cakes.",
+    text: "<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>4:15</b> All gifts for the Exalted Lady to be set upon the gift table in the Hall, sealed or covered.<br>• <b>4:30</b> Hall CLOSED to guests. Main door BARRED. Garden door latched (not bolted) for the herb boy.<br>• <b>6:00</b> Bell. Hall to open.<br>• <b>6:30</b> Guests seated. Count the candles!<br>• <b>7:30</b> THE TOAST, and the OPENING OF GIFTS. By the custom of Ravenmoor, each giver tastes first of any food or drink he has given.<br>• <b>8:00</b> Soul cakes.",
     how: "The Baron gave this to you himself, so you would know when to stand for the toast." },
   bonus: [
     "The Hall's main door was barred from half past four until the six o'clock bell. During that time the only way in was the garden door.",
@@ -59,7 +59,7 @@ oswin: {
 margarethe: {
   p2: {
     afternoon: "You rode with the King, the Magister and Tobias the Jester. The royal carriage axle broke near Hollin and was not mended until a quarter to six, so you did not reach Ravenmoor until a quarter past six. You were angry the entire way. The Herald wrote down everyone's arrival.",
-    story: "At the gate the Herald handed you the roll of arrivals to sign off for the royal party. You still have it. At the Hall you noticed the gift table for the foreign Lady: six gifts. You were not pleased to learn Master Crowe had dared propose a marriage for your daughter.",
+    story: "At the gate the Herald handed you the roll of arrivals to sign off for the royal party. You still have it. At the Hall you noticed the gift table for the foreign Lady: three gifts. You were not pleased to learn Master Crowe had dared propose a marriage for your daughter.",
     secret: "ABOUT YOUR COUSIN LADY ROSAMUND: the Thornburys are deeply in debt to the Baron and to Master Crowe. You secretly sent them money twice; it was not enough.",
     herring: "You are firmly convinced that Magister Mordecai is the murderer. He is always muttering about potions and 'rats of the realm', and he looked far too pleased when Crowe fell. You do not know what clears him.",
     quest: ["The Magister's sealed pouch of wolfsbane", "You want proof the Magister deals in poisons. Find his pouch and turn it in."]
@@ -250,16 +250,16 @@ wen: {
 godwin: {
   p2: {
     afternoon: "At a quarter past four you finished setting the gift table in the Hall. At half past four you barred the main door of the Hall as the Baron ordered. You left the garden door latched but not bolted, for the herb boy, and went down to the cellar to check the casks until the bell at six. You were in the cellar about an hour and a half. You did not see anyone in the Hall.",
-    story: "You kept the key to the Hall's main door on your belt the whole time. You counted four gifts on the table when you closed the Hall, including a pewter tin with a crow stamp, its lid shut. The Baron's own supply of rat poison, kept in the locked cupboard, was untouched.",
+    story: "You kept the key to the Hall's main door on your belt the whole time. You counted three gifts on the table when you closed the Hall, including a pewter tin with a crow stamp, its lid shut. The Baron's own supply of rat poison, kept in the locked cupboard, was untouched.",
     secret: "ABOUT THE GARDEN DOOR: it has no bolt, only a latch, because the Baron refused to pay for one. You warned him twice. You feel responsible and want to blame someone else.",
     herring: "You are firmly convinced that Tobias the Jester is the murderer. He has hated the Baron since the banishment threat, he has stolen honey, and he laughed when Crowe fell. You do not know what clears him.",
     quest: ["The empty wolfsbane pouch", "You want to see whose poison it was and who left it on your clean garden path. Find the pouch and turn it in."]
   },
   ev: { name: "The Steward's Tally of Doors", emoji: "🗝️",
-    text: "<span class='aname'>STEWARD'S TALLY OF DOORS</span>Oct 31, the Great Hall:<br>• <b>4:15</b> Gift table set: 4 gifts, covered or sealed. (Pewter tin, crow stamp, lid shut.)<br>• <b>4:30</b> Hall closed. MAIN DOOR barred, key on my belt. Garden door latched (<i>no bolt, as ever</i>).<br>• <b>4:35 to 6:00</b> Steward in cellar, inventory of 14 casks.<br>• <b>6:00</b> Bell. Hall opened. Nobody seen in or out.",
+    text: "<span class='aname'>STEWARD'S TALLY OF DOORS</span>Oct 31, the Great Hall:<br>• <b>4:15</b> Gift table set: 3 gifts, covered or sealed. (Pewter tin, crow stamp, lid shut.)<br>• <b>4:30</b> Hall closed. MAIN DOOR barred, key on my belt. Garden door latched (<i>no bolt, as ever</i>).<br>• <b>4:35 to 6:00</b> Steward in cellar, inventory of 14 casks.<br>• <b>6:00</b> Bell. Hall opened. Nobody seen in or out.",
     how: "You wrote it as you went, because you write everything down." },
   bonus: [
-    "The gift table held four gifts when the Hall was closed. By half past six two more had joined them (the royal party's), and Master Crowe's tin was the only one with its lid crooked.",
+    "The gift table held three gifts when the Hall was closed, and still held three at half past six. Master Crowe's tin was the only one with its lid crooked.",
     "The garden door's latch was found lifted at six, though you left it latched.",
     "The empty pouch found outside the garden door was tied with blue."
   ]
@@ -286,7 +286,7 @@ ambrose: {
 lucien: {
   p2: {
     afternoon: "You rode to Ravenmoor on the back of the royal baggage cart with Tobias the Jester. The axle of the royal carriage broke near Hollin and the whole party waited at the smithy until a quarter to six, so you reached the keep only at a quarter past six. You spent the wait composing a ballad. Tobias did not appreciate it.",
-    story: "At an earlier feast the Baron promised to pay you for a song and never did. While tuning your lute in the Hall at about half past six you noticed the gift table: six gifts, and one pewter tin with a crow stamp whose lid sat crooked and whose rim had a grey smudge on it.",
+    story: "At an earlier feast the Baron promised to pay you for a song and never did. While tuning your lute in the Hall at about half past six you noticed the gift table: three gifts, and one pewter tin with a crow stamp whose lid sat crooked and whose rim had a grey smudge on it.",
     secret: "ABOUT THE GIFT TABLE: you noticed that tin because it was the only gift not covered in cloth. You thought of lifting a ginger piece for the road, but the cook was glaring.",
     herring: "You are firmly convinced that Baron Godfrey is the murderer. He has kept your wages from you, and he looked far too calm when Crowe fell. You do not know what clears him.",
     quest: ["Master Crowe's Demand Letters", "You are writing a ballad about the evening's scandal and need to know who owes whom. Find the bundle of letters and turn it in."]
@@ -296,7 +296,7 @@ lucien: {
     how: "The King's carter handed it to you to keep dry in your lute case." },
   bonus: [
     "The royal party left Hollin at a quarter to six and reached Ravenmoor at a quarter past six. None of them were here during the afternoon.",
-    "The Hall's gift table held six gifts. Master Crowe's tin was the only one with a crooked lid.",
+    "The Hall's gift table held three gifts. Master Crowe's tin was the only one with a crooked lid.",
     "The pouch found outside the garden door was blue, and Master Crowe's ledger says who bought the blue one."
   ]
 }
