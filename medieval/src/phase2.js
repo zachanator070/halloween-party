@@ -11,7 +11,7 @@ baron: {
     quest: ["The Baron's Order of Ceremonies", "You lost your own copy. The foreign Queen has the other. Find it and turn it in."]
   },
   ev: { name: "Master Crowe's Day Ledger", emoji: "📒",
-    text: "<span class='aname'>CROWE &amp; CO. LEDGER</span><b>WOLFSBANE (dried root, ground). Three linen pouches, each tied with a coloured cord:</b><br>BLUE: Oct 30, to <i>Sir Cedric Brightblade</i>, 'bait for the wolf hunt'.<br>GREEN: Oct 8, Hollin Fair, to <i>Magister Mordecai</i>, 'a stage trick'.<br>RED: Oct 30, to <i>Lord R. Thornbury</i>, on credit, 'for wolves among the manor sheep'.<br><b>LOANS (jointly with the Baron):</b> Lord Thornbury 300 marks; Sir Cedric 50 marks.<br><b>PAWN:</b> one gold circlet (royal), unredeemed.",
+    text: "<span class='aname'>CROWE &amp; CO. LEDGER</span><b>WOLFSBANE (dried root, ground). Three linen pouches, each tied with a coloured cord:</b><br>BLUE: Oct 30, to <i>Sir Cedric Brightblade</i>, 'bait for the wolf hunt'.<br>GREEN: Oct 8, Hollin Fair, to <i>Magister Mordecai</i>, 'a stage trick'.<br>RED: Oct 30, to <i>Lord R. Thornbury</i>, on credit, 'for wolves among the manor sheep'. <i>Sent on to Thornbury Manor by rider.</i><br><b>LOANS (jointly with the Baron):</b> Lord Thornbury 300 marks; Sir Cedric 50 marks.<br><b>PAWN:</b> one gold circlet (royal), unredeemed.",
     how: "Master Crowe pressed it into your hands at noon and told you to keep it safe." },
   bonus: [
     "The poison was wolfsbane, also called monkshood: ground dried root. A strong dose numbs the tongue and tingles the lips within moments of tasting.",
@@ -29,7 +29,7 @@ suyin: {
     quest: ["Lady Rosamund's chapel offering receipt", "You are curious about the Western custom of burning candles for a husband's finances. Find her receipt and turn it in."]
   },
   ev: { name: "The Baron's Order of Ceremonies", emoji: "📜",
-    text: "<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>4:15</b> All gifts for the Exalted Lady to be set upon the gift table in the Hall, sealed or covered.<br>• <b>4:30</b> Hall CLOSED to guests. Main door BARRED. Garden door latched (not bolted) for the herb boy.<br>• <b>6:00</b> Bell. Hall to open.<br>• <b>6:30</b> Guests seated. Count the candles!<br>• <b>7:30</b> THE TOAST, and the OPENING OF GIFTS. By the custom of Ravenmoor, each giver tastes first of any food or drink he has given.<br>• <b>8:00</b> Soul cakes.",
+    text: "<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>4:15</b> All gifts for the Exalted Lady to be set upon the gift table in the Hall, sealed or covered.<br>• <b>4:30 to 6:00</b> Baron to the kitchens (soups). Tea for the Exalted Lady in the East Gallery, with Master Crowe.<br>• <b>4:30</b> Hall CLOSED to guests. Main door BARRED. Garden door latched (not bolted) for the herb boy.<br>• <b>6:00</b> Bell. Hall to open.<br>• <b>6:30</b> Guests seated.<br>• <b>7:30</b> THE TOAST, and the OPENING OF GIFTS. By the custom of Ravenmoor, each giver tastes first of any food or drink he has given.<br>• <b>8:00</b> Soul cakes.",
     how: "The Baron gave this to you himself, so you would know when to stand for the toast." },
   bonus: [
     "The Hall's main door was barred from half past four until the six o'clock bell. During that time the only way in was the garden door.",
@@ -47,8 +47,8 @@ oswin: {
     quest: ["The Herald's Roll of Arrivals", "You wish to know which of your guests dared arrive before you. Find the Herald's roll and turn it in."]
   },
   ev: { name: "A Napkin of Bitter Dust", emoji: "🧻",
-    text: "<span class='aname'>A STAINED LINEN NAPKIN</span>Folded within, a pinch of coarse <b>grey-green powder</b> with a few fibres of dried root. It smells earthy and bitter. <i>(Whatever you do, do not taste it.)</i>",
-    how: "You scooped it from the edge of the gift table at 6:20, beside a pewter tin with a crow stamp and a crooked lid." },
+    text: "<span class='aname'>A STAINED LINEN NAPKIN</span>Folded within, a pinch of coarse <b>grey-green powder</b> with a few fibres of dried root. It smells earthy and bitter. <i>(Whatever you do, do not taste it.)</i><br>The cook says the gift table's cloth was laid fresh at a quarter past four, so the spill came after that.",
+    how: "You scooped it from the edge of the gift table at 6:20, five minutes after the royal party reached the Hall, beside a pewter tin with a crow stamp and a crooked lid. The dust was already there when you walked in." },
   bonus: [
     "The dust in your napkin is dried, ground wolfsbane root.",
     "The pouch found outside the garden door had a blue cord. Master Crowe sold only one blue pouch.",
@@ -83,7 +83,7 @@ cedric: {
     quest: ["The Armorer's Receipt", "You want proof your helm was mended on time. Find the receipt (your squire has it) and turn it in."]
   },
   ev: { name: "The Tilt-Yard Tablet", emoji: "🛡️",
-    text: "<span class='aname'>WAX TABLET OF THE MARSHAL OF THE LISTS</span>Oct 31. Practice at the quintain, Sir Cedric Brightblade and squire. From <b>three o'clock until half past four</b>. <b>Forty-one</b> passes. (Sir Cedric says forty. The Marshal has noted forty-one.)<br>One dent in a helm. One dent in a goose. <i>Marshal's mark: ♞</i>",
+    text: "<span class='aname'>WAX TABLET OF THE MARSHAL OF THE LISTS</span>Oct 31. Practice at the quintain, Sir Cedric Brightblade and squire. From <b>three o'clock until half past four</b>. <b>Forty-one</b> passes. (Sir Cedric says forty. The Marshal has noted forty-one.)<br>At half past four the squire was sent off with the dented helm to the smithy. Sir Cedric went off alone to rest. <i>(Marshal: 'Neither looked back.')</i><br>One dent in a helm. One dent in a goose. <i>Marshal's mark: ♞</i>",
     how: "The Marshal handed it to you as proof of your passes. You intend to show it to everyone as proof of your forty victories. (It is only a practice tablet.)" },
   bonus: [
     "Wolfsbane is the old hunters' wolf-bait: a tiny dose kills a wolf. For a person, it numbs the tongue first.",
@@ -149,13 +149,13 @@ tobias: {
 reginald: {
   p2: {
     afternoon: "You spent the late afternoon strolling alone around the keep, admiring the architecture and the gardens. You are vague about exactly where and for how long: you never could keep track of time, unless a meal was involved.",
-    story: "Two letters were slid under your door: one addressed to you, one to Sir Cedric (clearly misdelivered, since his room is next to yours). You pocketed both, as you pocket everything. On Oct 30 Master Crowe also sold you a pouch of wolfsbane, on credit, for the wolves among the manor sheep. You forgot it in your saddlebag at the manor's stables and never brought it.",
+    story: "Two letters were slid under your door: one addressed to you, one to Sir Cedric (clearly misdelivered, since his room is next to yours). You pocketed both, as you pocket everything. On Oct 30 Master Crowe also sold you a pouch of wolfsbane, on credit, for the wolves among the manor sheep, and sent it on to Thornbury Manor by his rider (the delivery note is with the letters). You never saw the pouch itself.",
     secret: "ABOUT YOUR DEBT: you owe the Baron and Master Crowe 300 marks, due on All Souls' Day, or Thornbury Manor is forfeit. You have told no one. Your wife would die of shame. You hope that, somehow, it will all go away.",
     herring: "You are firmly convinced that Squire Wat is the murderer. He is always carrying things around the Hall, and a person with a tray can hide anything. You do not know what clears him.",
     quest: ["Lady Rosamund's chapel offering receipt", "You want proof your wife has been praying for your finances. Find her receipt from the chapel (she is guarding it) and turn it in."]
   },
   ev: { name: "Master Crowe's Demand Letters", emoji: "✉️",
-    text: "<span class='aname'>CROWE &amp; CO., jointly with Baron Godfrey</span><b>Letter 1.</b> To Lord Reginald Thornbury: three hundred marks due by <b>All Souls' Day (Nov 2)</b>, or <b>Thornbury Manor shall be forfeit</b>.<br><b>Letter 2.</b> To Sir Cedric Brightblade: fifty marks due by All Souls' Day, or his <b>warhorse Valor and gilt spurs shall be seized</b>.<br><i>'I shall announce both at the toast, for shame pays faster than silver.' B. Crowe</i>",
+    text: "<span class='aname'>CROWE &amp; CO., jointly with Baron Godfrey</span><b>Letter 1.</b> To Lord Reginald Thornbury: three hundred marks due by <b>All Souls' Day (Nov 2)</b>, or <b>Thornbury Manor shall be forfeit</b>.<br><b>Letter 2.</b> To Sir Cedric Brightblade: fifty marks due by All Souls' Day, or his <b>warhorse Valor and gilt spurs shall be seized</b>.<br><i>'I shall announce both at the toast, for shame pays faster than silver.' B. Crowe</i><br><b>Delivery note.</b> 'Wolfsbane, red cord, sold to Lord T. on credit. Sent by my rider to Thornbury Manor today, as it is not fit to be carried among guests. B.C.'",
     how: "Both were slid under your door this morning. The second was clearly misdelivered. You pocketed both and tried not to read the last line." },
   bonus: [
     "The pouch found in the garden was blue. Your red pouch is not the one used.",
@@ -176,7 +176,7 @@ rosamund: {
     text: "<span class='aname'>CHAPEL OF ST. ETHELBURGA, RAVENMOOR</span>Received this day, All Hallows' Eve, of <b>Lady Rosamund Thornbury</b>: an offering of <b>seven candles</b> and a coin, for the vigil. Lady Rosamund entered at five o'clock and kept the vigil <b>until the six o'clock bell</b>.<br><i>Br. Ambrose Marlowe, chaplain</i> (and a small drawing of a tankard).",
     how: "Brother Ambrose gave it to you after the vigil. You keep every receipt. You never know when you might need one." },
   bonus: [
-    "The empty pouch had a blue cord. The red one is sealed in your husband's saddlebag at the manor stables.",
+    "The empty pouch had a blue cord. The red one was sent by Master Crowe's rider to Thornbury Manor and never came to the keep.",
     "Brother Ambrose's register confirms you never left the vigil between five and six.",
     "Master Crowe intended to announce two seizures at the toast: a warhorse and a manor."
   ]
@@ -219,9 +219,9 @@ isolde: {
     herring: "You are firmly convinced that Brother Ambrose the Friar is the murderer. He is a herbalist, he mutters dark Latin, and he looked twitchy when Crowe fell. You do not know what clears him.",
     quest: ["The Armorer's Receipt", "You wish to see what the squire has been carrying about. Find his receipt and turn it in."]
   },
-  ev: { name: "Master Crowe's Marriage Proposal", emoji: "💌",
-    text: "<span class='aname'>FROM MASTER CROWE</span>To Their Majesties of Aldermere:<br><i>'I humbly offer the hand of the Princess Isolde to my nephew, Hob Crowe, with the exclusive wool and silk rights of the kingdom as her dowry. I expect your answer by All Souls'.'</i><br>(The Queen of Aldermere has written across it: <b>'NEVER!'</b> and underlined it three times.)",
-    how: "You found it crumpled in your mother's travelling case. You were horrified and kept it." },
+  ev: { name: "The Princess's Sketchbook", emoji: "🎨",
+    text: "<span class='aname'>SKETCHBOOK OF PRINCESS ISOLDE</span>Page 7: <i>Hollin Smithy, by the smithy's clock, <b>half past five</b>.</i> Quick portraits: the King asleep on a barrel, the Queen frowning at the axle, the Magister covered in mud, the Jester juggling socks, the minstrel singing at a donkey.<br>Page 8: <i>The road. A quarter to six.</i> Everyone squashed into the carriage. Page 9: <i>The gate. A quarter past six.</i> A very cross Herald.",
+    how: "You draw everything. You drew all this to pass the time while the smith mended the axle." },
   bonus: [
     "Wolfsbane makes the tongue tingle and go numb, and then the heart falters.",
     "The royal party's axle was not mended until a quarter to six.",
@@ -256,7 +256,7 @@ godwin: {
     quest: ["The empty wolfsbane pouch", "You want to see whose poison it was and who left it on your clean garden path. Find the pouch and turn it in."]
   },
   ev: { name: "The Steward's Tally of Doors", emoji: "🗝️",
-    text: "<span class='aname'>STEWARD'S TALLY OF DOORS</span>Oct 31, the Great Hall:<br>• <b>4:15</b> Gift table set: 3 gifts, covered or sealed. (Pewter tin, crow stamp, lid shut.)<br>• <b>4:30</b> Hall closed. MAIN DOOR barred, key on my belt. Garden door latched (<i>no bolt, as ever</i>).<br>• <b>4:35 to 6:00</b> Steward in cellar, inventory of 14 casks.<br>• <b>6:00</b> Bell. Hall opened. Nobody seen in or out.",
+    text: "<span class='aname'>STEWARD'S TALLY OF DOORS</span>Oct 31, the Great Hall:<br>• <b>4:15</b> Gift table set: 3 gifts, covered or sealed. (Pewter tin, crow stamp, lid shut.)<br>• <b>4:30</b> Hall closed. MAIN DOOR barred, key on my belt. Garden door latched (<i>no bolt, as ever</i>).<br>• <b>4:35 to 6:00</b> Steward in cellar with the cooper, inventory of 14 casks (<i>cooper's mark: ⌘</i>).<br>• <b>6:00</b> Bell. Hall opened. Nobody seen in or out.",
     how: "You wrote it as you went, because you write everything down." },
   bonus: [
     "The gift table held three gifts when the Hall was closed, and still held three at half past six. Master Crowe's tin was the only one with its lid crooked.",
