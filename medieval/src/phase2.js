@@ -2,7 +2,7 @@
 module.exports = {
  "baron": {
   "p2": {
-   "afternoon": "From half past five until the seven o'clock bell you were in the kitchens, tasting soups with the cook. You counted fourteen soups (it was fifteen; you will say fourteen). You left only once, to shout at a kitchen boy.",
+   "afternoon": "From half past five until the seven o'clock bell you were in the kitchens, tasting soups with the cook. You counted fourteen soups (it was fifteen; you will say fourteen). You never left the kitchens; you shouted at a kitchen boy from the hearth.",
    "story": "At supper the night before, you and Master Crowe argued about announcing your debtors' names at the toast: Crowe insisted that 'shame pays faster than silver'. You called it ungentlemanly. He laughed, and hinted he might also mention your Eastern silk to the foreign Lady, which made you furious.",
    "secret": "ABOUT LORD THORNBURY: you saw him slip into the kitchen at half past five to pilfer comfits (he has stolen sweets from your kitchen since he was a boy). The cook caught him and put him to work at the spit until the seven o'clock bell. He did not leave once.",
    "herring": "You are firmly convinced that Tobias the Jester is the murderer. He mocked you at the last feast and you threatened to banish him, and a jester who hates a host would sooner poison the party than leave it. You do not know what clears him.",
@@ -14,7 +14,7 @@ module.exports = {
   "ev": {
    "name": "The Cook's Kitchen Chit",
    "emoji": "🍲",
-   "text": "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Fifteen</b> soups tasted, four spilled.<br><b>5:30</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><b>7:00</b> Bell. Both released. Spit still greasy.<br><i>Cook's mark: ✿</i>",
+   "text": "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Fifteen</b> soups tasted, four spilled. The Baron stays at the hearth until the bell.<br><b>5:30</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><b>7:00</b> Bell. Both released. Spit still greasy.<br><i>Cook's mark: ✿</i>",
    "how": "The cook handed it to you at the bell, to prove you owed her nothing for the soup you tasted."
   },
   "bonus": [
@@ -163,7 +163,7 @@ module.exports = {
  },
  "tobias": {
   "p2": {
-   "afternoon": "You rode with the King, Queen Margarethe and the Princess in the cart behind the royal carriage, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past seven, singing the whole way.",
+   "afternoon": "You rode in the royal carriage with the King, Queen Margarethe, the Princess and the Magister, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past seven, singing the whole way.",
    "story": "At half past seven, as the guests settled, your bell fell off your hat and rolled out through the Hall's garden door. You went after it and, in the shrubs just outside the door, you found a crumpled, empty linen pouch tied with a blue cord, as if someone had tossed it quickly away. You pocketed it with a rhyme.",
    "secret": "ABOUT MASTER CROWE: at 7:40 he whispered to you, 'Tonight at the toast, Fool, I shall sell somebody's horse, somebody's manor and somebody's secret, in front of everyone!' He winked. You promised not to tell.",
    "herring": null,
@@ -192,14 +192,14 @@ module.exports = {
    "herring": "You are firmly convinced that Squire Wat is the murderer. He is always carrying things around the Hall, and a person with a tray can hide anything. You do not know what clears him.",
    "quest": [
     "The Cook's Kitchen Chit",
-    "You want proof (to show your wife) that you were punished unjustly. Find the cook's chit (the Baron has it) and turn it in."
+    "You promised the cook a wager on how many chickens burned. Find her kitchen chit (the Baron has it) and turn it in."
    ]
   },
   "ev": {
    "name": "Master Crowe's Demand Letters",
    "emoji": "✉️",
    "text": "<span class='aname'>CROWE &amp; CO., jointly with Baron Godfrey</span><b>Letter 1.</b> To Lord Reginald Thornbury: three hundred marks due by <b>All Souls' Day (Nov 2)</b>, or <b>Thornbury Manor shall be forfeit</b>.<br><b>Letter 2.</b> To Sir Cedric Brightblade: fifty marks due by All Souls' Day, or his <b>warhorse Valor and gilt spurs shall be seized</b>.<br><b>Letter 3.</b> To Baron Godfrey: <b>'Double my share, or I shall tell the Exalted Lady what your Eastern silk is made of.'</b><br><i>'I shall announce all three at the toast, for shame pays faster than silver.' B. Crowe</i><br><b>Delivery note.</b> 'Wolfsbane, red cord, sold to Sir C. for the hunt. Sent by my rider to the Baron's hunting lodge, as it is not fit to be carried among guests. B.C.'",
-   "how": "Both were slid under your door this morning. The second was clearly misdelivered. You pocketed both and tried not to read the last line."
+   "how": "All three were slid under your door this morning. The second and third were clearly misdelivered. You pocketed all three and tried not to read the last line."
   },
   "bonus": [
    "The pouch found in the garden was blue. Master Crowe's ledger says who bought the blue one.",
@@ -209,9 +209,9 @@ module.exports = {
  },
  "rosamund": {
   "p2": {
-   "afternoon": "At about six o'clock you went to the chapel for the All Hallows' vigil and lit seven candles for your husband's finances. You prayed, stepped out for some air at one point (you are vague about how long), came back, and prayed until the seven o'clock bell. Brother Ambrose gave you a receipt for the offering, as you never go anywhere without a receipt.",
-   "story": "You have not seen your husband much since lunch. He said he would 'take the air'. He is always vague about afternoons. At supper he was as vague and charming as ever.",
-   "secret": "ABOUT THE DEBT: your husband owes the Baron and Master Crowe 300 marks, due on All Souls' Day, or Thornbury Manor is forfeit. You found out only last night. He does not know you know. You have been sick with worry.",
+   "afternoon": "At about six o'clock you went to the chapel for the All Hallows' vigil and lit seven candles for your husband's finances. You prayed, took a breath of air outside at some point, came back, and prayed until the seven o'clock bell. Brother Ambrose gave you a receipt for the offering, as you never go anywhere without a receipt.",
+   "story": "You have not seen your husband much since lunch. He said he would 'take the air'. He is always elsewhere in the afternoons. At supper he was as absent-minded and charming as ever.",
+   "secret": "ABOUT THE DEBT: your husband owes the Baron and Master Crowe 300 marks, due on All Souls' Day, or Thornbury Manor is forfeit. You found out only last night, when Master Crowe let slip at supper that he would name his debtors at the toast. He does not know you know. You have been sick with worry.",
    "herring": "You are firmly convinced that Baron Godfrey is the murderer. He was Crowe's partner and Crowe could have exposed his fake silk, and you cannot imagine the Baron missing a chance to be dramatic. You do not know what clears him.",
    "quest": [
     "The empty wolfsbane pouch",
@@ -221,12 +221,12 @@ module.exports = {
   "ev": {
    "name": "The Chapel Offering Receipt",
    "emoji": "🕯️",
-   "text": "<span class='aname'>CHAPEL OF ST. ETHELBURGA, RAVENMOOR</span>Received this day, All Hallows' Eve, of <b>Lady Rosamund Thornbury</b>: an offering of <b>seven candles</b> and a coin, for the vigil. Lady Rosamund entered at six o'clock, finding Br. Ambrose already at the altar since half past five, stepped out 'for air' at ten past six, returned at ten to seven, and kept the vigil <b>until the seven o'clock bell</b>.<br><i>Br. Ambrose Marlowe, chaplain</i> (and a small drawing of a tankard).",
+   "text": "<span class='aname'>CHAPEL OF ST. ETHELBURGA, RAVENMOOR</span>Received this day, All Hallows' Eve, of <b>Lady Rosamund Thornbury</b>: an offering of <b>seven candles</b> and a coin, for the vigil. Lady Rosamund entered at six o'clock, finding Br. Ambrose already at the altar since half past five, and kept the vigil <b>until the seven o'clock bell</b>.<br><i>Br. Ambrose Marlowe, chaplain</i> (and a small drawing of a tankard).",
    "how": "Brother Ambrose gave it to you after the vigil. You keep every receipt. You never know when you might need one."
   },
   "bonus": [
    "The empty pouch had a blue cord. The red one was sent by Master Crowe's rider to the Baron's hunting lodge and never came into the keep.",
-   "Brother Ambrose's register says you stepped out at ten past six and returned at ten to seven.",
+   "Brother Ambrose's register records the candles you lit and the hours of your vigil. He keeps it beside his tankard.",
    "Master Crowe intended to announce two seizures and a secret at the toast: a warhorse, a manor, and what the Baron's silk is made of."
   ]
  },
@@ -384,7 +384,7 @@ module.exports = {
  },
  "lucien": {
   "p2": {
-   "afternoon": "You rode to Ravenmoor on the back of the royal baggage cart with Tobias the Jester. The axle of the royal carriage broke near Hollin and the whole party waited at the smithy until a quarter to seven, so you reached the keep only at a quarter past seven. You spent the wait composing a ballad. Tobias did not appreciate it.",
+   "afternoon": "You rode to Ravenmoor on the royal baggage cart behind the carriage, in earshot of Tobias the Jester. The axle of the royal carriage broke near Hollin and the whole party waited at the smithy until a quarter to seven, so you reached the keep only at a quarter past seven. You spent the wait composing a ballad. Tobias did not appreciate it.",
    "story": "At an earlier feast the Baron promised to pay you for a song and never did. While tuning your lute in the Hall at about half past seven you noticed the gift table: three gifts, and one pewter tin with a crow stamp whose lid sat crooked and whose rim had a grey smudge on it.",
    "secret": "ABOUT THE GIFT TABLE: you noticed that tin because it was the only gift not covered in cloth. You thought of lifting a ginger piece for the road, but the cook was glaring.",
    "herring": "You are firmly convinced that Baron Godfrey is the murderer. He has kept your wages from you, and he looked far too calm when Crowe fell. You do not know what clears him.",

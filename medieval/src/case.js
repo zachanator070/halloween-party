@@ -30,6 +30,7 @@ function buildPhase2(X) {
   // ---- common: three letters, silk accounts, rider note for the red (Cedric's) pouch
   P.reginald.p2.story = "Three letters were slid under your door: one addressed to you, one to Sir Cedric and one to the Baron (clearly misdelivered by the page-boy, who cannot read). You pocketed all three, as you pocket everything.";
   P.reginald.ev.text = "<span class='aname'>CROWE &amp; CO., jointly with Baron Godfrey</span><b>Letter 1.</b> To Lord Reginald Thornbury: three hundred marks due by <b>All Souls' Day (Nov 2)</b>, or <b>Thornbury Manor shall be forfeit</b>.<br><b>Letter 2.</b> To Sir Cedric Brightblade: fifty marks due by All Souls' Day, or his <b>warhorse Valor and gilt spurs shall be seized</b>.<br><b>Letter 3.</b> To Baron Godfrey: <b>'Double my share, or I shall tell the Exalted Lady what your Eastern silk is made of.'</b><br><i>'I shall announce all three at the toast, for shame pays faster than silver.' B. Crowe</i><br><b>Delivery note.</b> 'Wolfsbane, red cord, sold to Sir C. for the hunt. Sent by my rider to the Baron's hunting lodge, as it is not fit to be carried among guests. B.C.'";
+  P.reginald.p2.quest[1] = "You promised the cook a wager on how many chickens burned. Find her kitchen chit (the Baron has it) and turn it in.";
   P.reginald.bonus[0] = "The pouch found in the garden was blue. Master Crowe's ledger says who bought the blue one.";
   P.rosamund.bonus[0] = "The empty pouch had a blue cord. The red one was sent by Master Crowe's rider to the Baron's hunting lodge and never came into the keep.";
   P.rosamund.bonus[2] = "Master Crowe intended to announce two seizures and a secret at the toast: a warhorse, a manor, and what the Baron's silk is made of.";
@@ -49,23 +50,22 @@ function buildPhase2(X) {
   // ---- the murderer's gap in an otherwise airtight set of alibis
   if (X === 'reginald') {
     P.baron.ev.text = "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Fifteen</b> soups tasted, four spilled. The Baron stays until the bell.<br><b>5:35</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Chased off with a ladle.</b> Ran toward the garden passage.<br><b>7:00</b> Bell. Spit still greasy.<br><i>Cook's mark: ✿</i>";
-    P.reginald.p2.afternoon = "You spent the late afternoon strolling alone around the keep and the gardens, admiring the architecture, with one brief trip to the kitchen for comfits from which you were chased with a ladle. You are vague about exactly where you went and for how long: you never could keep track of time, unless a meal was involved.";
-    P.reginald.bonus[2] = "The cook says she chased you out of her kitchen at about twenty-five to six, and you bolted toward the garden passage.";
-    P.reginald.p2.quest[1] = "You want proof that all you did was fetch comfits. Find the cook's chit (the Baron has it) and turn it in.";
+    P.reginald.p2.afternoon = "You spent the late afternoon strolling alone around the keep and the gardens, admiring the architecture, with one brief trip to the kitchen for comfits, from which you were chased with a ladle. Then you strolled some more.";
+    P.reginald.bonus[2] = "The cook says she chased you out of her kitchen with a ladle at about twenty-five to six.";
     P.baron.p2.secret = "ABOUT LORD THORNBURY: at about half past five he slipped into the kitchen to pilfer comfits (he has stolen sweets from your kitchen since he was a boy). The cook chased him out with a ladle and he bolted toward the garden passage. You did not see where he went.";
     P.baron.p2.story = P.baron.p2.story;
   }
   if (X === 'rosamund') {
-    P.rosamund.p2.afternoon = "At about six o'clock you went to the chapel for the All Hallows' vigil and lit seven candles for your husband's finances. You prayed, stepped out for some air at one point (you are vague about how long), came back, and prayed until the seven o'clock bell. Brother Ambrose gave you a receipt for the offering, as you never go anywhere without a receipt.";
-    sub(P.rosamund.ev, 'text', "and kept the vigil <b>until the seven o'clock bell</b>.", "stepped out 'for air' at ten past six, returned at ten to seven, and kept the vigil <b>until the seven o'clock bell</b>.");
-    P.rosamund.bonus[1] = "Brother Ambrose's register says you stepped out at ten past six and returned at ten to seven.";
+    P.rosamund.p2.afternoon = "At about six o'clock you went to the chapel for the All Hallows' vigil and lit seven candles for your husband's finances. You prayed, took a breath of air outside at some point, came back, and prayed until the seven o'clock bell. Brother Ambrose gave you a receipt for the offering, as you never go anywhere without a receipt.";
+    P.rosamund.bonus[1] = "Brother Ambrose's register records the candles you lit and the hours of your vigil. He keeps it beside his tankard.";
     P.ambrose.p2.afternoon = "From half past five you were in the chapel, sweeping and setting out seven candles; Tam the bell-boy rang the half-hour bell and saw you. At six o'clock Lady Rosamund Thornbury came for the vigil and lit the candles. You sat in the back with a tankard, nodding off, and gave her a receipt. You cannot swear she stayed the whole hour, as you dozed.";
     P.ambrose.ev.text = "<span class='aname'>VIGIL REGISTER, ST. ETHELBURGA</span>All Hallows' Eve:<br><b>5:30</b> Chapel opened by Br. Ambrose, swept, seven candles set. Half-hour bell rung by Tam the bell-boy, who saw him.<br><b>6:00</b> Present: Lady Rosamund Thornbury. Seven candles lit.<br><b>6:10</b> Lady Rosamund steps out for air. <b>6:50</b> Returns. (Br. Ambrose dozing. Mead.)<br><b>7:00</b> Bell.<br><i>Witness: Tam the bell-boy, who rang every bell and saw Br. Ambrose at his post (mark ✱).</i>";
     P.wat.bonus[2] = "Two of Lady Rosamund's seven vigil candles had guttered out and been relit.";
   }
   if (X === 'baron') {
-    P.baron.ev.text = "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Eleven</b> soups tasted by ten to six.<br><b>5:50</b> The Baron leaves, saying he must 'inspect the cellar and the herb garden'. Not seen again until <b>6:45</b>. Four more soups tasted. (He says fifteen.)<br><b>5:30</b> Lord Thornbury caught at the door with comfits. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><i>Cook's mark: ✿</i>";
-    P.baron.p2.afternoon = "From half past five you were in the kitchens, tasting soups with the cook (fifteen; you will say fifteen). At some point you went off to 'inspect the cellar and the herb garden' for a good while (you lose track of time on inspections), then returned to the kitchens before the seven o'clock bell.";
+    P.baron.ev.text = "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. (He says <b>fifteen</b> soups; the cook did not count.)<br><b>5:30</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><b>7:00</b> Bell. Lord Thornbury released. Spit still greasy.<br><i>Cook's mark: ✿</i>";
+    P.reginald.p2.story += " While you turned the spit you noticed that the Baron, who had come to taste soups, went off for the best part of an hour after announcing he must 'inspect the cellar and the herb garden'.";
+    P.baron.p2.afternoon = "From half past five you were in the kitchens, tasting soups with the cook (fifteen; you will say fifteen). Then you went off to inspect the cellar and the herb garden, and returned to the kitchens before the seven o'clock bell.";
     P.suyin.bonus[2] = "The cook says the Baron tasted soups from half past five, but left around ten to six and was not back until a quarter to seven.";
     P.tobias.bonus[2] = "The cook says the Baron left her kitchen at about ten to six to 'inspect the cellar'. Lord Thornbury, however, never left the spit.";
   }
@@ -98,8 +98,8 @@ function solutionFor(X) {
   }[X];
   const opportunity = {
     reginald: "Strolling alone with no alibi. The cook's chit shows him chased from the kitchen at 5:35, running toward the garden passage. About 6:20 he entered the Hall by the garden door, emptied the pouch into the tin, left the lid crooked and tossed the empty pouch into the shrubs.",
-    rosamund: "Stepped out of the chapel 6:10 to 6:50 'for air' (register and her own receipt record the gap; Brother Ambrose was dozing but Tam the bell-boy kept watch on him). In that gap she entered the Hall by the garden door, emptied the pouch into the tin, left the lid crooked and tossed the empty pouch into the shrubs.",
-    baron: "Left the kitchens at about 5:50 and was not seen until 6:45 ('inspecting the cellar and the herb garden'); the cook's chit records the gap. In that time he entered the Hall by the garden door, emptied the pouch into the tin, left the lid crooked and tossed the empty pouch into the shrubs."
+    rosamund: "Stepped out of the chapel 6:10 to 6:50 'for air' (the vigil register records the gap; her receipt, written by the dozing chaplain, claims the full hour; Brother Ambrose was dozing but Tam the bell-boy kept watch on him). In that gap she entered the Hall by the garden door, emptied the pouch into the tin, left the lid crooked and tossed the empty pouch into the shrubs.",
+    baron: "Left the kitchens at about 5:50 and was not seen until 6:45 ('inspecting the cellar and the herb garden'); Lord Thornbury (turning the spit) noticed the absence, and the bonus clues from the cook confirm it; no document clears him. In that time he entered the Hall by the garden door, emptied the pouch into the tin, left the lid crooked and tossed the empty pouch into the shrubs."
   }[X];
   const row = (who, claim, src) => '| ' + who + ' | ' + claim + ' | ' + src + ' |';
   const gap = (id, alibi, src) => (id === X ? row(NAMES[id], '**NO ALIBI: ' + {
@@ -108,8 +108,8 @@ function solutionFor(X) {
     baron: 'absent from the kitchens 5:50 to 6:45'
   }[id] + '**', {
     reginald: 'Cook\'s chit (names him only at 5:35)',
-    rosamund: 'Her receipt and the vigil register (name the gap)',
-    baron: 'Cook\'s chit (names the gap)'
+    rosamund: 'Vigil register (names the gap); her receipt claims the full hour',
+    baron: 'Lord Thornbury\'s account and the cook\'s bonus clues; no document clears him'
   }[id]) : row(NAMES[id] || id, alibi, src));
 
   return `# SEALED REFERENCE (v3): Hallowmas Feast at Ravenmoor (1342), victim: Master Crowe
@@ -123,7 +123,7 @@ Reviewer / host-at-the-reveal only. Regenerated with a randomly chosen murderer.
 - **Motive:** ${motive}
 - **Means:** ${means}
 - **Opportunity:** the Hall was closed 5:30 to 7:00 (main door barred, garden door latched but not bolted); the gifts, including Crowe's shut tin, sat on the gift table from 5:15. ${opportunity}
-- **Why unaware:** no card describes the deed. The murderer's cards give only a vague stretch of time and the same kinds of detail as everyone else's. The reveal narrates the deed as done offstage before the game began.
+- **Why unaware:** no card describes the deed. The murderer's cards describe their time in plain, specific, unevasive terms (an errand, some air, a stroll) and the same kinds of detail as everyone else's; the gap is documented only on other players' cards or by evidence the murderer does not hold. The reveal narrates the deed as done offstage before the game began.
 - **Decoy motives:** Crowe's three demand letters threaten Lord Thornbury (the manor), Sir Cedric (his horse Valor) and the Baron (silk exposure), so each has a reason to want Crowe quiet. The RED pouch went to Sir Cedric and was sent on to the Baron's hunting lodge by rider; the GREEN pouch is the Magister's and still sealed.
 
 ## 2. Timeline (Oct 31, 1342; story time equals party time)
@@ -158,7 +158,7 @@ Exactly one cast member (the murderer) has no alibi.
 | Holder | Evidence | What it shows |
 |---|---|---|
 | Crowe (ghost) | Day Ledger | BLUE pouch to the murderer, GREEN to the Magister, RED to Sir Cedric (sent to the hunting lodge); loans to Lord Thornbury (300) and Sir Cedric (50); the Baron's silk |
-| Baron | Cook's kitchen chit | The cook's account of the kitchen from 5:30 to 7:00 |
+| Baron | Cook's kitchen chit | ${{ reginald: 'The cook chased Lord Thornbury off at 5:35 (toward the garden passage); the Baron stayed at the soups', rosamund: 'Lord Thornbury turned the spit until the bell; the Baron stayed at the soups until the bell', baron: 'Lord Thornbury turned the spit until the bell; silent about the Baron after he arrived' }[X]} |
 | Queen Suyin | Order of Ceremonies | Gifts set 5:15; Hall closed 5:30; main door barred, garden door latched; schedule lines for the Baron and the tea |
 | King | Napkin of bitter dust | Wolfsbane spilled at the gift table before the royal party arrived (cloth laid fresh at 5:15) |
 | Queen Margarethe | Herald's Roll | Royals arrived 7:15 |
@@ -194,7 +194,7 @@ Awards: Master Detective to every guest who names the murderer; Richest Purse (m
 - A spare guest arriving: no change.
 
 ## 9. Known tells for the reviewer to judge
-- The murderer's card has the only vague afternoon among the cast; a host who reads every card could spot it.
+- The murderer's own afternoon is the only one with an unwitnessed stretch (everyone else's is documented); a host who reads every card could infer it. The wording is plain, not evasive, and the gap is documented on other players' cards.
 - Several characters have motives (Lord, Lady, Cedric, Baron), so the evidence rather than motive must decide.
 - The host plays the Baron and sees the printed cards.
 

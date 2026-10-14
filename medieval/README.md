@@ -1,6 +1,6 @@
 # The Hallowmas Feast at Ravenmoor
 
-Medieval Halloween murder mystery for 13 players (16 characters designed; 3 spares).
+Medieval Halloween murder mystery for 15 players (16 characters designed; 1 spare).
 
 | Path | What it is |
 |---|---|

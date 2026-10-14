@@ -4,14 +4,14 @@ const PHASE2 = {
 
 baron: {
   p2: {
-    afternoon: "From half past five until the seven o'clock bell you were in the kitchens, tasting soups with the cook. You counted fourteen soups (it was fifteen; you will say fourteen). You left only once, to shout at a kitchen boy.",
+    afternoon: "From half past five until the seven o'clock bell you were in the kitchens, tasting soups with the cook. You counted fourteen soups (it was fifteen; you will say fourteen). You never left the kitchens; you shouted at a kitchen boy from the hearth.",
     story: "At supper the night before, you and Master Crowe argued about announcing your debtors' names at the toast: Crowe insisted that 'shame pays faster than silver'. You called it ungentlemanly. He laughed. Today, Lord Thornbury spent the whole evening turning the spit beside you, complaining that it was beneath him.",
     secret: "ABOUT LORD THORNBURY: you saw him slip into the kitchen at half past five to pilfer comfits (he has stolen sweets from your kitchen since he was a boy). The cook caught him and put him to work at the spit until the seven o'clock bell. He did not leave once.",
     herring: "You are firmly convinced that Tobias the Jester is the murderer. He mocked you at the last feast and you threatened to banish him, and a jester who hates a host would sooner poison the party than leave it. You do not know what clears him.",
     quest: ["Master Crowe's Day Ledger", "Your partner kept his ledger of sales and loans. Find it (Crowe's ghost has it) and turn it in. Ask nicely: ghosts cannot carry things."]
   },
   ev: { name: "The Cook's Kitchen Chit", emoji: "🍲",
-    text: "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Fifteen</b> soups tasted, four spilled.<br><b>5:30</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><b>7:00</b> Bell. Both released. Spit still greasy.<br><i>Cook's mark: ✿</i>",
+    text: "<span class='aname'>KITCHEN TALLY, in the cook's hand</span><b>5:30</b> The Baron comes in to taste the soups. <b>Fifteen</b> soups tasted, four spilled. The Baron stays at the hearth until the bell.<br><b>5:30</b> Lord Thornbury caught at the door with comfits in his pockets. <b>Set to turn the spit and scour the pots until the seven o'clock bell.</b> Two chickens burned.<br><b>7:00</b> Bell. Both released. Spit still greasy.<br><i>Cook's mark: ✿</i>",
     how: "The cook handed it to you at the bell, to prove you owed her nothing for the soup you tasted." },
   bonus: [
     "The poison was wolfsbane, also called monkshood: ground dried root. A strong dose numbs the tongue and tingles the lips within moments of tasting.",
@@ -130,7 +130,7 @@ mordecai: {
 
 tobias: {
   p2: {
-    afternoon: "You rode with the King, Queen Margarethe and the Princess in the cart behind the royal carriage, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past seven, singing the whole way.",
+    afternoon: "You rode in the royal carriage with the King, Queen Margarethe, the Princess and the Magister, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past seven, singing the whole way.",
     story: "At half past seven, as the guests settled, your bell fell off your hat and rolled out through the Hall's garden door. You went after it and, in the shrubs just outside the door, you found a crumpled, empty linen pouch tied with a blue cord, as if someone had tossed it quickly away. You pocketed it with a rhyme.",
     secret: "ABOUT MASTER CROWE: at 7:40 he whispered to you, 'Tonight at the toast, Fool, I shall sell somebody's horse and somebody's manor, in front of everyone!' He winked. You promised not to tell.",
     herring: null,
@@ -156,7 +156,7 @@ reginald: {
   },
   ev: { name: "Master Crowe's Demand Letters", emoji: "✉️",
     text: "<span class='aname'>CROWE &amp; CO., jointly with Baron Godfrey</span><b>Letter 1.</b> To Lord Reginald Thornbury: three hundred marks due by <b>All Souls' Day (Nov 2)</b>, or <b>Thornbury Manor shall be forfeit</b>.<br><b>Letter 2.</b> To Sir Cedric Brightblade: fifty marks due by All Souls' Day, or his <b>warhorse Valor and gilt spurs shall be seized</b>.<br><i>'I shall announce both at the toast, for shame pays faster than silver.' B. Crowe</i><br><b>Delivery note.</b> 'Wolfsbane, red cord, sold to Lord T. on credit. Sent by my rider to Thornbury Manor today, as it is not fit to be carried among guests. B.C.'",
-    how: "Both were slid under your door this morning. The second was clearly misdelivered. You pocketed both and tried not to read the last line." },
+    how: "All three were slid under your door this morning. The second and third were clearly misdelivered. You pocketed all three and tried not to read the last line." },
   bonus: [
   "The pouch found in the garden was blue. Your red pouch is not the one used.",
   "The Marshal confirms that practice at the tilt-yard ended at half past five.",
@@ -167,8 +167,8 @@ reginald: {
 rosamund: {
   p2: {
     afternoon: "At about six o'clock you went to the chapel for the All Hallows' vigil and lit seven candles for your husband's finances. You stayed in prayer until the seven o'clock bell. Brother Ambrose gave you a receipt for the offering, as you never go anywhere without a receipt.",
-    story: "You have not seen your husband much since lunch. He said he would 'take the air'. He is always vague about afternoons. At supper he was as vague and charming as ever.",
-    secret: "ABOUT THE DEBT: your husband owes the Baron and Master Crowe 300 marks, due on All Souls' Day, or Thornbury Manor is forfeit. You found out only last night. He does not know you know. You have been sick with worry.",
+    story: "You have not seen your husband much since lunch. He said he would 'take the air'. He is always elsewhere in the afternoons. At supper he was as absent-minded and charming as ever.",
+    secret: "ABOUT THE DEBT: your husband owes the Baron and Master Crowe 300 marks, due on All Souls' Day, or Thornbury Manor is forfeit. You found out only last night, when Master Crowe let slip at supper that he would name his debtors at the toast. He does not know you know. You have been sick with worry.",
     herring: "You are firmly convinced that Baron Godfrey is the murderer. He was Crowe's partner and Crowe could have exposed his fake silk, and you cannot imagine the Baron missing a chance to be dramatic. You do not know what clears him.",
     quest: ["The empty wolfsbane pouch", "You cannot abide litter in a lady's garden. Find the discarded pouch (the Jester has it) and turn it in."]
   },
@@ -286,7 +286,7 @@ ambrose: {
 
 lucien: {
   p2: {
-    afternoon: "You rode to Ravenmoor on the back of the royal baggage cart with Tobias the Jester. The axle of the royal carriage broke near Hollin and the whole party waited at the smithy until a quarter to seven, so you reached the keep only at a quarter past seven. You spent the wait composing a ballad. Tobias did not appreciate it.",
+    afternoon: "You rode to Ravenmoor on the royal baggage cart behind the carriage, in earshot of Tobias the Jester. The axle of the royal carriage broke near Hollin and the whole party waited at the smithy until a quarter to seven, so you reached the keep only at a quarter past seven. You spent the wait composing a ballad. Tobias did not appreciate it.",
     story: "At an earlier feast the Baron promised to pay you for a song and never did. While tuning your lute in the Hall at about half past seven you noticed the gift table: three gifts, and one pewter tin with a crow stamp whose lid sat crooked and whose rim had a grey smudge on it.",
     secret: "ABOUT THE GIFT TABLE: you noticed that tin because it was the only gift not covered in cloth. You thought of lifting a ginger piece for the road, but the cook was glaring.",
     herring: "You are firmly convinced that Baron Godfrey is the murderer. He has kept your wages from you, and he looked far too calm when Crowe fell. You do not know what clears him.",

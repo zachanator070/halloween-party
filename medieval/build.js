@@ -309,7 +309,7 @@ li{margin:2px 0}
 <li>Every fact in the solution's timeline matches the cards (times, names, pouch colours, door details).</li>
 <li>The alibi matrix holds: only the culprit has an unaccounted-for window.</li>
 <li>No single card names or decisively points to the culprit. Note how many cards contribute partially.</li>
-<li>The culprit's cards never describe the deed. Judge whether the culprit's vague "afternoon" line is too much of a tell.</li>
+<li>The culprit's cards never describe the deed or use evasive wording; their own account of the afternoon is plain and specific. Judge whether anything on their cards (their afternoon, quest, bonus clues or evidence) hints that they did it. Run <code>node scripts/audit-case.js</code> in the repository for an anonymous machine check.</li>
 <li>Red herrings are only convictions about a murderer, motive, or flaw; each is clearly false given other cards and none implicates the real culprit.</li>
 <li>Every living player has a unique evidence piece and a quest target held by someone who is present.</li>
 </ul>
