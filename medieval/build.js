@@ -177,7 +177,7 @@ function p2Card(c) {
 <h4>Your new role</h4>${li(p.rules)}
 <h4>Your truthful answers (use only if asked)</h4>
 <div class="secret">${p.truths.map((t) => '<div><b>' + t[0] + '</b> ' + t[1] + '</div>').join('')}</div>
-<h4>Reminder</h4><p>You do not know who killed you. You only know you drank from the Cup. Enjoy haunting.</p>
+<h4>Reminder</h4><p>You do not know who killed you. You only know you drank from your goblet. Enjoy haunting.</p>
 <div class="foot">You win by watching them all fumble.</div></article>`;
   }
   return `<article class="card${cls(c)}">

@@ -7,7 +7,7 @@ const INVITE = {
     "Hear ye, all good folk of every estate, whether lord or lady, knight or merchant, minstrel or fool!",
     "Baron Godfrey Aldous de Ravenmoor doth bid thee to a <strong>Great Feast on the eve of All Hallows</strong>, to be held in the Hall of Ravenmoor Keep, in the year of Our Lord 1342.",
     "A most Exalted Lady hath come among us from a land beyond the farthest roads, with an escort and strange gifts in her train. In gratitude for so rare an honour, the Baron doth open his hall, his cellar, and his fire. Come, give thanks, and treat of trade and friendship, that all our houses may prosper.",
-    "There shall be roast fowl, mulled mead, soul cakes for the souls of the faithful, and a toast to be drunk from the Baron's own Loving Cup."
+    "There shall be roast fowl, mulled mead, soul cakes for the souls of the faithful, and a toast to be drunk from the Baron's own silver goblet."
   ],
   small: [
     "Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything.",
@@ -33,7 +33,7 @@ CHARS.push(
   },
   p2:{ ghost:true,
     rules:["You are DEAD. You are now the Ghost of Ravenmoor. Put on a sheet or a pale veil, if you have one, and wander the hall silently and mournfully. Do not speak, except to answer questions.","Any living guest may ask you yes-or-no questions, but you may answer only THREE in total across the whole evening. Answer by nodding or shaking your head. Keep count aloud in a hollow ghostly whisper: 'One...' (you still count everything).","Answer truthfully using the list below. If asked something not on the list, shake your head sadly (you do not know).","You still carry your own secret from your Phase 1 card, but you may only share it through a nod when asked a direct question about it."],
-    truths:[["Was the poison in the Loving Cup?","Yes."],["Was it ratsbane?","Yes."],["Did you see who put it there?","No. It came as a surprise to you."],["Was the cup clean when it was tasted at a quarter past five?","Yes."],["Was the Great Hall empty between a quarter past five and the six o'clock bell?","Yes. The main door was barred."],["Was the cellar's own rat poison used?","No."],["Did you plan to speak of money owed at the toast?","Yes. You meant to name three debtors."],["Do you suspect the Queen of Cathay?","No."]]
+    truths:[["Was the poison in your silver goblet?","Yes."],["Was it ratsbane?","Yes."],["Did you see who put it there?","No. It came as a surprise to you."],["Was the cup clean when it was tasted at a quarter past five?","Yes."],["Was the Great Hall empty between a quarter past five and the six o'clock bell?","Yes. The main door was barred."],["Was the cellar's own rat poison used?","No."],["Did you plan to speak of money owed at the toast?","Yes. You meant to name three debtors."],["Do you suspect the Queen of Cathay?","No."]]
   },
   ev:null
 },
@@ -58,7 +58,7 @@ CHARS.push(
     quest:["Master Crowe's ledger","You want to know what a western merchant charges. Find his ledger of sales and loans and turn it in to the host."]
   },
   ev:{ name:"The Baron's Order of Ceremonies", emoji:"📜",
-    text:"<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>4:30</b> The Loving Cup to be filled with spiced mead and set upon the Hall sideboard. Hall closed to guests.<br>• <b>5:15</b> Kitchen boy to taste the Cup. Steward to BAR the main door of the Hall. The garden door to be latched (not bolted) for the herb boy.<br>• <b>6:00</b> Bell. Hall to open.<br>• <b>6:30</b> Guests seated. Count the candles!<br>• <b>7:30</b> THE TOAST. I shall drink first from the Cup.<br>• <b>8:00</b> Soul cakes.<br>• Spare no expense for the foreign Lady.",
+    text:"<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>4:30</b> The Baron's silver goblet to be filled with spiced mead and set upon the Hall sideboard. Hall closed to guests.<br>• <b>5:15</b> Kitchen boy to taste the goblet. Steward to BAR the main door of the Hall. The garden door to be latched (not bolted) for the herb boy.<br>• <b>6:00</b> Bell. Hall to open.<br>• <b>6:30</b> Guests seated. Count the candles!<br>• <b>7:30</b> THE TOAST. I shall drink first from my goblet.<br>• <b>8:00</b> Soul cakes.<br>• Spare no expense for the foreign Lady.",
     how:"The Baron gave this to you himself, so you would know when to stand for the toast." }
 },
 { id:"oswin", name:"King Oswin Edmund Plantagrey IV", title:"By the Grace of Heaven, King of Aldermere", emoji:"👑", optional:false,
@@ -158,7 +158,7 @@ CHARS.push(
     quest:["Sir Cedric's Tilt-Yard Tablet","You want proof you served at the tilt-yard so Sir Cedric will finally recommend you for knighthood. Find the Marshal's tablet and turn it in. (It is held by Sir Cedric. Ask him nicely.)"]
   },
   ev:{ name:"The Baron's Toast Speech (Draft)", emoji:"🎤",
-    text:"<span class='aname'>THE TOAST, FIRST DRAFT</span><i>(fair copy in Wat's hand, Baron's corrections)</i><br>'Honoured guests! <b>First</b>, to our Eastern Lady, whose coming is a wonder. <b>Second</b>, tonight I settle accounts, and I shall name three debtors for all to hear: a gallant knight, <u>fifty marks</u>; a merchant who sells me wool as silk; and one <u>noble friend of long years</u>, whose <u>three hundred marks</u> are overdue and whose manor shall be mine by All Souls' Day. Ha! You know who you are! <b>Third</b>, a toast, from the Loving Cup. I SHALL DRINK FIRST.'",
+    text:"<span class='aname'>THE TOAST, FIRST DRAFT</span><i>(fair copy in Wat's hand, Baron's corrections)</i><br>'Honoured guests! <b>First</b>, to our Eastern Lady, whose coming is a wonder. <b>Second</b>, tonight I settle accounts, and I shall name three debtors for all to hear: a gallant knight, <u>fifty marks</u>; a merchant who sells me wool as silk; and one <u>noble friend of long years</u>, whose <u>three hundred marks</u> are overdue and whose manor shall be mine by All Souls' Day. Ha! You know who you are! <b>Third</b>, a toast, from my silver goblet. I SHALL DRINK FIRST.'",
     how:"The Baron asked you to copy this in your neat hand three days ago. You kept the draft. You were told not to show anyone before the toast." }
 },
 { id:"mordecai", name:"Magister Mordecai Quillfeather", title:"Court Magician to King Oswin", emoji:"🔮", optional:false,
@@ -358,7 +358,7 @@ CHARS.push(
     quest:["The empty ratsbane packet","You want to see whose poison it was and who left it on your clean garden path. Find the packet and turn it in."]
   },
   ev:{ name:"The Steward's Door Tally", emoji:"🗝️",
-    text:"<span class='aname'>STEWARD'S TALLY OF DOORS</span>Oct 31, the Great Hall:<br>• <b>4:30</b> Hall closed. Cup on sideboard.<br>• <b>5:15</b> Cup tasted by kitchen boy: <b>sound</b>. MAIN DOOR barred. Key on my belt.<br>• <b>5:15</b> Garden door latched (<i>no bolt, as ever</i>).<br>• <b>5:20 to 5:55</b> Steward in cellar, inventory of 14 casks. (Cask 9 slightly lighter. Odd.)<br>• <b>6:00</b> Bell. Hall opened. Nobody seen in or out.",
+    text:"<span class='aname'>STEWARD'S TALLY OF DOORS</span>Oct 31, the Great Hall:<br>• <b>4:30</b> Hall closed. Baron's goblet on sideboard.<br>• <b>5:15</b> Goblet tasted by kitchen boy: <b>sound</b>. MAIN DOOR barred. Key on my belt.<br>• <b>5:15</b> Garden door latched (<i>no bolt, as ever</i>).<br>• <b>5:20 to 5:55</b> Steward in cellar, inventory of 14 casks. (Cask 9 slightly lighter. Odd.)<br>• <b>6:00</b> Bell. Hall opened. Nobody seen in or out.",
     how:"You wrote it as you went, because you write everything down." }
 },
 { id:"ambrose", name:"Brother Ambrose Tuck Marlowe", title:"Friar and Chaplain of Ravenmoor Chapel", emoji:"🍺", optional:true,
@@ -413,17 +413,17 @@ CHARS.push(
 
 
 REWARDS.push(
- "The kitchen boy who tasted the Loving Cup at a quarter past five swore it was sound: nothing but spiced mead.",
+ "The kitchen boy who tasted the Baron's goblet at a quarter past five swore it was sound: nothing but spiced mead.",
  "The Baron's own rat poison, kept under the Steward's lock, was untouched. The poison came from outside the keep.",
  "A trial tray of violet comfits stood by the kitchen door at five o'clock. When the cook returned, it was lighter by a fistful.",
- "A whole packet of ratsbane was stirred into the Cup, enough to give the mead a faint smell of garlic and iron.",
+ "A whole packet of ratsbane was stirred into the goblet, enough to give the mead a faint smell of garlic and iron.",
  "The garden door's latch was found lifted at six o'clock, though the Steward swears he left it latched.",
  "The Hall's main door stayed barred from a quarter past five until the six o'clock bell. The only way in was the garden door.",
  "Fresh scuffs marked the gravel by the garden door: a shoe worn thin at the sole.",
  "The Baron laughed on the stairs this morning: 'By All Souls' Day I shall own a fine new manor!'",
- "The Loving Cup is the only silver goblet in the keep engraved with a raven. The Baron forbade anyone else to drink from it.",
+ "The Baron's silver goblet is the only goblet in the keep engraved with a raven. The Baron forbade anyone else to drink from it.",
  "Ratsbane stirred into warm, spiced mead leaves no colour at all, only a gritty sweetness underneath the spice.",
- "The kitchen boy who tasted the Cup was sent to the cellar for a keg at twenty past five, and saw no one in the passage to the Hall.",
+ "The kitchen boy who tasted the goblet was sent to the cellar for a keg at twenty past five, and saw no one in the passage to the Hall.",
  "The Marshal swears that neither the knight nor his squire left the lists between half past four and the six o'clock bell.",
  "The chapel's seven vigil candles were burned down to matching stubs by six o'clock. Whoever kept the vigil never left."
 );
