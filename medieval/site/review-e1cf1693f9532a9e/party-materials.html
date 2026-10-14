@@ -32,21 +32,21 @@ section>p.intro{color:#d9c9a3;font-size:14px}
 body.hide-spare .spare{display:none!important}
 @page{size:letter landscape;margin:.3in}
 @media print{
- .card{width:5.2in;max-width:none;height:7.7in;overflow:hidden;font-size:9.4pt;line-height:1.28;padding:.16in .2in .14in}
+ .card{width:5.2in;max-width:none;height:7.7in;overflow:hidden;font-size:8.9pt;line-height:1.26;padding:.16in .2in .14in}
  .card.small{height:3.85in;font-size:8.6pt;padding:.1in .16in}
  .card h3{font-size:15pt}.card .title{font-size:9.5pt}.card .emoji{font-size:30pt}.card h4{font-size:8pt}.card .for{font-size:8pt}
  .artifact{font-size:8.2pt}
  body{background:#fff}.toolbar,.note,section>h2,section>p.intro{display:none!important}
  main{padding:0}section.sheet-section{margin:0;max-width:none;page-break-before:always}section.sheet-section:first-of-type{page-break-before:auto}
  .cards{display:grid;grid-template-columns:5.2in 5.2in;gap:0 .15in;justify-content:center}
- body[data-only="p2"] section:not(#p2),body[data-only="ev"] section:not(#ev),body[data-only="bonus"] section:not(#bonus){display:none!important}
+ body[data-only="p2"] section:not(#p2),body[data-only="ev"] section:not(#ev),body[data-only="bonus"] section:not(#bonus),body[data-only="ballot"] section:not(#ballot),body[data-only="awards"] section:not(#awards){display:none!important}
 }</style></head><body class="hide-spare">
 <div class="toolbar"><strong>🕯️ Ravenmoor Feast: print cards</strong>
-<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#bonus">Bonus clues</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
+<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#bonus">Bonus clues</a> <a href="#ballot">Final ballots</a> <a href="#awards">Awards</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
 <label><input type="checkbox" id="spareToggle"> Include spare characters (not cast)</label>
-<label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="bonus">Bonus clue cards</option></select></label>
+<label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="bonus">Bonus clue cards</option><option value="ballot">Final ballots</option><option value="awards">Award certificates</option></select></label>
 <button id="printBtn">Print</button></div>
-<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, bonus clue cards four to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and bonus clue cards are physical. Keep them sealed until the host's signal.</div>
+<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, bonus clue cards, final ballots and award certificates four to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and bonus clue cards are physical. Keep them sealed until the host's signal.</div>
 <main>
 <section class="sheet-section" id="p2"><h2>Phase 2: Character Cards</h2><p class="intro">Host hands these out after the death scene. One per player.</p><div class="cards"><article class="card">
 <div class="head"><div class="emoji">🏰</div><div><h3>Baron Godfrey Aldous de Ravenmoor</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Zach Johnson</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
@@ -56,7 +56,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Lord Thornbury is the murderer. His debt is the largest and he looked guilty fleeing the kitchen (he always looks guilty). You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>Master Crowe's Day Ledger</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Baron's Order of Ceremonies.</b> You lost your own copy. The foreign Queen has the other. Find it and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🏮</div><div><h3>Queen Zhao Suyin of Cathay</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Alyssum Johnson</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You arrived at one o'clock. From half past four until the six o'clock bell you sat in the East Gallery taking tea with Master Crowe, who talked the entire time. The gallery window faces the stable yard, so you saw nothing of the gardens. You counted seven pots of tea.</p>
@@ -65,7 +65,7 @@ body.hide-spare .spare{display:none!important}
 
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Baron's Order of Ceremonies</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: Lady Rosamund's chapel offering receipt.</b> You are curious about the Western custom of burning candles for a husband's finances. Find her receipt and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">👑</div><div><h3>King Oswin Edmund Plantagrey IV</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Craig Brown</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You and Margarethe left the royal castle at dawn. The carriage axle broke near Hollin and the smith kept you waiting until a quarter to six, so you did not reach Ravenmoor until a quarter past six, hungry, grumpy and tired. You rode with the Queen, Magister Mordecai and the Jester, with the baggage cart behind.</p>
@@ -74,7 +74,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Lord Thornbury is the murderer. He once stole your marzipan swan, and a man who steals sweets would poison them. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>A Napkin of Bitter Dust</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Herald's Roll of Arrivals.</b> You wish to know which of your guests dared arrive before you. Find the Herald's roll and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">💎</div><div><h3>Queen Margarethe Eleanor Plantagrey</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Emily Brown</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You rode with the King, the Magister and Tobias the Jester. The royal carriage axle broke near Hollin and was not mended until a quarter to six, so you did not reach Ravenmoor until a quarter past six. You were angry the entire way. The Herald wrote down everyone's arrival.</p>
@@ -83,7 +83,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Magister Mordecai is the murderer. He is always muttering about potions and 'rats of the realm', and he looked far too pleased when Crowe fell. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Herald's Roll of Arrivals</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Magister's sealed pouch of wolfsbane.</b> You want proof the Magister deals in poisons. Find his pouch and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">⚔️</div><div><h3>Sir Cedric Aelfric Brightblade</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Jared Beckstead</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>From three o'clock until half past four you and Wat practised at the quintain (forty-one passes; you will say forty). At half past four you sent Wat to the armorer with your dented helm and went off alone to rest and polish your spurs, because a knight needs solitude before a feast. You lost track of time and appeared at the six o'clock bell.</p>
@@ -92,7 +92,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Magister Mordecai is the murderer. A man who sells fake magic would sell real poison, and you saw him whispering over a bag. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Tilt-Yard Tablet</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Armorer's Receipt.</b> You want proof your helm was mended on time. Find the receipt (your squire has it) and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🧣</div><div><h3>Wat Piers Fenwick</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Breyton Barber</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You and Sir Cedric practised at the tilt-yard from three until half past four. Then Sir Cedric sent you to the armorer with his dented helm and said he would go and rest. You waited at the smithy until the helm was mended at six, eating two apples, then carried it back to the Hall.</p>
@@ -101,7 +101,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Lady Rosamund is the murderer. Her polite insults must be hiding something sharper. You do not know what clears her.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Armorer's Receipt</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: Sir Cedric's Tilt-Yard Tablet.</b> You want proof you served at the tilt-yard so Sir Cedric will recommend you for knighthood. Find the Marshal's tablet (Sir Cedric has it) and turn it in. Ask nicely. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🔮</div><div><h3>Magister Mordecai Quillfeather</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Brad Stephenson</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You travelled with the royal party. The carriage axle broke near Hollin, you spent hours standing in the mud being blamed for it, and you reached Ravenmoor at a quarter past six, grumpy and covered in dust.</p>
@@ -110,7 +110,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Baron Godfrey is the murderer. Crowe was his partner and could have exposed the Baron's fake silk, and the Baron has no alibi you know of. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>A Sealed Pouch of Wolfsbane (Green)</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: A Napkin of Bitter Dust.</b> You are fascinated by unusual powders. Find the King's napkin of grey-green powder and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🃏</div><div><h3>Tobias "Tumble" Thistlewick</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Kayla Beckstead</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You rode with the King and Queen Margarethe in the cart behind the royal carriage, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past six, singing the whole way.</p>
@@ -119,7 +119,7 @@ body.hide-spare .spare{display:none!important}
 
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>An Empty Pouch of Wolfsbane (Blue)</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: Master Crowe's Demand Letters.</b> You love gossip about who owes whom. Find the bundle of demand letters (Lord Thornbury has them) and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🎩</div><div><h3>Lord Reginald Cuthbert Thornbury</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Ryan Chandler</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You spent the late afternoon strolling alone around the keep, admiring the architecture and the gardens. You are vague about exactly where and for how long: you never could keep track of time, unless a meal was involved.</p>
@@ -128,7 +128,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Squire Wat is the murderer. He is always carrying things around the Hall, and a person with a tray can hide anything. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>Master Crowe's Demand Letters</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: Lady Rosamund's chapel offering receipt.</b> You want proof your wife has been praying for your finances. Find her receipt from the chapel (she is guarding it) and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🦢</div><div><h3>Lady Rosamund Philippa Thornbury</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Rachel Chandler</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>At about five o'clock you went to the chapel for the All Hallows' vigil and lit seven candles for your husband's finances. You stayed in prayer until the six o'clock bell. Brother Ambrose gave you a receipt for the offering, as you never go anywhere without a receipt.</p>
@@ -137,13 +137,14 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Baron Godfrey is the murderer. He was Crowe's partner and Crowe could have exposed his fake silk, and you cannot imagine the Baron missing a chance to be dramatic. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Chapel Offering Receipt</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The empty wolfsbane pouch.</b> You cannot abide litter in a lady's garden. Find the discarded pouch (the Jester has it) and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">👻</div><div><h3>The Ghost of Ravenmoor</h3><div class="title">Master Bartholomew Crowe, now deceased</div><div class="for">Player: <b>Shelby Gorriceta</b></div></div><div class="badge ghost">Phase 2<br>Ghost</div></div>
 <h4>Your new role</h4><ul><li>You are DEAD. You are now the Ghost of Master Crowe. Put on a sheet or a pale veil, if you have one, and wander the Hall silently and mournfully. Do not speak, except to answer questions.</li><li>Any living guest may ask you yes-or-no questions, but you may answer only THREE in total across the whole evening. Answer by nodding or shaking your head, then name a price for the answer in a hollow ghostly whisper ('Yes. Dear at twice the price.').</li><li>Answer truthfully using the list below. If asked something not on the list, shake your head sadly (you do not know).</li><li>You still carry your own secret from your Phase 1 card, but you may only share it through a nod when asked a direct question about it.</li></ul>
 <h4>Your truthful answers (use only if asked)</h4>
 <div class="secret"><div><b>Was the poison in your tin of candied ginger?</b> Yes.</div><div><b>Was it wolfsbane (monkshood)?</b> Yes.</div><div><b>Was the tin shut when you set it on the gift table at a quarter past four?</b> Yes.</div><div><b>Did you see who tampered with it?</b> No. It came as a surprise to you.</div><div><b>Were you taking tea with Queen Suyin from half past four until six?</b> Yes. You never left her side.</div><div><b>Was the Hall barred to guests from half past four until the bell at six?</b> Yes.</div><div><b>Did you sell three pouches of wolfsbane?</b> Yes. They are all in your ledger.</div><div><b>Did you plan to announce debts at the toast?</b> Yes. Two of them.</div><div><b>Do you suspect the Queen of Cathay?</b> No.</div></div>
 <h4>Your quest</h4><p><b>Seek: Your own ledger.</b> You want your Day Ledger back. The Baron has it. Find it and turn it in to the host. (Ask nicely: ghosts cannot carry things.) (The host will give you Bonus Clues.)</p>
+<h4>Gold and awards</h4><p>You keep the gold you had and may still earn coins for your quest. Coins count toward <b>Richest Purse</b>, and you may vote for <b>Best Costume</b> and <b>Best Actor</b>.</p>
 <h4>Reminder</h4><p>You do not know who killed you. You only know you tasted the ginger and it was not ginger. Enjoy haunting.</p>
 <div class="foot">You win by watching them all fumble.</div></article><article class="card spare">
 <div class="head"><div class="emoji">🌹</div><div><h3>Princess Isolde Rosalind Plantagrey</h3><div class="title">Phase 2: Master Crowe is dead!</div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
@@ -153,7 +154,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Brother Ambrose the Friar is the murderer. He is a herbalist, he mutters dark Latin, and he looked twitchy when Crowe fell. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>Master Crowe's Marriage Proposal</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Armorer's Receipt.</b> You wish to see what the squire has been carrying about. Find his receipt and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🏯</div><div><h3>Wen Liang</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>Emily Barber</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You arrived at one o'clock with the Queen. From half past four until six, you stood in the corridor outside the East Gallery, keeping a log of the tea ceremony with Master Crowe. The gallery window overlooks the stable yard. You counted seven pots, and Master Crowe never left the Queen's side.</p>
@@ -162,7 +163,7 @@ body.hide-spare .spare{display:none!important}
 
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Interpreter's Tea Log</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Tilt-Yard Tablet.</b> You wish to understand this 'forty victories' business. Find Sir Cedric's tablet and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card spare">
 <div class="head"><div class="emoji">🗝️</div><div><h3>Godwin Alfred Hobsworth</h3><div class="title">Phase 2: Master Crowe is dead!</div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>At a quarter past four you finished setting the gift table in the Hall. At half past four you barred the main door of the Hall as the Baron ordered. You left the garden door latched but not bolted, for the herb boy, and went down to the cellar to check the casks until the bell at six. You were in the cellar about an hour and a half. You did not see anyone in the Hall.</p>
@@ -171,7 +172,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Tobias the Jester is the murderer. He has hated the Baron since the banishment threat, he has stolen honey, and he laughed when Crowe fell. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Steward's Tally of Doors</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The empty wolfsbane pouch.</b> You want to see whose poison it was and who left it on your clean garden path. Find the pouch and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card spare">
 <div class="head"><div class="emoji">🍺</div><div><h3>Brother Ambrose Tuck Marlowe</h3><div class="title">Phase 2: Master Crowe is dead!</div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>At five o'clock Lady Rosamund Thornbury came to the chapel for the vigil, lit seven candles, and stayed in prayer until the bell at six. You sat in the back with a tankard, nodding off, and gave her a receipt. You can swear she did not leave.</p>
@@ -180,7 +181,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Magister Mordecai is the murderer. Dark arts, you are sure. He mutters over potions and keeps strange bottles. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Chapel Vigil Register</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: The Magister's sealed pouch of wolfsbane.</b> You wish to bless the dangerous object, from a safe distance. Find his sealed pouch and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article><article class="card">
 <div class="head"><div class="emoji">🎶</div><div><h3>Lucien Fairweather</h3><div class="title">Phase 2: Master Crowe is dead!</div><div class="for">Player: <b>John Gorriceta</b></div></div><div class="badge p2">Phase 2<br>Your Character</div></div>
 <h4>Your afternoon</h4><p>You rode to Ravenmoor on the back of the royal baggage cart with Tobias the Jester. The axle of the royal carriage broke near Hollin and the whole party waited at the smithy until a quarter to six, so you reached the keep only at a quarter past six. You spent the wait composing a ballad. Tobias did not appreciate it.</p>
@@ -189,7 +190,7 @@ body.hide-spare .spare{display:none!important}
 <div class="herring"><b>Your conviction:</b> You are firmly convinced that Baron Godfrey is the murderer. He has kept your wages from you, and he looked far too calm when Crowe fell. You do not know what clears him.</div>
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>The Smith's Receipt from Hollin</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: Master Crowe's Demand Letters.</b> You are writing a ballad about the evening's scandal and need to know who owes whom. Find the bundle of letters and turn it in. (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article></div></section>
 <section class="sheet-section" id="ev"><h2>Evidence Cards</h2><p class="intro">Hand one to each living character with their Phase 2 card.</p><div class="cards"><article class="card small">
 <div class="head"><div class="emoji">📒</div><div><h3 style="font-size:12pt">Master Crowe's Day Ledger</h3><div class="title">Held by Baron Godfrey Aldous de Ravenmoor</div><div class="for">Player: <b>Zach Johnson</b></div></div><div class="badge ev">Evidence</div></div>
@@ -317,6 +318,132 @@ body.hide-spare .spare{display:none!important}
 <p><i>Hand over when this player turns in:</i> <b>Master Crowe's Demand Letters</b>.</p>
 <ul><li>The royal party left Hollin at a quarter to six and reached Ravenmoor at a quarter past six. None of them were here during the afternoon.</li><li>The Hall's gift table held fourteen gifts. Master Crowe's tin was the only one with a crooked lid.</li><li>The pouch found outside the garden door was blue, and Master Crowe's ledger says who bought the blue one.</li></ul>
 <div class="foot">Three true clues. Share them, trade them, or keep them close.</div></article></div></section>
+<section class="sheet-section" id="ballot"><h2>Final Ballots</h2><p class="intro">One per player, handed out when the final bell rings.</p><div class="cards"><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Baron Godfrey Aldous de Ravenmoor</div><div class="for">Player: <b>Zach Johnson</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Queen Zhao Suyin of Cathay</div><div class="for">Player: <b>Alyssum Johnson</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">King Oswin Edmund Plantagrey IV</div><div class="for">Player: <b>Craig Brown</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Queen Margarethe Eleanor Plantagrey</div><div class="for">Player: <b>Emily Brown</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Sir Cedric Aelfric Brightblade</div><div class="for">Player: <b>Jared Beckstead</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Wat Piers Fenwick</div><div class="for">Player: <b>Breyton Barber</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Magister Mordecai Quillfeather</div><div class="for">Player: <b>Brad Stephenson</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Tobias "Tumble" Thistlewick</div><div class="for">Player: <b>Kayla Beckstead</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Lord Reginald Cuthbert Thornbury</div><div class="for">Player: <b>Ryan Chandler</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Lady Rosamund Philippa Thornbury</div><div class="for">Player: <b>Rachel Chandler</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Master Bartholomew Crowe</div><div class="for">Player: <b>Shelby Gorriceta</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small spare">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Princess Isolde Rosalind Plantagrey</div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Wen Liang</div><div class="for">Player: <b>Emily Barber</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small spare">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Godwin Alfred Hobsworth</div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small spare">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Brother Ambrose Tuck Marlowe</div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article><article class="card small">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">Lucien Fairweather</div><div class="for">Player: <b>John Gorriceta</b></div></div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Method: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Motive: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p><p>Best Actor: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span></p>
+<p>Coins in my purse at the end: <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span></p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article></div></section>
+<section class="sheet-section" id="awards"><h2>Award Certificates</h2><p class="intro">Hand out at the end of the party. Two spare Master Detective certificates are included in case several guests solve the case.</p><div class="cards"><article class="card small"><div class="head"><div class="emoji">💰</div><div><h3 style="font-size:13pt">Richest Purse</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">Awarded to the guest who ends the feast with the most gold coins.</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article><article class="card small"><div class="head"><div class="emoji">🔍</div><div><h3 style="font-size:13pt">Master Detective</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">Awarded to every guest who named the true murderer.</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article><article class="card small"><div class="head"><div class="emoji">🎭</div><div><h3 style="font-size:13pt">Best Costume</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">Awarded to the guest chosen by all as the best dressed of the feast.</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article><article class="card small"><div class="head"><div class="emoji">⭐</div><div><h3 style="font-size:13pt">Best Actor</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">Awarded to the guest chosen by all as the finest player of their part.</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article><article class="card small"><div class="head"><div class="emoji">🔍</div><div><h3 style="font-size:13pt">Master Detective</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">Awarded to every guest who named the true murderer.</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article><article class="card small"><div class="head"><div class="emoji">🔍</div><div><h3 style="font-size:13pt">Master Detective</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">Awarded to every guest who named the true murderer.</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article></div></section>
 </main>
 <script>
 document.getElementById('spareToggle').addEventListener('change',e=>document.body.classList.toggle('hide-spare',!e.target.checked));

@@ -46,6 +46,9 @@ const isSpare = (c) => !playerOf[c.id];
 const byId = Object.fromEntries(CHARS.map((c) => [c.id, c]));
 for (const m of CAST.cast) if (!byId[m.id]) throw new Error('Unknown character in cast: ' + m.id);
 
+const GOLD_RULES = `<h4>Gold coins and awards</h4>
+<p>You begin the feast with <b>10 gold coins</b> (the host will hand them to you). Coins may be offered in trade for information: a secret, an answer, or a piece of evidence. Haggle as your character would. Turning in the evidence you are sent to find earns <b>2 more coins</b> from the host.</p>
+<p>At the end of the feast, prizes are given for: <b>Richest Purse</b> (most coins), <b>Master Detective</b> (everyone who names the murderer), and by vote of all guests, <b>Best Costume</b> and <b>Best Actor</b>.</p>`;
 const li = (a) => '<ul>' + a.map((x) => '<li>' + x + '</li>').join('') + '</ul>';
 const write = (rel, content) => {
   const f = path.join(SITE, rel);
@@ -99,7 +102,8 @@ ${player ? `<p class="for">Prepared for <b>${player}</b>. Keep this page secret!
 <h4>How you treat others</h4>${li(p.treat)}
 <h4>Your relationships</h4>${li(p.rel.map((r) => '<b>' + r[0] + ':</b> ' + r[1]))}
 <h4>Your flaw</h4><p>${p.flaw}</p>
-<div class="secret"><b>Your secret to trade:</b> ${p.secret}<br><i>You may reveal it only in exchange for information. Do not show anyone this page.</i></div>
+<div class="secret"><b>Your secret to trade:</b> ${p.secret}<br><i>You may reveal it in exchange for information or gold. Do not show anyone this page.</i></div>
+${GOLD_RULES}
 <h4>Props to bring</h4>${li(p.props)}<p><i>Costume tip:</i> ${p.costume}</p>
 <p><i>Gift to bring for the Baron:</i> ${p.gift}</p>
 <h4>Conversation starters</h4>${li(p.starters)}
@@ -157,14 +161,14 @@ section>p.intro{color:#d9c9a3;font-size:14px}
 body.hide-spare .spare{display:none!important}
 @page{size:letter landscape;margin:.3in}
 @media print{
- .card{width:5.2in;max-width:none;height:7.7in;overflow:hidden;font-size:9.4pt;line-height:1.28;padding:.16in .2in .14in}
+ .card{width:5.2in;max-width:none;height:7.7in;overflow:hidden;font-size:8.9pt;line-height:1.26;padding:.16in .2in .14in}
  .card.small{height:3.85in;font-size:8.6pt;padding:.1in .16in}
  .card h3{font-size:15pt}.card .title{font-size:9.5pt}.card .emoji{font-size:30pt}.card h4{font-size:8pt}.card .for{font-size:8pt}
  .artifact{font-size:8.2pt}
  body{background:#fff}.toolbar,.note,section>h2,section>p.intro{display:none!important}
  main{padding:0}section.sheet-section{margin:0;max-width:none;page-break-before:always}section.sheet-section:first-of-type{page-break-before:auto}
  .cards{display:grid;grid-template-columns:5.2in 5.2in;gap:0 .15in;justify-content:center}
- body[data-only="p2"] section:not(#p2),body[data-only="ev"] section:not(#ev),body[data-only="bonus"] section:not(#bonus){display:none!important}
+ body[data-only="p2"] section:not(#p2),body[data-only="ev"] section:not(#ev),body[data-only="bonus"] section:not(#bonus),body[data-only="ballot"] section:not(#ballot),body[data-only="awards"] section:not(#awards){display:none!important}
 }`;
 const forLine = (c) => (playerOf[c.id] ? `<div class="for">Player: <b>${playerOf[c.id]}</b></div>` : '');
 const cls = (c) => (isSpare(c) ? ' spare' : '');
@@ -177,6 +181,7 @@ function p2Card(c) {
 <h4>Your truthful answers (use only if asked)</h4>
 <div class="secret">${p.truths.map((t) => '<div><b>' + t[0] + '</b> ' + t[1] + '</div>').join('')}</div>
 ${p.quest ? `<h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (The host will give you Bonus Clues.)</p>` : ''}
+<h4>Gold and awards</h4><p>You keep the gold you had and may still earn coins for your quest. Coins count toward <b>Richest Purse</b>, and you may vote for <b>Best Costume</b> and <b>Best Actor</b>.</p>
 <h4>Reminder</h4><p>You do not know who killed you. You only know you tasted the ginger and it was not ginger. Enjoy haunting.</p>
 <div class="foot">You win by watching them all fumble.</div></article>`;
   }
@@ -188,7 +193,7 @@ ${p.quest ? `<h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (Th
 ${p.herring ? `<div class="herring"><b>Your conviction:</b> ${p.herring}</div>` : ''}
 <h4>Your evidence</h4><p>You were handed a piece of evidence: <b>${c.ev.name}</b>. You may show it, describe it, or trade it for secrets or for other evidence. Whoever holds it can read it.</p>
 <h4>Your quest</h4><p><b>Seek: ${p.quest[0]}.</b> ${p.quest[1]} (When you do, the host will give you your Bonus Clues.)</p>
-<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, write your accusation on a slip and hand it to the host. Remember: you may even be wrong about everyone, including yourself.</p>
+<h4>Your goal</h4><p>Work out WHO killed Master Crowe, HOW, and WHY. At the end of the party, fill in your Final Ballot (your accusation, plus your votes for Best Costume and Best Actor) and hand it to the host. Coins you hold count toward Richest Purse; trade them freely for information. Remember: you may even be wrong about everyone, including yourself.</p>
 <div class="foot">Phase 2 card. Speak in character, as before. Trade freely.</div></article>`;
 }
 function evCard(c) {
@@ -199,6 +204,26 @@ function evCard(c) {
 <p><b>How it came to you:</b> ${e.how}</p>
 <div class="foot">Trade this for a secret or another piece of evidence. Show it to others only in trade.</div></article>`;
 }
+function ballotCard(c) {
+  const line = '<span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:11em">&nbsp;</span>';
+  return `<article class="card small${cls(c)}">
+<div class="head"><div class="emoji">🗳️</div><div><h3 style="font-size:12pt">Final Ballot</h3><div class="title">${c.name}</div>${forLine(c)}</div><div class="badge">Ballot</div></div>
+<h4>Your accusation</h4>
+<p>Murderer: ${line}</p><p>Method: ${line}</p><p>Motive: ${line}</p>
+<h4>Your votes (not for yourself)</h4>
+<p>Best Costume: ${line}</p><p>Best Actor: ${line}</p>
+<p>Coins in my purse at the end: ${'<span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:4em">&nbsp;</span>'}</p>
+<div class="foot">Hand this to the host when the final bell rings.</div></article>`;
+}
+const AWARDS = [
+  ['💰', 'Richest Purse', 'Awarded to the guest who ends the feast with the most gold coins.'],
+  ['🔍', 'Master Detective', 'Awarded to every guest who named the true murderer.'],
+  ['🎭', 'Best Costume', 'Awarded to the guest chosen by all as the best dressed of the feast.'],
+  ['⭐', 'Best Actor', 'Awarded to the guest chosen by all as the finest player of their part.']
+];
+const awardCard = (a) => `<article class="card small"><div class="head"><div class="emoji">${a[0]}</div><div><h3 style="font-size:13pt">${a[1]}</h3><div class="title">The Hallowmas Feast at Ravenmoor, 1342</div></div></div>
+<p style="text-align:center;margin-top:12px">${a[2]}</p><p style="text-align:center;margin-top:18px"><b>Awarded to:</b> <span style="display:inline-block;border-bottom:1px solid #2b1d0e;min-width:12em">&nbsp;</span></p>
+<div class="foot">By the hand of the Baron's household. One certificate per winner; spares for Master Detective are included.</div></article>`;
 function bonusCard(c) {
   const q = c.p2.quest[0];
   return `<article class="card small${cls(c)}">
@@ -211,15 +236,17 @@ ${li(c.bonus)}
 function printMaterials() {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Phase 2, Evidence and Bonus Clue Cards (printable)</title><style>${PRINT_CSS}</style></head><body class="hide-spare">
 <div class="toolbar"><strong>🕯️ Ravenmoor Feast: print cards</strong>
-<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#bonus">Bonus clues</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
+<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#bonus">Bonus clues</a> <a href="#ballot">Final ballots</a> <a href="#awards">Awards</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
 <label><input type="checkbox" id="spareToggle"> Include spare characters (not cast)</label>
-<label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="bonus">Bonus clue cards</option></select></label>
+<label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="bonus">Bonus clue cards</option><option value="ballot">Final ballots</option><option value="awards">Award certificates</option></select></label>
 <button id="printBtn">Print</button></div>
-<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, bonus clue cards four to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and bonus clue cards are physical. Keep them sealed until the host's signal.</div>
+<div class="note"><b>How to print:</b> Letter paper, <em>landscape</em>, default margins, scale 100%, Background graphics ON. Phase 2 cards print two to a sheet, evidence cards four to a sheet, bonus clue cards, final ballots and award certificates four to a sheet. Cut along the card borders. The invitation, Phase 1 pages and Phase 2 cards are digital (the Phase 2 card unlocks on each player's page with the passphrase the host reveals); these printed Phase 2 cards are an optional fallback. Evidence cards and bonus clue cards are physical. Keep them sealed until the host's signal.</div>
 <main>
 <section class="sheet-section" id="p2"><h2>Phase 2: Character Cards</h2><p class="intro">Host hands these out after the death scene. One per player.</p><div class="cards">${CHARS.map(p2Card).join('')}</div></section>
 <section class="sheet-section" id="ev"><h2>Evidence Cards</h2><p class="intro">Hand one to each living character with their Phase 2 card.</p><div class="cards">${CHARS.filter((c) => c.ev).map(evCard).join('')}</div></section>
 <section class="sheet-section" id="bonus"><h2>Bonus Clue Cards</h2><p class="intro">When a guest turns in the evidence they were told to find, hand them their own bonus clue card (it carries their name). Keep them sealed until then.</p><div class="cards">${CHARS.map(bonusCard).join('')}</div></section>
+<section class="sheet-section" id="ballot"><h2>Final Ballots</h2><p class="intro">One per player, handed out when the final bell rings.</p><div class="cards">${CHARS.map(ballotCard).join('')}</div></section>
+<section class="sheet-section" id="awards"><h2>Award Certificates</h2><p class="intro">Hand out at the end of the party. Two spare Master Detective certificates are included in case several guests solve the case.</p><div class="cards">${[...AWARDS, AWARDS[1], AWARDS[1]].map(awardCard).join('')}</div></section>
 </main>
 <script>
 document.getElementById('spareToggle').addEventListener('change',e=>document.body.classList.toggle('hide-spare',!e.target.checked));

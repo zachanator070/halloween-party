@@ -10,7 +10,7 @@ const INVITE = {
     "There shall be roast fowl, mulled mead, soul cakes for the souls of the faithful, and a toast, with the opening of all gifts, wherein by the custom of Ravenmoor each giver shall taste first of his own offering."
   ],
   small: [
-    "Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything.",
+    "Dress as befits thy station. Bring a modest gift for thy host. Mind thy manners; the Baron counts everything. Each guest shall receive a purse of gold at the door, to spend upon tidings; and at the feast's end, prizes shall be given.",
     "Thine own good name and station are described in a private letter, which the Steward will deliver when thou givest thy name below. Keep it close and tell no one.",
     "Sent by the hand of Godwin Hobsworth, Steward of Ravenmoor. Make answer to the Steward that thou wilt attend."
   ]
