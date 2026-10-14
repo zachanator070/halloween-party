@@ -83,11 +83,12 @@ document.getElementById('f').addEventListener('submit', async (e) => {
   e.preventDefault();
   const err = document.getElementById('err'), out = document.getElementById('out'); err.textContent = '';
   try {
-    const pass = document.getElementById('pw').value.trim();
+    if (!window.crypto || !crypto.subtle) { out.hidden = true; err.textContent = 'This browser cannot decrypt here: open the page over https or as a local file.'; return; }
+    const pass = document.getElementById('pw').value.trim().toLowerCase();
     const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
     const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(ENC.salt), iterations: ENC.iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
     const buf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(ENC.iv) }, key, b64(ENC.ct));
     out.innerHTML = md(new TextDecoder().decode(buf)); out.hidden = false; out.scrollIntoView();
-  } catch (x) { out.hidden = true; err.textContent = 'Could not decrypt: check the passphrase. (This page needs https or a local file.)'; }
+  } catch (x) { out.hidden = true; err.textContent = 'Could not decrypt: check the passphrase.'; }
 });
 </script></body></html>
