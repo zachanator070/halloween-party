@@ -5,7 +5,7 @@ Medieval Halloween murder mystery for 13 players (16 characters designed; 3 spar
 | Path | What it is |
 |---|---|
 | `site/` | Static web root. `invitation.html` (with a name form that sends each guest to their own page) and `p1/<token>.html` (one private character page each; its Phase 2 card is encrypted and unlocks with a passphrase). Cast addresses are derived from the guest's name; spare characters have random ones. |
-| `site/review-<token>/` | Reviewer and host documents: `reviewer.html` (links to everything, decrypts the solution in the browser), `party-materials.html` (printable Phase 2 / evidence / reward cards), `host-guide.html`, `phase1-all.html`. Do not send to players. |
+| `site/review-<token>/` | Reviewer and host documents (`reviewer.html` itself lives at `site/reviewer.html`, i.e. `/halloween-party/reviewer.html`), `party-materials.html` (printable Phase 2 / evidence / reward cards), `host-guide.html`, `phase1-all.html`. Do not send to players. |
 | `distribution.md` | Which link goes to which player. |
 | `src/characters.js` | All character, invitation and reward-slip text. |
 | `src/cast.json` | Player to character assignments and spare characters. |

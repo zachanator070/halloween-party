@@ -201,7 +201,7 @@ const slipCard = (t, i) => `<article class="card slip"><div style="text-align:ce
 function printMaterials() {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Phase 2, Evidence and Reward Cards (printable)</title><style>${PRINT_CSS}</style></head><body class="hide-spare">
 <div class="toolbar"><strong>🕯️ Ravenmoor Feast: print cards</strong>
-<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#slips">Reward slips</a> <a href="reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
+<span><a href="#p2">Phase 2</a> <a href="#ev">Evidence</a> <a href="#slips">Reward slips</a> <a href="../reviewer.html">Reviewer page</a> <a href="host-guide.html">Host guide</a></span>
 <label><input type="checkbox" id="spareToggle"> Include spare characters (not cast)</label>
 <label>Print <select id="printSel"><option value="">everything</option><option value="p2">Phase 2 cards</option><option value="ev">Evidence cards</option><option value="slips">Reward slips</option></select></label>
 <button id="printBtn">Print</button></div>
@@ -221,7 +221,7 @@ window.addEventListener('afterprint',()=>{delete document.body.dataset.only;});
 // ---------------------------------------------------------------- Phase 1 overview for the reviewer
 function phase1All() {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>All Phase 1 cards (reviewer view)</title><style>${P1_CSS}.wrap{max-width:900px}.wrap>.card{margin-bottom:22px}.tag{color:#e8c66a;font-size:.9em;margin:0 0 4px}</style></head><body>
-<div class="nav"><a href="reviewer.html">&larr; Reviewer page</a> &middot; Every Phase 1 page in one view. Players only ever see their own.</div>
+<div class="nav"><a href="../reviewer.html">&larr; Reviewer page</a> &middot; Every Phase 1 page in one view. Players only ever see their own.</div>
 <div class="wrap">${CHARS.map((c) => `<p class="tag">${playerOf[c.id] ? 'Cast: ' + playerOf[c.id] : 'Spare character (not cast)'}</p>${p1Body(c)}`).join('')}</div></body></html>`;
 }
 
@@ -235,7 +235,7 @@ function hostGuide() {
 // ---------------------------------------------------------------- Reviewer page
 function reviewerPage() {
   const enc = fs.readFileSync(path.join(ROOT, 'src', 'solution.enc.json'), 'utf8');
-  const p1Links = CHARS.map((c) => `<li><a href="../p1/${tokenOf[c.id]}.html">${c.name}</a> <span class="dim">(${playerOf[c.id] ? playerOf[c.id] : 'spare'})</span></li>`).join('');
+  const p1Links = CHARS.map((c) => `<li><a href="p1/${tokenOf[c.id]}.html">${c.name}</a> <span class="dim">(${playerOf[c.id] ? playerOf[c.id] : 'spare'})</span></li>`).join('');
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Reviewer Page: The Hallowmas Feast at Ravenmoor</title><style>
 body{font-family:Palatino,Georgia,serif;max-width:900px;margin:0 auto;padding:20px;background:#f6ecd0;color:#2b1d0e;line-height:1.5}
 h1{color:#7a1f1f;font-variant:small-caps;border-bottom:3px double #a8791a}h2{color:#7a1f1f;font-variant:small-caps;border-bottom:1px solid #a8791a;margin-top:28px}
@@ -252,10 +252,10 @@ li{margin:2px 0}
 
 <h2>1. Read the materials</h2>
 <div class="cols"><ul>
-<li><a href="../invitation.html">Invitation</a> (what players receive; identical for all)</li>
-<li><a href="phase1-all.html">All Phase 1 cards in one page</a></li>
-<li><a href="party-materials.html">Phase 2 cards, evidence cards, reward slips</a> (printable; tick "Include spare characters" for the full set)</li>
-<li><a href="host-guide.html">Host guide</a> (must contain no solution)</li>
+<li><a href="invitation.html">Invitation</a> (what players receive; identical for all)</li>
+<li><a href="${R}/phase1-all.html">All Phase 1 cards in one page</a></li>
+<li><a href="${R}/party-materials.html">Phase 2 cards, evidence cards, reward slips</a> (printable; tick "Include spare characters" for the full set)</li>
+<li><a href="${R}/host-guide.html">Host guide</a> (must contain no solution)</li>
 </ul></div>
 <h3>Each player's own Phase 1 page</h3>
 <div class="cols"><ul>${p1Links}</ul></div>
@@ -337,7 +337,7 @@ write('invitation.html', invitationPage());
 for (const c of CHARS) write(`p1/${tokenOf[c.id]}.html`, p1Page(c));
 write('robots.txt', 'User-agent: *\nDisallow: /\n');
 const R = `review-${tokens.review}`;
-write(`${R}/reviewer.html`, reviewerPage());
+write('reviewer.html', reviewerPage());
 write(`${R}/party-materials.html`, printMaterials());
 write(`${R}/phase1-all.html`, phase1All());
 write(`${R}/host-guide.html`, hostGuide());
@@ -347,6 +347,6 @@ const lines = ['# Distribution list', '', 'Paths are relative to the `site/` fol
 for (const m of CAST.cast) lines.push(`| ${m.player} | ${byId[m.id].name} | \`/p1/${tokenOf[m.id]}.html\` |`);
 lines.push('', '## Spare characters (hand out only if an extra guest arrives)', '', '| Character | Phase 1 link |', '|---|---|');
 for (const c of CHARS.filter(isSpare)) lines.push(`| ${c.name} | \`/p1/${tokenOf[c.id]}.html\` |`);
-lines.push('', '## Reviewer and host documents (do NOT send to players)', '', `\`/${R}/reviewer.html\`, \`/${R}/party-materials.html\`, \`/${R}/host-guide.html\`, \`/${R}/phase1-all.html\``, '');
+lines.push('', '## Reviewer and host documents (do NOT send to players)', '', `\`/reviewer.html\` (reviewer page), \`/${R}/party-materials.html\`, \`/${R}/host-guide.html\`, \`/${R}/phase1-all.html\``, '');
 fs.writeFileSync(path.join(ROOT, 'distribution.md'), lines.join('\n'));
 console.log('Built', CHARS.length, 'character pages. Review folder:', R);

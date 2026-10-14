@@ -30,4 +30,4 @@ Invitation (everyone): `/invitation.html`
 
 ## Reviewer and host documents (do NOT send to players)
 
-`/review-e1cf1693f9532a9e/reviewer.html`, `/review-e1cf1693f9532a9e/party-materials.html`, `/review-e1cf1693f9532a9e/host-guide.html`, `/review-e1cf1693f9532a9e/phase1-all.html`
+`/reviewer.html` (reviewer page), `/review-e1cf1693f9532a9e/party-materials.html`, `/review-e1cf1693f9532a9e/host-guide.html`, `/review-e1cf1693f9532a9e/phase1-all.html`
