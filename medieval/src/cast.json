@@ -51,11 +51,17 @@
     {
       "player": "Shelby Gorriceta",
       "id": "crowe"
+    },
+    {
+      "player": "Kelson Stephenson",
+      "id": "ambrose"
+    },
+    {
+      "player": "Paige Stephenson",
+      "id": "isolde"
     }
   ],
   "spares": [
-    "isolde",
-    "godwin",
-    "ambrose"
+    "godwin"
   ]
 }

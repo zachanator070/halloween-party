@@ -285,7 +285,7 @@ input[type=password],input[type=text]{font:inherit;padding:6px 10px;width:20em;m
 li{margin:2px 0}
 </style></head><body>
 <h1>Reviewer Page: The Hallowmas Feast at Ravenmoor</h1>
-<p>You are the outside reviewer of a medieval Halloween murder-mystery party (13 players, fourteenth century, all characters caricatures). Your job is to confirm the mystery is <b>coherent, fair, and fun</b>. The host and players must not see the solution, so it is encrypted on this page. You hold the passphrase.</p>
+<p>You are the outside reviewer of a medieval Halloween murder-mystery party (15 players, fourteenth century, all characters caricatures). Your job is to confirm the mystery is <b>coherent, fair, and fun</b>. The host and players must not see the solution, so it is encrypted on this page. You hold the passphrase.</p>
 
 <h2>1. Read the materials</h2>
 <div class="cols"><ul>

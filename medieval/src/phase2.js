@@ -8,7 +8,7 @@ baron: {
     story: "Master Crowe gave you his day ledger at noon, 'in case I get carried away tonight', and begged you to keep it safe. At supper the night before the two of you argued about announcing your debtors' names at the toast: Crowe insisted that 'shame pays faster than silver'. You called it ungentlemanly. He laughed.",
     secret: "ABOUT LORD THORNBURY: at about twenty past six, while you tasted soup, you saw Lord Thornbury slip into the kitchen, pocket a fistful of comfits, and bolt when the cook shouted. He has stolen sweets from your kitchen since he was a boy.",
     herring: "You are firmly convinced that Lord Thornbury is the murderer. His debt is the largest and he looked guilty fleeing the kitchen (he always looks guilty). You do not know what clears him.",
-    quest: ["The Baron's Order of Ceremonies", "You lost your own copy. The foreign Queen has the other. Find it and turn it in."]
+    quest: ["The Interpreter's Tea Log", "You wonder whether the foreign Queen enjoyed your hospitality. Her interpreter keeps a log of everything. Find it and turn it in."]
   },
   ev: { name: "Master Crowe's Day Ledger", emoji: "📒",
     text: "<span class='aname'>CROWE &amp; CO. LEDGER</span><b>WOLFSBANE (dried root, ground). Three linen pouches, each tied with a coloured cord:</b><br>BLUE: Oct 30, to <i>Sir Cedric Brightblade</i>, 'bait for the wolf hunt'.<br>GREEN: Oct 8, Hollin Fair, to <i>Magister Mordecai</i>, 'a stage trick'.<br>RED: Oct 30, to <i>Lord R. Thornbury</i>, on credit, 'for wolves among the manor sheep'. <i>Sent on to Thornbury Manor by rider.</i><br><b>LOANS (jointly with the Baron):</b> Lord Thornbury 300 marks; Sir Cedric 50 marks.<br><b>PAWN:</b> one gold circlet (royal), unredeemed.",
@@ -26,7 +26,7 @@ suyin: {
     story: "The Baron gave you a copy of the Order of Ceremonies for the evening. You approve of the custom that each giver tastes his own gift first. Master Crowe boasted of his candied ginger and swore it was 'the finest cut in the shire'.",
     secret: "ABOUT MASTER CROWE: he told you he set his tin of candied ginger on the gift table in the Hall at a quarter past five, lid shut, planning to 'taste first and sell the rest'. He did not leave your sight between half past five and seven.",
     herring: null,
-    quest: ["Lady Rosamund's chapel offering receipt", "You are curious about the Western custom of burning candles for a husband's finances. Find her receipt and turn it in."]
+    quest: ["The Chapel Vigil Register", "You are curious about the Western custom of burning candles for the dead and for finances. Brother Ambrose keeps the chapel's register. Find it and turn it in."]
   },
   ev: { name: "The Baron's Order of Ceremonies", emoji: "📜",
     text: "<span class='aname'>ORDER OF THE HALLOWS' EVE FEAST</span>In the Baron's own hand:<br>• <b>5:15</b> All gifts for the Exalted Lady to be set upon the gift table in the Hall, sealed or covered.<br>• <b>5:30 to 7:00</b> Baron to the kitchens (soups). Tea for the Exalted Lady in the East Gallery, with Master Crowe.<br>• <b>5:30</b> Hall CLOSED to guests. Main door BARRED. Garden door latched (not bolted) for the herb boy.<br>• <b>7:00</b> Bell. Hall to open.<br>• <b>7:30</b> Guests seated.<br>• <b>8:00</b> THE TOAST, and the OPENING OF GIFTS. By the custom of Ravenmoor, each giver tastes first of any food or drink he has given.<br>• <b>8:30</b> Soul cakes.",
@@ -40,7 +40,7 @@ suyin: {
 
 oswin: {
   p2: {
-    afternoon: "You and Margarethe left the royal castle at dawn. The carriage axle broke near Hollin and the smith kept you waiting until a quarter to seven, so you did not reach Ravenmoor until a quarter past seven, hungry, grumpy and tired. You rode with the Queen, Magister Mordecai and the Jester, with the baggage cart behind.",
+    afternoon: "You and Margarethe left the royal castle at dawn. The carriage axle broke near Hollin and the smith kept you waiting until a quarter to seven, so you did not reach Ravenmoor until a quarter past seven, hungry, grumpy and tired. You rode with the Queen, Princess Isolde, Magister Mordecai and the Jester, with the baggage cart behind.",
     story: "The moment you entered the Hall you went straight for the gift table hoping for snacks. A tin with a crow stamp had a crooked lid, and beside it lay a spill of grey-green dust. You scooped it into your napkin, thinking it was spice, and the cook shooed you away before you could taste it. A good thing.",
     secret: "ABOUT YOUR CROWN: the royal circlet you are not wearing is in pawn to Master Crowe, for a loan that bought last year's hunting hounds. Margarethe does not know. You want it back before she notices.",
     herring: "You are firmly convinced that Lord Thornbury is the murderer. He once stole your marzipan swan, and a man who steals sweets would poison them. You do not know what clears him.",
@@ -58,14 +58,14 @@ oswin: {
 
 margarethe: {
   p2: {
-    afternoon: "You rode with the King, the Magister and Tobias the Jester. The royal carriage axle broke near Hollin and was not mended until a quarter to seven, so you did not reach Ravenmoor until a quarter past seven. You were angry the entire way. The Herald wrote down everyone's arrival.",
+    afternoon: "You rode with the King, Princess Isolde, the Magister and Tobias the Jester. The royal carriage axle broke near Hollin and was not mended until a quarter to seven, so you did not reach Ravenmoor until a quarter past seven. You were angry the entire way. The Herald wrote down everyone's arrival.",
     story: "At the gate the Herald handed you the roll of arrivals to sign off for the royal party. You still have it. At the Hall you noticed the gift table for the foreign Lady: three gifts. You were not pleased to learn Master Crowe had dared propose a marriage for your daughter.",
     secret: "ABOUT YOUR COUSIN LADY ROSAMUND: the Thornburys are deeply in debt to the Baron and to Master Crowe. You secretly sent them money twice; it was not enough.",
     herring: "You are firmly convinced that Magister Mordecai is the murderer. He is always muttering about potions and 'rats of the realm', and he looked far too pleased when Crowe fell. You do not know what clears him.",
     quest: ["The Magister's sealed pouch of wolfsbane", "You want proof the Magister deals in poisons. Find his pouch and turn it in."]
   },
   ev: { name: "The Herald's Roll of Arrivals", emoji: "🪶",
-    text: "<span class='aname'>HERALD'S ROLL, RAVENMOOR GATE</span><b>Resident:</b> Baron Godfrey; Steward Godwin; Brother Ambrose (chapel).<br><b>Oct 29:</b> Lord &amp; Lady Thornbury.<br><b>Oct 30:</b> Sir Cedric Brightblade &amp; squire Wat Fenwick. Master Crowe, merchant.<br><b>Oct 31, one o'clock:</b> Queen Zhao Suyin of Cathay, with escort Wen Liang.<br><b>Oct 31, a quarter past seven:</b> King Oswin, Queen Margarethe, Magister Mordecai, Tobias the Jester, Lucien the minstrel, and the royal household. <i>(Royal carriage: broken axle.)</i>",
+    text: "<span class='aname'>HERALD'S ROLL, RAVENMOOR GATE</span><b>Resident:</b> Baron Godfrey; Steward Godwin; Brother Ambrose (chapel).<br><b>Oct 29:</b> Lord &amp; Lady Thornbury.<br><b>Oct 30:</b> Sir Cedric Brightblade &amp; squire Wat Fenwick. Master Crowe, merchant.<br><b>Oct 31, one o'clock:</b> Queen Zhao Suyin of Cathay, with escort Wen Liang.<br><b>Oct 31, a quarter past seven:</b> King Oswin, Queen Margarethe, Princess Isolde, Magister Mordecai, Tobias the Jester, Lucien the minstrel, and the royal household. <i>(Royal carriage: broken axle.)</i>",
     how: "The Herald handed it to you at the gate so you could sign off for the royal party. You kept it." },
   bonus: [
     "The Magister's green pouch is sealed. The pouch found in the garden was empty and tied with blue.",
@@ -130,7 +130,7 @@ mordecai: {
 
 tobias: {
   p2: {
-    afternoon: "You rode with the King and Queen Margarethe in the cart behind the royal carriage, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past seven, singing the whole way.",
+    afternoon: "You rode with the King, Queen Margarethe and the Princess in the cart behind the royal carriage, and sang all the way to keep the King amused. The axle broke near Hollin and you reached Ravenmoor at a quarter past seven, singing the whole way.",
     story: "At half past seven, as the guests settled, your bell fell off your hat and rolled out through the Hall's garden door. You went after it and, in the shrubs just outside the door, you found a crumpled, empty linen pouch tied with a blue cord, as if someone had tossed it quickly away. You pocketed it with a rhyme.",
     secret: "ABOUT MASTER CROWE: at 7:40 he whispered to you, 'Tonight at the toast, Fool, I shall sell somebody's horse and somebody's manor, in front of everyone!' He winked. You promised not to tell.",
     herring: null,
@@ -173,7 +173,7 @@ rosamund: {
     quest: ["The empty wolfsbane pouch", "You cannot abide litter in a lady's garden. Find the discarded pouch (the Jester has it) and turn it in."]
   },
   ev: { name: "The Chapel Offering Receipt", emoji: "🕯️",
-    text: "<span class='aname'>CHAPEL OF ST. ETHELBURGA, RAVENMOOR</span>Received this day, All Hallows' Eve, of <b>Lady Rosamund Thornbury</b>: an offering of <b>seven candles</b> and a coin, for the vigil. Lady Rosamund entered at six o'clock and kept the vigil <b>until the seven o'clock bell</b>.<br><i>Br. Ambrose Marlowe, chaplain</i> (and a small drawing of a tankard).",
+    text: "<span class='aname'>CHAPEL OF ST. ETHELBURGA, RAVENMOOR</span>Received this day, All Hallows' Eve, of <b>Lady Rosamund Thornbury</b>: an offering of <b>seven candles</b> and a coin, for the vigil. Lady Rosamund entered at six o'clock, finding Br. Ambrose already at the altar since half past five, and kept the vigil <b>until the seven o'clock bell</b>.<br><i>Br. Ambrose Marlowe, chaplain</i> (and a small drawing of a tankard).",
     how: "Brother Ambrose gave it to you after the vigil. You keep every receipt. You never know when you might need one." },
   bonus: [
     "The empty pouch had a blue cord. The red one was sent by Master Crowe's rider to Thornbury Manor and never came to the keep.",
@@ -217,7 +217,7 @@ isolde: {
     story: "Earlier this week, you overheard your mother angrily saying that Master Crowe had written offering you in marriage to his nephew 'with wool and silk rights as the dowry', as if you were a parcel. You were horrified.",
     secret: "ABOUT YOUR MOTHER: Queen Margarethe was livid and called Master Crowe 'a counting-house toad' behind his back. But she is too proper to harm anyone. You know her best, and you are sure she is no killer.",
     herring: "You are firmly convinced that Brother Ambrose the Friar is the murderer. He is a herbalist, he mutters dark Latin, and he looked twitchy when Crowe fell. You do not know what clears him.",
-    quest: ["The Armorer's Receipt", "You wish to see what the squire has been carrying about. Find his receipt and turn it in."]
+    quest: ["The Smith's Receipt from Hollin", "You want a keepsake of the dreadful day the axle broke. Find the smith's receipt (the minstrel has it) and turn it in."]
   },
   ev: { name: "The Princess's Sketchbook", emoji: "🎨",
     text: "<span class='aname'>SKETCHBOOK OF PRINCESS ISOLDE</span>Page 7: <i>Hollin Smithy, by the smithy's clock, <b>half past six</b>.</i> Quick portraits: the King asleep on a barrel, the Queen frowning at the axle, the Magister covered in mud, the Jester juggling socks, the minstrel singing at a donkey.<br>Page 8: <i>The road. A quarter to seven.</i> Everyone squashed into the carriage. Page 9: <i>The gate. A quarter past six.</i> A very cross Herald.",
@@ -235,7 +235,7 @@ wen: {
     story: "Master Crowe talked for ninety minutes. You were told to log every word, but you abandoned the log after the third offer of 'authentic silk' and drew small, rude pictures of his hat instead. He mentioned his candied ginger twice and promised to open the tin at the toast.",
     secret: "ABOUT THE QUEEN'S CHARTER: the Queen had already decided to trade with the Baron, not Master Crowe. She was going to announce it at the toast, as a surprise. Crowe's death is bad for no one's trade but his own.",
     herring: null,
-    quest: ["The Tilt-Yard Tablet", "You wish to understand this 'forty victories' business. Find Sir Cedric's tablet and turn it in."]
+    quest: ["The Baron's Order of Ceremonies", "You must give the Queen a plain-spoken translation of the feast's schedule. Find the Order (your Queen has it) and turn it in. Be diplomatic."]
   },
   ev: { name: "The Interpreter's Tea Log", emoji: "🍵",
     text: "<span class='aname'>LOG OF THE TEA CEREMONY</span>East Gallery, Oct 31. <b>5:30</b> The Queen sits. Master Crowe sits. Pot 1.<br><b>6:15</b> Pot 4. Master Crowe still talking. The window overlooks the stable yard.<br><b>7:00</b> Bell. Pot 7. Master Crowe has offered the Queen 'silk', 'a bargain', and 'a sure thing'. Queen declines all.<br><i>(Margin: a rude drawing of a merchant's hat.)</i>",
@@ -267,14 +267,14 @@ godwin: {
 
 ambrose: {
   p2: {
-    afternoon: "At six o'clock Lady Rosamund Thornbury came to the chapel for the vigil, lit seven candles, and stayed in prayer until the bell at seven. You sat in the back with a tankard, nodding off, and gave her a receipt. You can swear she did not leave.",
+    afternoon: "From half past five you were in the chapel, sweeping and setting out seven candles; Tam the bell-boy rang the half-hour bell and saw you. At six o'clock Lady Rosamund Thornbury came for the vigil, lit the candles, and stayed in prayer until the bell at seven. You sat in the back with a tankard, nodding off, and gave her a receipt. You can swear she did not leave.",
     story: "As the herbalist of Ravenmoor, you know every poisonous plant for miles. You know wolfsbane well: it grows wild only in the high valleys, and the Baron's gardens have none. Whoever used it must have bought it. You saw nobody in the garden.",
     secret: "ABOUT THE POISON: wolfsbane numbs the mouth and tongue within moments of tasting, then makes the heart falter. The Baron's gardens do not grow it. It must have come in a pouch from a merchant.",
     herring: "You are firmly convinced that Magister Mordecai is the murderer. Dark arts, you are sure. He mutters over potions and keeps strange bottles. You do not know what clears him.",
     quest: ["The Magister's sealed pouch of wolfsbane", "You wish to bless the dangerous object, from a safe distance. Find his sealed pouch and turn it in."]
   },
   ev: { name: "The Chapel Vigil Register", emoji: "📖",
-    text: "<span class='aname'>VIGIL REGISTER, ST. ETHELBURGA</span>All Hallows' Eve:<br><b>6:00</b> Present: Lady Rosamund Thornbury. Seven candles lit.<br><b>6:45</b> Lady Rosamund still at prayer. (Br. Ambrose dozing. Mead.)<br><b>7:00</b> Bell. Lady Rosamund rose.<br><i>(Margin: 'Pray for the soul of the soup.')</i>",
+    text: "<span class='aname'>VIGIL REGISTER, ST. ETHELBURGA</span>All Hallows' Eve:<br><b>5:30</b> Chapel opened by Br. Ambrose, swept, seven candles set. Half-hour bell rung by Tam the bell-boy, who saw him.<br><b>6:00</b> Present: Lady Rosamund Thornbury. Seven candles lit.<br><b>6:45</b> Lady Rosamund still at prayer. (Br. Ambrose dozing. Mead.)<br><b>7:00</b> Bell. Lady Rosamund rose.<br><i>Witness: Tam the bell-boy (mark ✱). (Margin: 'Pray for the soul of the soup.')</i>",
     how: "You keep the chapel's register. It is the only book you can reliably find." },
   bonus: [
     "Master Crowe sold exactly three wolfsbane pouches, one in each of blue, green and red.",
@@ -289,7 +289,7 @@ lucien: {
     story: "At an earlier feast the Baron promised to pay you for a song and never did. While tuning your lute in the Hall at about half past seven you noticed the gift table: three gifts, and one pewter tin with a crow stamp whose lid sat crooked and whose rim had a grey smudge on it.",
     secret: "ABOUT THE GIFT TABLE: you noticed that tin because it was the only gift not covered in cloth. You thought of lifting a ginger piece for the road, but the cook was glaring.",
     herring: "You are firmly convinced that Baron Godfrey is the murderer. He has kept your wages from you, and he looked far too calm when Crowe fell. You do not know what clears him.",
-    quest: ["Master Crowe's Demand Letters", "You are writing a ballad about the evening's scandal and need to know who owes whom. Find the bundle of letters and turn it in."]
+    quest: ["The Princess's Sketchbook", "You hear the Princess draws everything, even minstrels. Find her sketchbook and turn it in."]
   },
   ev: { name: "The Smith's Receipt from Hollin", emoji: "🧾",
     text: "<span class='aname'>HOLLIN SMITHY</span>Oct 31: royal carriage, <b>axle and wheel</b>, received 12:40 pm, returned <b>6:40 pm</b>. Royal baggage cart, one wheel, mended. Paid by the King's carter.<br>Party left Hollin at <b>a quarter to seven</b>.<br><i>(Smith's note: 'A cranky King, and a more cranky Queen.')</i>",

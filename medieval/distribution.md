@@ -19,14 +19,14 @@ Invitation (everyone): `/invitation.html`
 | Ryan Chandler | Lord Reginald Cuthbert Thornbury | `/p1/bdb80c69e5bb7cc13828577fdc874553.html` |
 | Rachel Chandler | Lady Rosamund Philippa Thornbury | `/p1/e5f86cbf87b7dd0f98cb14a8eaaae365.html` |
 | Shelby Gorriceta | Master Bartholomew Crowe | `/p1/325c9a3ef679c898fd22e475c27b924a.html` |
+| Kelson Stephenson | Brother Ambrose Tuck Marlowe | `/p1/797c6c8d1b421863e8d00641e22d6c8a.html` |
+| Paige Stephenson | Princess Isolde Rosalind Plantagrey | `/p1/7cd9cb0cb420c4d9a8ff05f0b5a876a7.html` |
 
 ## Spare characters (hand out only if an extra guest arrives)
 
 | Character | Phase 1 link |
 |---|---|
-| Princess Isolde Rosalind Plantagrey | `/p1/571c764285ef6778.html` |
 | Godwin Alfred Hobsworth | `/p1/33db72a7e0665e12.html` |
-| Brother Ambrose Tuck Marlowe | `/p1/cdcd40facd7c837f.html` |
 
 ## Reviewer and host documents (do NOT send to players)
 
